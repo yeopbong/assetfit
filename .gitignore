@@ -11,3 +11,4 @@ artifacts/
 
 # Superseded small archive can be regenerated with pnpm examples.
 examples/demo/
+examples/release-project.json
