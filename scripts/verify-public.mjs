@@ -1,4 +1,4 @@
-/** Read-only deployed-site acceptance. Usage: node scripts/verify-public.mjs <site-url> */
+/** Read-only deployed-site acceptance. Usage: node scripts/verify-public.mjs <site-url> [--fallback-only] */
 import {readFile,writeFile,mkdir,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
@@ -9,9 +9,10 @@ import {allocate} from '../src/allocator.mjs';
 
 const require=createRequire(import.meta.url);
 const {chromium}=require('playwright'),JSZip=require('jszip'),sharp=require('sharp'),validator=require('gltf-validator');
-const root=fileURLToPath(new URL('../',import.meta.url)),out=path.join(root,'artifacts/public-verification');
+const fallbackOnly=process.argv.includes('--fallback-only');
+const root=fileURLToPath(new URL('../',import.meta.url)),out=path.join(root,'artifacts',fallbackOnly?'public-fallback-verification':'public-verification');
 const digest=data=>createHash('sha256').update(data).digest('hex');
-if(!process.argv[2])throw new Error('Usage: node scripts/verify-public.mjs <https://host/project/>');
+if(!process.argv[2])throw new Error('Usage: node scripts/verify-public.mjs <https://host/project/> [--fallback-only]');
 const site=new URL(process.argv[2]);
 assert(['https:','http:'].includes(site.protocol)&&!site.username&&!site.password,'Use an HTTP(S) site URL without credentials.');
 site.search='';site.hash='';if(!site.pathname.endsWith('/'))site.pathname+='/';
@@ -31,7 +32,7 @@ async function browserOptions(){
   return {};
 }
 await mkdir(out,{recursive:true});
-const proof={schemaVersion:1,site:site.href,checkedAt:new Date().toISOString(),status:'running',readOnlyRemoteActions:true,
+const proof={schemaVersion:1,site:site.href,checkedAt:new Date().toISOString(),status:'running',readOnlyRemoteActions:true,verificationMode:fallbackOnly?'recorded-render-fallback-only':'full-public-acceptance',
   scope:'Public page, live finite-table allocation, selected media and downloaded delivery. The remaining candidate files are not downloaded solely to increase a verification count.',
   localArchiveValidCandidates:archive.assets.reduce((sum,asset)=>sum+asset.candidates.filter(candidate=>candidate.valid).length,0)};
 const browser=await chromium.launch({...await browserOptions(),headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
@@ -55,16 +56,103 @@ page.on('response',response=>{
   })());
 });
 const selectionRecord=(name,assets,budget)=>({name,budget,...allocate(assets,budget)});
-async function assertVisibleAllocation(expected){
+async function assertVisibleAllocation(expected,target=page){
   assert(expected.feasible);
-  await page.waitForFunction(({bytes,budget})=>document.querySelector('#exact-bytes')?.textContent===`${bytes.toLocaleString()} / ${budget.toLocaleString()} actual asset bytes`,{bytes:expected.bytes,budget:expected.budget});
+  await target.waitForFunction(({bytes,budget})=>document.querySelector('#exact-bytes')?.textContent===`${bytes.toLocaleString()} / ${budget.toLocaleString()} actual asset bytes`,{bytes:expected.bytes,budget:expected.budget});
 }
 async function waitForModels(){
   await page.waitForFunction(()=>document.querySelectorAll('.view-stage canvas').length===2&&[...document.querySelectorAll('.view-stage canvas')].every(canvas=>canvas.width>0&&canvas.height>0));
   await page.waitForLoadState('networkidle');
+  // Canvas creation and an idle network can precede image decode and the first GLB frame.
+  // Read the current framebuffer during animation-frame polling; transparent clear pixels
+  // must not be accepted as proof that the model was actually drawn.
+  await page.waitForFunction(()=>document.querySelectorAll('.view-stage canvas').length===2&&[...document.querySelectorAll('.view-stage canvas')].every(canvas=>{
+    const gl=canvas.getContext('webgl2')??canvas.getContext('webgl');if(!gl||gl.isContextLost())return false;
+    const pixel=new Uint8Array(4);
+    for(const x of [.2,.35,.5,.65,.8])for(const y of [.2,.35,.5,.65,.8]){
+      gl.readPixels(Math.floor(canvas.width*x),Math.floor(canvas.height*y),1,1,gl.RGBA,gl.UNSIGNED_BYTE,pixel);
+      if(pixel[3]>0)return true;
+    }
+    return false;
+  }),null,{polling:'raf',timeout:45_000});
   assert.equal(await page.getByText('3D preview unavailable:',{exact:false}).count(),0);
 }
+async function verifyWebglFallback(){
+  const context=await browser.newContext({viewport:{width:1440,height:1080}});
+  // Make the unavailable-WebGL path deterministic without altering the delivered app.
+  await context.addInitScript(()=>{
+    const getContext=HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext=function(name,...args){
+      return /webgl/i.test(name)?null:getContext.call(this,name,...args);
+    };
+  });
+  const fallbackPage=await context.newPage();fallbackPage.setDefaultTimeout(45_000);
+  const fallbackRequests=[],fallbackResponses=[],errors=[],checks=[],media=new Map();
+  fallbackPage.on('pageerror',error=>errors.push(error.message));
+  fallbackPage.on('request',request=>fallbackRequests.push({url:request.url(),method:request.method()}));
+  fallbackPage.on('response',response=>{
+    const url=response.url();fallbackResponses.push({url,status:response.status()});
+    if(response.status()!==200||!url.startsWith(new URL('demo/media/',site).href)||media.has(url))return;
+    media.set(url,null);
+    checks.push((async()=>{
+      try{
+        const bytes=await response.body(),expected=expectedFiles.get(url),filenameHash=new URL(url).pathname.match(/\/([a-f0-9]{64})\.[a-z0-9]+$/)?.[1];
+        assert.equal(digest(bytes),expected?.hash??filenameHash,'Fallback media must match its recorded or content-addressed hash.');
+        if(expected)assert.equal(bytes.length,expected.bytes);
+        media.set(url,{file:new URL(url).pathname.slice(site.pathname.length),bytes:bytes.length,sha256:digest(bytes)});
+      }catch(error){errors.push(error.message);}
+    })());
+  });
+  try{
+    const tableResponse=fallbackPage.waitForResponse(response=>response.url()===new URL('demo/project.json',site).href&&response.status()===200);
+    const navigation=await fallbackPage.goto(site.href,{waitUntil:'domcontentloaded'});assert.equal(navigation.status(),200);
+    assert.equal(digest(await(await tableResponse).body()),digest(Buffer.from(JSON.stringify(expectedPublic))));
+    await fallbackPage.getByText('Measured example archive.',{exact:false}).waitFor();
+    const tier=archive.budgets.find(budget=>budget.name==='standard')??archive.budgets[0],expected=selectionRecord(tier.name,archive.assets,tier.bytes);
+    await fallbackPage.locator(`[data-tier="${tier.name}"]`).click();await assertVisibleAllocation(expected,fallbackPage);
+    const model=archive.assets.find(asset=>asset.type==='glb');assert(model);
+    const selected=model.candidates.find(candidate=>candidate.id===expected.selected[model.id]);assert(selected);
+    const alternative=model.candidates.filter(candidate=>candidate.valid&&candidate.id!==selected.id).sort((a,b)=>a.bytes-b.bytes)[0];assert(alternative);
+    async function checkRecordedImages(candidate){
+      const reference=candidate.metrics?.reference??model.reference?.preview,preview=candidate.metrics?.preview;assert(reference&&preview);
+      const originalUrl=new URL('demo/'+reference,site).href,resultUrl=new URL('demo/'+preview,site).href;
+      await fallbackPage.waitForFunction(({originalUrl,resultUrl})=>{
+        const original=document.querySelector('#original-view img'),result=document.querySelector('#result-view img');
+        return original?.src===originalUrl&&result?.src===resultUrl&&original.complete&&result.complete&&original.naturalWidth>0&&result.naturalWidth>0;
+      },{originalUrl,resultUrl});
+      await fallbackPage.locator('#original-view img').evaluate(image=>image.decode());
+      await fallbackPage.locator('#result-view img').evaluate(image=>image.decode());
+      assert.equal(await fallbackPage.locator('#original-view img').getAttribute('alt'),'Recorded original render');
+      assert.equal(await fallbackPage.locator('#result-view img').getAttribute('alt'),'Recorded candidate render');
+      assert.match(await fallbackPage.locator('.compare-note').textContent(),/Interactive 3D preview unavailable:.*Showing recorded fixed-camera renders\./);
+      assert.equal(await fallbackPage.locator('.view-stage canvas, #light').count(),0);
+      assert(await fallbackPage.locator('#save-camera').isDisabled());
+      await assertVisibleAllocation(expected,fallbackPage);
+      assert.equal(await fallbackPage.locator('.candidate-table tr.chosen [data-candidate]').getAttribute('data-candidate'),selected.id);
+      return {candidateId:candidate.id,reference,preview};
+    }
+    await fallbackPage.locator(`[data-asset="${model.id}"]`).click();
+    const allocatedImages=await checkRecordedImages(selected);
+    await fallbackPage.locator(`[data-candidate="${alternative.id}"]`).click();
+    const inspectedImages=await checkRecordedImages(alternative);
+    assert((await fallbackPage.locator('.comparison').first().textContent()).includes(alternative.id));
+    await fallbackPage.waitForLoadState('networkidle');await Promise.all(checks);
+    await fallbackPage.locator('.comparison').first().screenshot({path:path.join(out,'public-model-fallback.png')});
+    assert.deepEqual(errors,[]);
+    const httpRequests=fallbackRequests.filter(request=>/^https?:/.test(request.url)),healthUrl=new URL('api/health',site).href;
+    assert(httpRequests.every(request=>request.method==='GET'&&request.url.startsWith(site.href)));
+    assert(!httpRequests.some(request=>new URL(request.url).pathname.endsWith('.glb')),'WebGL failure before loader startup must use recorded images without downloading GLBs.');
+    assert(fallbackResponses.some(response=>response.url===healthUrl&&response.status===404));
+    assert.deepEqual(fallbackResponses.filter(response=>response.status>=400&&response.url!==healthUrl),[]);
+    return {forcedWebglUnavailable:true,mode:'recorded-fixed-camera-images',interactive3D:false,asset:model.name,allocatedImages,inspectedImages,
+      assetBytes:expected.bytes,budgetBytes:expected.budget,allocationUnchangedByInspection:true,imagesDecoded:true,saveViewDisabled:true,noInteractiveControls:true,
+      noGlbDownloads:true,onlyGetRequests:true,projectSubpathRespected:true,noProcessingBackend:true,loadedMedia:[...media.values()].filter(Boolean),browserErrors:errors};
+  }finally{await context.close();}
+}
 try{
+  if(fallbackOnly){
+    proof.webglFallback=await verifyWebglFallback();proof.status='passed';proof.browser=browser.version();
+  }else{
   const tableUrl=new URL('demo/project.json',site).href;
   const tableResponse=page.waitForResponse(response=>response.url()===tableUrl&&response.status()===200);
   const navigation=await page.goto(site.href,{waitUntil:'domcontentloaded'});assert.equal(navigation.status(),200);
@@ -99,7 +187,7 @@ try{
   assert.equal(await page.locator('.candidate-table tr.chosen [data-candidate]').getAttribute('data-candidate'),selected,'Inspection must not silently change the allocation.');
   assert(requests.some(request=>request.url===new URL('demo/'+alternative.file,site).href));
   await page.locator('.comparison').first().screenshot({path:path.join(out,'public-model-comparison.png')});
-  proof.modelComparison={asset:model.name,inspectedCandidate:alternative.id,allocationUnchangedByInspection:true,twoRenderedCanvases:true};
+  proof.modelComparison={asset:model.name,inspectedCandidate:alternative.id,allocationUnchangedByInspection:true,twoRenderedCanvases:true,nontransparentFramebufferPixelsVerified:true};
 
   const configuration=JSON.parse(await readFile(path.join(root,'examples/release-config.json'),'utf8'));
   const priorityBudget=configuration.priorityCheckBudget??activeTier.bytes;
@@ -154,5 +242,7 @@ try{
   assert.deepEqual(responses.filter(response=>response.status>=400&&response.url!==healthUrl),[]);assert.deepEqual(pageErrors,[]);
   proof.status='passed';proof.browser=browser.version();proof.noProcessingBackend=true;proof.onlyGetRequests=true;proof.projectSubpathRespected=true;
   proof.loadedMedia=[...loadedFiles.values()].filter(Boolean);proof.distinctPublicCandidateFilesLoaded=[...loadedFiles.keys()].filter(url=>candidateUrls.has(url)).length;proof.browserErrors=pageErrors;
+  proof.webglFallback=await verifyWebglFallback();
+  }
 }catch(error){proof.status='failed';proof.error=error.message;throw error;}
 finally{await browser.close();await writeFile(path.join(out,'result.json'),JSON.stringify(proof,null,2));console.log(JSON.stringify(proof,null,2));}

@@ -8,7 +8,7 @@ The output is a delivery ZIP containing the selected files, an inspectable compa
 
 ![AssetFit running with real mixed assets, usage settings, comparison and a joint byte budget](docs/images/demo-desktop.png)
 
-[Source repository](https://github.com/yeopbong/assetfit) · [Release validation](docs/RC.md)
+[Try the live demo](https://yeopbong.github.io/assetfit/) · [Source repository](https://github.com/yeopbong/assetfit) · [Release validation](docs/RC.md)
 
 ## Try it locally
 
@@ -32,7 +32,7 @@ Open [the local workspace](http://127.0.0.1:4318). If your checkout path contain
 
 If Chrome is unavailable, run `pnpm exec playwright install chromium`. If port 4318 is occupied, use `pnpm start --port 4319` and open the address printed in the terminal. If the first dependency installation fails, check `node --version`, `pnpm --version` and the reported registry/network or package error, then rerun the frozen install; keep the lockfile. See [setup and troubleshooting](docs/USAGE.md#setup-and-troubleshooting) for browser paths, the macOS launcher and recovery.
 
-Validated environment: **macOS arm64, Node 24.19.0, pnpm 11.19.0, Chrome 152.0.7977.76**. Node 22.13 is the declared minimum; that version, Linux and Windows have not been validated for this release. [Release checks and remaining limits](docs/RC.md) record the actual verification scope.
+Validated environment: **macOS arm64, Node 24.19.0, pnpm 11.19.0, Chrome 152.0.7977.76**. GitHub Actions also passed installation, default tests, production build and static subpath checks on Ubuntu 24.04; this does not validate full local processing on Linux. Node 22.13 is the declared minimum; that version and Windows remain untested. [Release checks and remaining limits](docs/RC.md) record the actual verification scope.
 
 ## Local application and static demo
 
@@ -44,13 +44,15 @@ Validated environment: **macOS arm64, Node 24.19.0, pnpm 11.19.0, Chrome 152.0.7
 | New display conditions or protection | Regenerate or reevaluate as required | Use the local application |
 | Delivery | Actual selected files, report and replay recipe | Actual selected sample files and recorded measurements |
 
-The static build is in `dist/`; it needs no processing backend. It loads selected content as needed and can export a new selection from the existing candidate table. It does not simulate encoding or rendering progress. Public deployment is being verified; the release report records its status. The loopback link above works only on the computer running AssetFit.
+The static build is in `dist/`; it needs no processing backend. It loads selected content as needed and can export a new selection from the existing candidate table. It does not simulate encoding or rendering progress. [The public demo](https://yeopbong.github.io/assetfit/) runs this build on GitHub Pages under `/assetfit/`. Candidate encoding and measurement are precomputed; budget and importance changes perform real allocation in your browser. The loopback link above works only on the computer running AssetFit.
 
 ## What the results mean
 
 The hard budget is the **sum of actual selected visual-file bytes**. Embedded GLB textures are already counted inside the model. Reports, ZIP overhead, network transfer, GPU memory and frame rate are different quantities. One MB is 1,000,000 bytes; one MiB is 1,048,576 bytes.
 
 The allocator minimizes a defined reference-based engineering loss over the valid candidate table. It is not a human visual-quality percentage or a claim of optimal encoding outside that table. Locks and protection remain constraints. If no measured combination fits, AssetFit reports that result and does not silently remove an asset or unlock it. Inspect critical details before using a delivery.
+
+Interactive model orbit and lighting require WebGL. If it is unavailable, the comparison shows labeled recorded fixed-camera renders for the original and inspected candidate; allocation and downloads still work.
 
 The supported scope is static 8-bit JPEG/PNG/WebP and self-contained static GLB 2.0 with supported core PBR content and `KHR_texture_transform`. Animation, skins, morph targets, other GLB extensions, external model resources, SVG and high-bit-depth images are rejected explicitly. [Supported inputs, protection and resource limits](docs/USAGE.md#supported-assets-and-protections) explain the boundary.
 
