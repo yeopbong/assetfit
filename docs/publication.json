@@ -1,0 +1,996 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/yeopbong/assetfit",
+  "site": "https://yeopbong.github.io/assetfit/",
+  "testedRevision": "fc8448030e098a0f50b1558fb8ecfdd940cdc352",
+  "scopeNote": "This complete public browser run verifies the WebGL fallback repair. The following commit adds this evidence and clarifies two archived-size labels; it changes no candidates, allocation or downloads. ZIP hashes describe one actual download, not a byte-identical ZIP guarantee.",
+  "releaseChecks": {
+    "conclusion": "success",
+    "databaseId": 34015269536,
+    "headSha": "fc8448030e098a0f50b1558fb8ecfdd940cdc352",
+    "jobs": [
+      {
+        "completedAt": "2026-09-06T05:59:03Z",
+        "conclusion": "success",
+        "databaseId": 101437826805,
+        "name": "check",
+        "startedAt": "2026-09-06T05:57:49Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-06T05:57:50Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-06T05:57:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:57:53Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v6",
+            "number": 2,
+            "startedAt": "2026-09-06T05:57:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:57:57Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v6",
+            "number": 3,
+            "startedAt": "2026-09-06T05:57:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:04Z",
+            "conclusion": "success",
+            "name": "Run pnpm/setup@v1",
+            "number": 4,
+            "startedAt": "2026-09-06T05:57:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:07Z",
+            "conclusion": "success",
+            "name": "Run pnpm install --frozen-lockfile",
+            "number": 5,
+            "startedAt": "2026-09-06T05:58:04Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:10Z",
+            "conclusion": "success",
+            "name": "Run pnpm typecheck",
+            "number": 6,
+            "startedAt": "2026-09-06T05:58:07Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:18Z",
+            "conclusion": "success",
+            "name": "Run pnpm test",
+            "number": 7,
+            "startedAt": "2026-09-06T05:58:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:19Z",
+            "conclusion": "success",
+            "name": "Run pnpm build",
+            "number": 8,
+            "startedAt": "2026-09-06T05:58:18Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:43Z",
+            "conclusion": "success",
+            "name": "Run pnpm exec playwright install --with-deps chromium",
+            "number": 9,
+            "startedAt": "2026-09-06T05:58:19Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:01Z",
+            "conclusion": "success",
+            "name": "Run pnpm verify:demo",
+            "number": 10,
+            "startedAt": "2026-09-06T05:58:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:01Z",
+            "conclusion": "success",
+            "name": "Post Run pnpm/setup@v1",
+            "number": 18,
+            "startedAt": "2026-09-06T05:59:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:01Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v6",
+            "number": 19,
+            "startedAt": "2026-09-06T05:59:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:02Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v6",
+            "number": 20,
+            "startedAt": "2026-09-06T05:59:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:02Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 21,
+            "startedAt": "2026-09-06T05:59:02Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/yeopbong/assetfit/actions/runs/34015269536/job/101437826805"
+      }
+    ],
+    "name": "Release checks",
+    "status": "completed",
+    "url": "https://github.com/yeopbong/assetfit/actions/runs/34015269536"
+  },
+  "pagesDeployment": {
+    "conclusion": "success",
+    "databaseId": 34015269578,
+    "headSha": "fc8448030e098a0f50b1558fb8ecfdd940cdc352",
+    "jobs": [
+      {
+        "completedAt": "2026-09-06T05:59:01Z",
+        "conclusion": "success",
+        "databaseId": 101437828403,
+        "name": "build",
+        "startedAt": "2026-09-06T05:57:51Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-06T05:57:53Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-06T05:57:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:57:56Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v6",
+            "number": 2,
+            "startedAt": "2026-09-06T05:57:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:01Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v6",
+            "number": 3,
+            "startedAt": "2026-09-06T05:57:56Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:08Z",
+            "conclusion": "success",
+            "name": "Run pnpm/setup@v1",
+            "number": 4,
+            "startedAt": "2026-09-06T05:58:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:11Z",
+            "conclusion": "success",
+            "name": "Run pnpm install --frozen-lockfile",
+            "number": 5,
+            "startedAt": "2026-09-06T05:58:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:14Z",
+            "conclusion": "success",
+            "name": "Run pnpm typecheck",
+            "number": 6,
+            "startedAt": "2026-09-06T05:58:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:15Z",
+            "conclusion": "success",
+            "name": "Run pnpm build",
+            "number": 7,
+            "startedAt": "2026-09-06T05:58:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:40Z",
+            "conclusion": "success",
+            "name": "Run pnpm exec playwright install --with-deps chromium",
+            "number": 8,
+            "startedAt": "2026-09-06T05:58:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:52Z",
+            "conclusion": "success",
+            "name": "Run pnpm verify:demo",
+            "number": 9,
+            "startedAt": "2026-09-06T05:58:40Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:52Z",
+            "conclusion": "success",
+            "name": "Run actions/configure-pages@v5",
+            "number": 10,
+            "startedAt": "2026-09-06T05:58:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:57Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-pages-artifact@v4",
+            "number": 11,
+            "startedAt": "2026-09-06T05:58:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:57Z",
+            "conclusion": "success",
+            "name": "Post Run pnpm/setup@v1",
+            "number": 20,
+            "startedAt": "2026-09-06T05:58:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:57Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v6",
+            "number": 21,
+            "startedAt": "2026-09-06T05:58:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:57Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v6",
+            "number": 22,
+            "startedAt": "2026-09-06T05:58:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:58:57Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 23,
+            "startedAt": "2026-09-06T05:58:57Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/yeopbong/assetfit/actions/runs/34015269578/job/101437828403"
+      },
+      {
+        "completedAt": "2026-09-06T05:59:14Z",
+        "conclusion": "success",
+        "databaseId": 101437949011,
+        "name": "deploy",
+        "startedAt": "2026-09-06T05:59:04Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-06T05:59:06Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-06T05:59:05Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:12Z",
+            "conclusion": "success",
+            "name": "Deploy static explorer",
+            "number": 2,
+            "startedAt": "2026-09-06T05:59:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-06T05:59:12Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 3,
+            "startedAt": "2026-09-06T05:59:12Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/yeopbong/assetfit/actions/runs/34015269578/job/101437949011"
+      }
+    ],
+    "name": "Publish static explorer",
+    "status": "completed",
+    "url": "https://github.com/yeopbong/assetfit/actions/runs/34015269578"
+  },
+  "publicFiles": {
+    "index.html": {
+      "status": 200,
+      "bytes": 463,
+      "sha256": "1d451837db3413220b00eea4d246d474118d25f5d90582ac37e217785c8849ad"
+    },
+    "app.js": {
+      "status": 200,
+      "bytes": 723896,
+      "sha256": "25761d2b027ba9cdc462d20f536dff0234306a38cd19169240b733b7f92ab11c"
+    },
+    "demo/project.json": {
+      "status": 200,
+      "bytes": 227290,
+      "sha256": "8eb91397aad6902914197a91ebd0820340e4850134d68bea346c39082ff1bacb"
+    },
+    "demo/README.txt": {
+      "status": 200,
+      "bytes": 2028,
+      "sha256": "64ccfa6ac4912e7a3076bb10f113ac1982627e98023a84f25100aff6957fbb2b"
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "status": 200,
+      "bytes": 50666,
+      "sha256": "adb23acab4d9cc2602bff06b99cc2b06bbbf9ec9876db53d527256b67dc25db4"
+    }
+  },
+  "browserVerification": {
+    "schemaVersion": 1,
+    "site": "https://yeopbong.github.io/assetfit/",
+    "checkedAt": "2026-09-06T06:00:29.048Z",
+    "status": "passed",
+    "readOnlyRemoteActions": true,
+    "verificationMode": "full-public-acceptance",
+    "scope": "Public page, live finite-table allocation, selected media and downloaded delivery. The remaining candidate files are not downloaded solely to increase a verification count.",
+    "localArchiveValidCandidates": 29,
+    "initial": {
+      "tableBytes": 227290,
+      "tableSha256": "8eb91397aad6902914197a91ebd0820340e4850134d68bea346c39082ff1bacb",
+      "candidateFiles": 2,
+      "totalCandidateFiles": 29,
+      "glbFiles": 0
+    },
+    "budgets": [
+      {
+        "name": "lite",
+        "budget": 5500000,
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 5347181,
+        "loss": 0.008021601558907559,
+        "normalizedLoss": 0.0020054003897268897,
+        "slack": 152819,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 160,
+        "peakFrontier": 32,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.4940420000002632
+      },
+      {
+        "name": "standard",
+        "budget": 7000000,
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "slack": 98405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 176,
+        "peakFrontier": 41,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.19495800000004238
+      },
+      {
+        "name": "high",
+        "budget": 9000000,
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "slack": 2098405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 189,
+        "peakFrontier": 41,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.15170899999975518
+      }
+    ],
+    "modelComparison": {
+      "asset": "Avocado.glb",
+      "inspectedCandidate": "glb-8f90d219f22061",
+      "allocationUnchangedByInspection": true,
+      "twoRenderedCanvases": true,
+      "nontransparentFramebufferPixelsVerified": true
+    },
+    "priorities": {
+      "baseline": {
+        "name": "equal priorities",
+        "budget": 8500000,
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "slack": 1598405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 182,
+        "peakFrontier": 41,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.19350000000122236
+      },
+      "model": {
+        "name": "model priority 10",
+        "budget": 8500000,
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "original",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 8472685,
+        "loss": 0.006543411849190894,
+        "normalizedLoss": 0.0005033393730146841,
+        "slack": 27315,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "original",
+            "bytes": 8110040,
+            "priority": 10,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 201,
+        "peakFrontier": 39,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.1628340000024764
+      },
+      "photo": {
+        "name": "photo priority 10",
+        "budget": 8500000,
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00011370690074743573,
+        "slack": 1598405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 10,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 206,
+        "peakFrontier": 65,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.30004200000257697
+      },
+      "changedBetweenPriorities": true
+    },
+    "delivery": {
+      "assetBytes": 6901595,
+      "budgetBytes": 8500000,
+      "zipBytes": 9723095,
+      "zipSha256": "8e0cad0e3061601f8549ac9c7991f73c82598272abc280474f8059f37fa7a959",
+      "files": [
+        {
+          "asset": "Avocado.glb",
+          "file": "assets/0f141c4c-ea2-Avocado.glb",
+          "bytes": 4984536,
+          "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+          "candidateId": "glb-93cccbaabffad1"
+        },
+        {
+          "asset": "astronaut.png",
+          "file": "assets/707c3bcb-c52-astronaut.png",
+          "bytes": 423805,
+          "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+          "candidateId": "image-ad000c3926294464d012"
+        },
+        {
+          "asset": "blue-marble.jpg",
+          "file": "assets/97ffd40a-71c-blue-marble.jpg",
+          "bytes": 1438327,
+          "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+          "candidateId": "original"
+        },
+        {
+          "asset": "detail.png",
+          "file": "assets/fae3d18e-7ae-detail.png",
+          "bytes": 54927,
+          "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+          "candidateId": "original"
+        }
+      ],
+      "independentlyDecoded": true,
+      "recipesMatch": true,
+      "sourceLicensesIncluded": true
+    },
+    "tooSmallBudgetDisablesExport": true,
+    "browser": "152.0.7977.76",
+    "noProcessingBackend": true,
+    "onlyGetRequests": true,
+    "projectSubpathRespected": true,
+    "loadedMedia": [
+      {
+        "file": "demo/media/eed03db0dde540ecc4e4f31f88e468dcfbe99438ec2845b03387ce317fe71892.png",
+        "bytes": 40613,
+        "sha256": "eed03db0dde540ecc4e4f31f88e468dcfbe99438ec2845b03387ce317fe71892",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/59d9d71e9e609e1f0e82eaca7902dd3be1c3e31c94b9cd7b209e6d6f8e91af01.png",
+        "bytes": 69841,
+        "sha256": "59d9d71e9e609e1f0e82eaca7902dd3be1c3e31c94b9cd7b209e6d6f8e91af01",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/c5222a0bfdb69f37c2003b9d27427016f45890912cb123776b4541b7d074460f.png",
+        "bytes": 270240,
+        "sha256": "c5222a0bfdb69f37c2003b9d27427016f45890912cb123776b4541b7d074460f",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/5c65807ad878d6b5dcba6f5a9c43f39bd6bfdc2585ac525b01beb6fce5904fe4.png",
+        "bytes": 1271,
+        "sha256": "5c65807ad878d6b5dcba6f5a9c43f39bd6bfdc2585ac525b01beb6fce5904fe4",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5.png",
+        "bytes": 791555,
+        "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e.png",
+        "bytes": 423805,
+        "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/278e51e618acdf01472915003200fcc21a7d737d140e01c5038883c7f0f51951.png",
+        "bytes": 1025350,
+        "sha256": "278e51e618acdf01472915003200fcc21a7d737d140e01c5038883c7f0f51951",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a.jpg",
+        "bytes": 58480,
+        "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/2cb23f9d783a0bebd75ae0e533be5fda8642c4bb81e26ea9226f548fadc5f1e4.png",
+        "bytes": 245261,
+        "sha256": "2cb23f9d783a0bebd75ae0e533be5fda8642c4bb81e26ea9226f548fadc5f1e4",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/7041e13040b1145da1b0155cf893571647ebe99472b34b3de87b1253c7545f6c.png",
+        "bytes": 49385,
+        "sha256": "7041e13040b1145da1b0155cf893571647ebe99472b34b3de87b1253c7545f6c",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/02901fe85608ae15882838aded49913612bd2524ab30760c5f5dd2baa6bf5dac.png",
+        "bytes": 839001,
+        "sha256": "02901fe85608ae15882838aded49913612bd2524ab30760c5f5dd2baa6bf5dac",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/134dece3bb3372065947b87f94e448e03fc3c070a79428d37ae6e2e885718bab.png",
+        "bytes": 9669,
+        "sha256": "134dece3bb3372065947b87f94e448e03fc3c070a79428d37ae6e2e885718bab",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4.glb",
+        "bytes": 8110040,
+        "sha256": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5.glb",
+        "bytes": 4984536,
+        "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/a59e9098e182e165704fbd7376cde38741e66951d95136f6bddd2e815f26f086.png",
+        "bytes": 15125,
+        "sha256": "a59e9098e182e165704fbd7376cde38741e66951d95136f6bddd2e815f26f086",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/ba1abb74e9f10a050b2cfdc552e44074addf8c42c7b8917e7cd0ebcd79d3c163.glb",
+        "bytes": 4941592,
+        "sha256": "ba1abb74e9f10a050b2cfdc552e44074addf8c42c7b8917e7cd0ebcd79d3c163",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/5082062686ab15909785264da8691268947d033b5a550ebc5744e83769944f21.png",
+        "bytes": 40304,
+        "sha256": "5082062686ab15909785264da8691268947d033b5a550ebc5744e83769944f21",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/adc34c68a6b75ed14847dfb1144813f70ca70a6b94a8bd410a3bdba51ccbf7e6.png",
+        "bytes": 3309,
+        "sha256": "adc34c68a6b75ed14847dfb1144813f70ca70a6b94a8bd410a3bdba51ccbf7e6",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871.png",
+        "bytes": 54927,
+        "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+        "candidateOrSource": true
+      },
+      {
+        "file": "demo/media/de460515744917726a02d809ae1103a0aeb08e84b9c89d053acb97d459d6e5f1.png",
+        "bytes": 1710,
+        "sha256": "de460515744917726a02d809ae1103a0aeb08e84b9c89d053acb97d459d6e5f1",
+        "candidateOrSource": false
+      },
+      {
+        "file": "demo/media/dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048.jpg",
+        "bytes": 1438327,
+        "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+        "candidateOrSource": true
+      }
+    ],
+    "distinctPublicCandidateFilesLoaded": 8,
+    "browserErrors": [],
+    "webglFallback": {
+      "forcedWebglUnavailable": true,
+      "mode": "recorded-fixed-camera-images",
+      "interactive3D": false,
+      "asset": "Avocado.glb",
+      "allocatedImages": {
+        "candidateId": "glb-93cccbaabffad1",
+        "reference": "media/5082062686ab15909785264da8691268947d033b5a550ebc5744e83769944f21.png",
+        "preview": "media/eed03db0dde540ecc4e4f31f88e468dcfbe99438ec2845b03387ce317fe71892.png"
+      },
+      "inspectedImages": {
+        "candidateId": "glb-8f90d219f22061",
+        "reference": "media/5082062686ab15909785264da8691268947d033b5a550ebc5744e83769944f21.png",
+        "preview": "media/15719c9ded8a5d7ae0b81d89cfabc4cec582119802eede19b1841531090eeac3.png"
+      },
+      "assetBytes": 6901595,
+      "budgetBytes": 7000000,
+      "allocationUnchangedByInspection": true,
+      "imagesDecoded": true,
+      "saveViewDisabled": true,
+      "noInteractiveControls": true,
+      "noGlbDownloads": true,
+      "onlyGetRequests": true,
+      "projectSubpathRespected": true,
+      "noProcessingBackend": true,
+      "loadedMedia": [
+        {
+          "file": "demo/media/eed03db0dde540ecc4e4f31f88e468dcfbe99438ec2845b03387ce317fe71892.png",
+          "bytes": 40613,
+          "sha256": "eed03db0dde540ecc4e4f31f88e468dcfbe99438ec2845b03387ce317fe71892"
+        },
+        {
+          "file": "demo/media/c5222a0bfdb69f37c2003b9d27427016f45890912cb123776b4541b7d074460f.png",
+          "bytes": 270240,
+          "sha256": "c5222a0bfdb69f37c2003b9d27427016f45890912cb123776b4541b7d074460f"
+        },
+        {
+          "file": "demo/media/278e51e618acdf01472915003200fcc21a7d737d140e01c5038883c7f0f51951.png",
+          "bytes": 1025350,
+          "sha256": "278e51e618acdf01472915003200fcc21a7d737d140e01c5038883c7f0f51951"
+        },
+        {
+          "file": "demo/media/5c65807ad878d6b5dcba6f5a9c43f39bd6bfdc2585ac525b01beb6fce5904fe4.png",
+          "bytes": 1271,
+          "sha256": "5c65807ad878d6b5dcba6f5a9c43f39bd6bfdc2585ac525b01beb6fce5904fe4"
+        },
+        {
+          "file": "demo/media/59d9d71e9e609e1f0e82eaca7902dd3be1c3e31c94b9cd7b209e6d6f8e91af01.png",
+          "bytes": 69841,
+          "sha256": "59d9d71e9e609e1f0e82eaca7902dd3be1c3e31c94b9cd7b209e6d6f8e91af01"
+        },
+        {
+          "file": "demo/media/88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5.png",
+          "bytes": 791555,
+          "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+        },
+        {
+          "file": "demo/media/789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e.png",
+          "bytes": 423805,
+          "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+        },
+        {
+          "file": "demo/media/5082062686ab15909785264da8691268947d033b5a550ebc5744e83769944f21.png",
+          "bytes": 40304,
+          "sha256": "5082062686ab15909785264da8691268947d033b5a550ebc5744e83769944f21"
+        },
+        {
+          "file": "demo/media/134dece3bb3372065947b87f94e448e03fc3c070a79428d37ae6e2e885718bab.png",
+          "bytes": 9669,
+          "sha256": "134dece3bb3372065947b87f94e448e03fc3c070a79428d37ae6e2e885718bab"
+        },
+        {
+          "file": "demo/media/a59e9098e182e165704fbd7376cde38741e66951d95136f6bddd2e815f26f086.png",
+          "bytes": 15125,
+          "sha256": "a59e9098e182e165704fbd7376cde38741e66951d95136f6bddd2e815f26f086"
+        },
+        {
+          "file": "demo/media/15719c9ded8a5d7ae0b81d89cfabc4cec582119802eede19b1841531090eeac3.png",
+          "bytes": 36845,
+          "sha256": "15719c9ded8a5d7ae0b81d89cfabc4cec582119802eede19b1841531090eeac3"
+        }
+      ],
+      "browserErrors": []
+    }
+  }
+}

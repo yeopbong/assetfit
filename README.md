@@ -60,6 +60,7 @@ The supported scope is static 8-bit JPEG/PNG/WebP and self-contained static GLB 
 
 - [Real mixed release case](docs/release-case.md): an 8.11 MB Avocado model, photographs and a protected graphic; exact input/output bytes, recipes, constraints, timings and reproduction commands. [Machine-readable record](docs/release-case.json).
 - [Search comparison](docs/benchmark-notes.md): audited historical observations and a reproducible figure. Simple methods can win; 222 paid evaluations are not 222 unique outputs or proof of general superiority.
+- [Public deployment evidence](docs/publication.json): successful remote workflows, real public browser checks and verified downloaded files.
 - [Release validation](docs/RC.md): clean installation, local processing, UI and static subpath checks, plus verified and unverified scope.
 - [User guide](docs/USAGE.md): CLI, failure and recovery states, export, replay and policy. [Technical reference](docs/TECHNICAL.md): objective, cache validity and implementation limits.
 
