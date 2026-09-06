@@ -1,6 +1,6 @@
 # Licensing and third-party software
 
-The MIT license in `LICENSE` applies to AssetFit's original application code and documentation. It does not replace the licenses of imported sample assets or dependencies. The release candidate's proposed code license is included for review before public publication.
+The MIT license in `LICENSE` applies to AssetFit's original application code and documentation. It does not replace the licenses of imported sample assets or dependencies.
 
 Each bundled source asset and its derivatives retain the asset-specific attribution and license recorded in [examples/SOURCES.json](examples/SOURCES.json). The Duck model uses the SCEA Shared Source License, Avocado uses CC0, and the NASA photographs retain their source attribution and applicable media guidance. The original detail-sheet fixture is CC0. Downloaded deliveries carry the applicable source manifest and license text.
 

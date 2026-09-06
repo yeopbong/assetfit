@@ -8,6 +8,8 @@ The output is a delivery ZIP containing the selected files, an inspectable compa
 
 ![AssetFit running with real mixed assets, usage settings, comparison and a joint byte budget](docs/images/demo-desktop.png)
 
+[Source repository](https://github.com/yeopbong/assetfit) · [Release validation](docs/RC.md)
+
 ## Try it locally
 
 Requirements: **Node.js 22.13+**, **pnpm 11.19.0**, and **Chrome or Playwright Chromium** for GLB evaluation. Image-only CLI processing does not need a browser.
@@ -42,7 +44,7 @@ Validated environment: **macOS arm64, Node 24.19.0, pnpm 11.19.0, Chrome 152.0.7
 | New display conditions or protection | Regenerate or reevaluate as required | Use the local application |
 | Delivery | Actual selected files, report and replay recipe | Actual selected sample files and recorded measurements |
 
-The static build is in `dist/`; it needs no processing backend. It loads selected content as needed and can export a new selection from the existing candidate table. It does not simulate encoding or rendering progress. **This release candidate has not been publicly published; no external Demo URL is available yet.** The loopback link above works only on the computer running AssetFit.
+The static build is in `dist/`; it needs no processing backend. It loads selected content as needed and can export a new selection from the existing candidate table. It does not simulate encoding or rendering progress. Public deployment is being verified; the release report records its status. The loopback link above works only on the computer running AssetFit.
 
 ## What the results mean
 
