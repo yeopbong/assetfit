@@ -1,0 +1,13 @@
+node_modules/
+.assetfit/
+dist/
+artifacts/
+*.log
+.DS_Store
+
+.cache/
+.install-cache/
+.install-store/
+
+# Superseded small archive can be regenerated with pnpm examples.
+examples/demo/

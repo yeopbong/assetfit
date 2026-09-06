@@ -1,0 +1,43 @@
+{
+  "name": "assetfit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Visual asset budget optimizer for images and static GLB projects",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "start": "node src/cli.mjs serve",
+    "cli": "node src/cli.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit && node scripts/check.mjs",
+    "examples": "node scripts/examples.mjs",
+    "verify:demo": "node scripts/verify-demo.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "verify:local": "node scripts/verify-local.mjs",
+    "release:case": "node scripts/release-case.mjs",
+    "verify:clean": "node scripts/verify-clean.mjs"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "4.2.1",
+    "@gltf-transform/extensions": "4.2.1",
+    "@gltf-transform/functions": "4.2.1",
+    "meshoptimizer": "0.25.0",
+    "gltf-validator": "2.0.0-dev.3.10",
+    "sharp": "0.34.3",
+    "three": "0.180.0",
+    "playwright": "1.55.0",
+    "express": "5.1.0",
+    "multer": "2.0.2",
+    "jszip": "3.10.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.9",
+    "typescript": "5.9.2",
+    "@types/node": "24.3.0"
+  },
+  "license": "MIT"
+}

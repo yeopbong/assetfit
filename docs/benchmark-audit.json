@@ -1,0 +1,1344 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-05T22-56-52-423Z",
+  "versions": {
+    "node": "24.19.0",
+    "glb": "assetfit-glb-1.0.1",
+    "renderer": "three-180-fixed-v1",
+    "metric": "rgba-reference-v1"
+  },
+  "sourceSha256": "8400769944be71001f5e2250b2db92775c586f3fc2e776cd176dc7a584004fec",
+  "physicalFileVerificationAtExtraction": {
+    "checked": 222,
+    "bytesAndSha256Matched": 222,
+    "measurementIdentityMatched": 222
+  },
+  "counting": "An evaluation is a candidate completion event, including invalid candidates. Repeated output hashes across independent runs remain paid observations; they are not unique candidates or cache hits.",
+  "assets": [
+    {
+      "name": "Duck",
+      "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+      "sourceBytes": 120484,
+      "eventCounts": {
+        "initialization": 15,
+        "proposal": 111,
+        "candidate": 111,
+        "search-complete": 15
+      },
+      "uniqueOutputHashes": 18,
+      "commonFirstFiveHashesAndLossesMatch": true,
+      "pairedEvolutionProposals": [
+        {
+          "seed": 11,
+          "vectors": {
+            "false": [
+              [
+                4,
+                2
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "true": [
+              [
+                4,
+                3
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                2
+              ]
+            ]
+          },
+          "differentSequence": true
+        },
+        {
+          "seed": 22,
+          "vectors": {
+            "false": [
+              [
+                2,
+                1
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "true": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                2
+              ]
+            ]
+          },
+          "differentSequence": true
+        },
+        {
+          "seed": 33,
+          "vectors": {
+            "false": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                4,
+                0
+              ]
+            ],
+            "true": [
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                4,
+                2
+              ]
+            ]
+          },
+          "differentSequence": true
+        }
+      ],
+      "runs": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 5,
+          "physicalMs": 1460.6333330000007,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 1940.4710830000004,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 2253.388333000001,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 1851.2551249999997,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 5,
+          "physicalMs": 1188.9385419999999,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 1884.0168330000015,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 1869.3381250000002,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 1918.6857500000006,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 5,
+          "physicalMs": 1217.494083999998,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 1916.789208000002,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 1876.8657920000005,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 1956.8460840000007,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 1930.9030409999978,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 1994.7878750000018,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 2274.546957999999,
+          "bestObjective": 0.048818794531640224,
+          "bestHash": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+          "bestBytes": 17712,
+          "bestLoss": 0.01941738023596611,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "label": "Uniform",
+          "meanObjective": 0.048818794531640224,
+          "meanPhysicalSeconds": 1.289021986333333
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "label": "Random",
+          "meanObjective": 0.048818794531640224,
+          "meanPhysicalSeconds": 1.9137590413333345
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "label": "Measured greedy",
+          "meanObjective": 0.048818794531640224,
+          "meanPhysicalSeconds": 1.9998640833333339
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "label": "Evolution · ridge off",
+          "meanObjective": 0.048818794531640224,
+          "meanPhysicalSeconds": 1.9089289863333336
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "label": "Evolution · ridge on",
+          "meanObjective": 0.048818794531640224,
+          "meanPhysicalSeconds": 2.0667459579999994
+        }
+      ]
+    },
+    {
+      "name": "Avocado",
+      "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+      "sourceBytes": 8110040,
+      "eventCounts": {
+        "initialization": 15,
+        "proposal": 111,
+        "candidate": 111,
+        "search-complete": 15
+      },
+      "uniqueOutputHashes": 18,
+      "commonFirstFiveHashesAndLossesMatch": true,
+      "pairedEvolutionProposals": [
+        {
+          "seed": 11,
+          "vectors": {
+            "false": [
+              [
+                2,
+                1
+              ],
+              [
+                4,
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "true": [
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                1,
+                3
+              ]
+            ]
+          },
+          "differentSequence": true
+        },
+        {
+          "seed": 22,
+          "vectors": {
+            "false": [
+              [
+                2,
+                1
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ],
+            "true": [
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                4
+              ]
+            ]
+          },
+          "differentSequence": true
+        },
+        {
+          "seed": 33,
+          "vectors": {
+            "false": [
+              [
+                2,
+                4
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "true": [
+              [
+                2,
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                1,
+                3
+              ]
+            ]
+          },
+          "differentSequence": true
+        }
+      ],
+      "runs": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 5,
+          "physicalMs": 2537.6454169999997,
+          "bestObjective": 0.13057460661996112,
+          "bestHash": "66e4661ca3e22133e1f647bd0fff40b2081dc0d5dd0e00e4616df7658a96ab60",
+          "bestBytes": 5185280,
+          "bestLoss": 0.0027015011852160186,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 4393.606040999999,
+          "bestObjective": 0.12707945970808746,
+          "bestHash": "3dc3dfb907814aa056401a1f285ea41bc5b7ac17d021c0779c56aa71f4dea136",
+          "bestBytes": 5029944,
+          "bestLoss": 0.003037062876505859,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 4191.182708,
+          "bestObjective": 0.12599587097566564,
+          "bestHash": "e38d2c6a3b04f860607a1668c12d179b5498a7f6de51d8b5c408a5da99b12b7f",
+          "bestBytes": 4978800,
+          "bestLoss": 0.0032147256298967,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 4155.899958000002,
+          "bestObjective": 0.13044219429236664,
+          "bestHash": "61be5c4b109d977250ea7bb7b3a8f46b99418d827616878f675f83b49dfa141a",
+          "bestBytes": 4950080,
+          "bestLoss": 0.008369306859012432,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 5,
+          "physicalMs": 2451.8933749999997,
+          "bestObjective": 0.13057460661996112,
+          "bestHash": "66e4661ca3e22133e1f647bd0fff40b2081dc0d5dd0e00e4616df7658a96ab60",
+          "bestBytes": 5185280,
+          "bestLoss": 0.0027015011852160186,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 3905.353541999997,
+          "bestObjective": 0.13057460661996112,
+          "bestHash": "66e4661ca3e22133e1f647bd0fff40b2081dc0d5dd0e00e4616df7658a96ab60",
+          "bestBytes": 5185280,
+          "bestLoss": 0.0027015011852160186,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 4219.241332999998,
+          "bestObjective": 0.12599587097566564,
+          "bestHash": "e38d2c6a3b04f860607a1668c12d179b5498a7f6de51d8b5c408a5da99b12b7f",
+          "bestBytes": 4978800,
+          "bestLoss": 0.0032147256298967,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 4136.652374999998,
+          "bestObjective": 0.13057460661996112,
+          "bestHash": "66e4661ca3e22133e1f647bd0fff40b2081dc0d5dd0e00e4616df7658a96ab60",
+          "bestBytes": 5185280,
+          "bestLoss": 0.0027015011852160186,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 5,
+          "physicalMs": 2511.4504579999993,
+          "bestObjective": 0.13057460661996112,
+          "bestHash": "66e4661ca3e22133e1f647bd0fff40b2081dc0d5dd0e00e4616df7658a96ab60",
+          "bestBytes": 5185280,
+          "bestLoss": 0.0027015011852160186,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 4307.301583000008,
+          "bestObjective": 0.12531759296512346,
+          "bestHash": "e8b42ba94042d19bfdf7eaf7a081a7892c74c1bf1d9ef3a0d444c7dbe47c8fc7",
+          "bestBytes": 5035680,
+          "bestLoss": 0.0011337418373854947,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 4192.675958000007,
+          "bestObjective": 0.12599587097566564,
+          "bestHash": "e38d2c6a3b04f860607a1668c12d179b5498a7f6de51d8b5c408a5da99b12b7f",
+          "bestBytes": 4978800,
+          "bestLoss": 0.0032147256298967,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 3802.081957999995,
+          "bestObjective": 0.12707945970808746,
+          "bestHash": "3dc3dfb907814aa056401a1f285ea41bc5b7ac17d021c0779c56aa71f4dea136",
+          "bestBytes": 5029944,
+          "bestLoss": 0.003037062876505859,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "physicalMs": 3800.834208,
+          "bestObjective": 0.12599587097566564,
+          "bestHash": "e38d2c6a3b04f860607a1668c12d179b5498a7f6de51d8b5c408a5da99b12b7f",
+          "bestBytes": 4978800,
+          "bestLoss": 0.0032147256298967,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "physicalMs": 3699.5531670000055,
+          "bestObjective": 0.12627799897294908,
+          "bestHash": "f36196209624862ed42e3b2bf95221b1b60ed029c34c3fa9d489647668a3965f",
+          "bestBytes": 4955656,
+          "bestLoss": 0.004067602969970047,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "physicalMs": 3792.570166000005,
+          "bestObjective": 0.12599587097566564,
+          "bestHash": "e38d2c6a3b04f860607a1668c12d179b5498a7f6de51d8b5c408a5da99b12b7f",
+          "bestBytes": 4978800,
+          "bestLoss": 0.0032147256298967,
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true
+            }
+          ]
+        }
+      ],
+      "methods": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "label": "Uniform",
+          "meanObjective": 0.13057460661996112,
+          "meanPhysicalSeconds": 2.5003297499999997
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "label": "Random",
+          "meanObjective": 0.12765721976439068,
+          "meanPhysicalSeconds": 4.202087055333335
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "label": "Measured greedy",
+          "meanObjective": 0.12599587097566564,
+          "meanPhysicalSeconds": 4.201033333000002
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "label": "Evolution · ridge off",
+          "meanObjective": 0.12936542020680508,
+          "meanPhysicalSeconds": 4.031544763666665
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "label": "Evolution · ridge on",
+          "meanObjective": 0.1260899136414268,
+          "meanPhysicalSeconds": 3.764319180333337
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "logicalEvaluations": 222,
+    "validEvaluations": 222,
+    "failedEvaluations": 0,
+    "uniqueOutputHashes": 36,
+    "cacheObservations": 0,
+    "retryObservations": 0,
+    "initializations": 30,
+    "surrogateProposals": 18
+  },
+  "costs": {
+    "rendererStartupMs": 3614.482791,
+    "originalReferenceMs": 1325.6333329999989,
+    "totalMs": 88811.36137500001,
+    "methodPhysicalMs": 83632.90241300002,
+    "logicalEvaluations": 222,
+    "initializationMsWithinMethods": 507.2558350000345,
+    "candidateMsWithinMethods": 83091.22891799998,
+    "surrogateFittingAndRankingMsWithinMethods": 5.085833000015555,
+    "otherMethodOverheadMs": 29.33182699999088,
+    "orchestrationAndShutdownMs": 238.34283799999093,
+    "note": "Within-method components partition methodPhysicalMs; do not add them again. Candidate transform, encode, validate and evaluate timings are further subsets, not additional costs."
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "kind": "recipe",
+  "version": "assetfit-0.1.0",
+  "environment": {
+    "node": "24.19.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "sharp": {
+      "aom": "3.12.1",
+      "archive": "3.8.1",
+      "cairo": "1.18.4",
+      "cgif": "0.5.0",
+      "exif": "0.6.25",
+      "expat": "2.7.1",
+      "ffi": "3.5.1",
+      "fontconfig": "2.17.1",
+      "freetype": "2.13.3",
+      "fribidi": "1.0.16",
+      "glib": "2.85.1",
+      "harfbuzz": "11.2.1",
+      "heif": "1.20.1",
+      "highway": "1.2.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.17",
+      "mozjpeg": "4.1.5",
+      "pango": "1.56.4",
+      "pixman": "0.46.2",
+      "png": "1.6.50",
+      "proxy-libintl": "0.4",
+      "rsvg": "2.60.0",
+      "spng": "0.7.4",
+      "tiff": "4.7.0",
+      "vips": "8.17.1",
+      "webp": "1.5.0",
+      "xml2": "2.14.4",
+      "zlib-ng": "2.2.4",
+      "sharp": "0.34.3"
+    },
+    "renderer": "three-180-fixed-v1",
+    "metric": "rgba-reference-v1"
+  },
+  "name": "Field Notes / A mixed visual collection",
+  "settings": {
+    "maxEvaluations": 12,
+    "seed": 42,
+    "method": "evolutionary",
+    "maxImageCandidates": 8,
+    "useSurrogate": true
+  },
+  "budgets": [
+    {
+      "name": "lite",
+      "bytes": 5500000
+    },
+    {
+      "name": "standard",
+      "bytes": 7000000
+    },
+    {
+      "name": "high",
+      "bytes": 9000000
+    }
+  ],
+  "manualChoices": {},
+  "assets": [
+    {
+      "id": "0f141c4c-ea2",
+      "name": "Avocado.glb",
+      "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+      "sourceBytes": 8110040,
+      "usages": [
+        {
+          "label": "Product model",
+          "width": 320,
+          "height": 320,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ],
+      "constraints": {
+        "preserveAlpha": true,
+        "formats": [
+          "jpeg",
+          "png",
+          "webp"
+        ]
+      },
+      "priority": 1,
+      "selectedHashes": {
+        "lite": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+        "standard": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+        "high": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+      }
+    },
+    {
+      "id": "707c3bcb-c52",
+      "name": "astronaut.png",
+      "sourceHash": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+      "sourceBytes": 791555,
+      "usages": [
+        {
+          "label": "Editorial portrait",
+          "width": 320,
+          "height": 320,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 2,
+          "regions": []
+        },
+        {
+          "label": "Byline portrait",
+          "width": 96,
+          "height": 96,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ],
+      "constraints": {
+        "preserveAlpha": true,
+        "formats": [
+          "jpeg",
+          "png",
+          "webp"
+        ]
+      },
+      "priority": 1,
+      "selectedHashes": {
+        "lite": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+        "standard": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+        "high": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+      }
+    },
+    {
+      "id": "97ffd40a-71c",
+      "name": "blue-marble.jpg",
+      "sourceHash": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+      "sourceBytes": 1438327,
+      "usages": [
+        {
+          "label": "Earth feature photo",
+          "width": 640,
+          "height": 640,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ],
+      "constraints": {
+        "preserveAlpha": true,
+        "formats": [
+          "jpeg",
+          "png",
+          "webp"
+        ],
+        "minWidth": 640,
+        "minHeight": 640
+      },
+      "priority": 1,
+      "selectedHashes": {
+        "lite": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187",
+        "standard": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+        "high": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+      }
+    },
+    {
+      "id": "fae3d18e-7ae",
+      "name": "detail.png",
+      "sourceHash": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+      "sourceBytes": 54927,
+      "usages": [
+        {
+          "label": "Protected detail graphic",
+          "width": 640,
+          "height": 320,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ],
+      "constraints": {
+        "preserveAlpha": true,
+        "formats": [
+          "png",
+          "webp"
+        ],
+        "lockOriginal": true,
+        "lossless": true,
+        "preserveDimensions": true,
+        "minWidth": 960,
+        "minHeight": 480
+      },
+      "priority": 1,
+      "selectedHashes": {
+        "lite": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+        "standard": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+        "high": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+      }
+    }
+  ]
+}

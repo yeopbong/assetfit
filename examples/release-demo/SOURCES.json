@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-06T04:49:06.968Z",
+  "note": "Each asset has its own license. Snapshot content hashes bind source versions even when upstream URLs refer to a moving branch.",
+  "assets": [
+    {
+      "file": "Avocado.glb",
+      "title": "Avocado",
+      "author": "Microsoft",
+      "license": "CC0-1.0",
+      "source": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Avocado/glTF-Binary/Avocado.glb",
+      "attribution": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Avocado/README.md",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "modifications": "Original retained. Candidate derivatives preserve original normal and metallic-roughness images and optimize opaque color plus geometry.",
+      "sha256": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+      "bytes": 8110040,
+      "snapshotVersion": "sha256:ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4"
+    },
+    {
+      "file": "astronaut.png",
+      "title": "Astronaut Eileen Collins",
+      "author": "NASA",
+      "license": "Public domain, United States government work",
+      "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.25.2/skimage/data/astronaut.png",
+      "attribution": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.astronaut",
+      "modifications": "Original retained. Image candidates are resized and encoded at the explicitly recorded dimensions and formats.",
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+      "bytes": 791555,
+      "snapshotVersion": "sha256:88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+    },
+    {
+      "file": "detail.png",
+      "title": "Field Notes detail sheet",
+      "author": "AssetFit project contributors",
+      "license": "CC0-1.0",
+      "source": "scripts/examples.mjs#makeDetailSheet",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+      "modifications": "Purpose-built transparency and small-text constraint fixture; generated locally from vector shapes and text. Not used as sole real-asset evidence.",
+      "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+      "bytes": 54927,
+      "snapshotVersion": "sha256:4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+    },
+    {
+      "file": "blue-marble.jpg",
+      "title": "Blue Marble Earth, Apollo 17",
+      "author": "NASA / Apollo 17 Crew",
+      "license": "Public domain, United States government work; NASA media usage guidelines apply",
+      "source": "https://apod.nasa.gov/apod/image/2202/bluemarble_apollo17_3000.jpg",
+      "attribution": "https://apod.nasa.gov/apod/ap220206.html",
+      "individualSourcePage": "https://www.nasa.gov/image-article/blue-marble-view-from-apollo-17/",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "credit": "NASA / Apollo 17 Crew. Source photograph AS17-148-22727, captured December 7, 1972.",
+      "usageNote": "Used as a factual image-processing example with source attribution. No endorsement is asserted.",
+      "modifications": "Official 3000-pixel JPEG retained exactly; candidates are encoded and resized under the recorded display constraints. No source upscaling or synthetic byte padding.",
+      "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+      "bytes": 1438327,
+      "width": 3000,
+      "height": 3002,
+      "snapshotVersion": "sha256:dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+    }
+  ]
+}

@@ -1,0 +1,3085 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-05T22-55-01-175Z",
+  "status": "complete",
+  "protocol": {
+    "sources": [
+      "Duck",
+      "Avocado"
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "maxEvaluations": 8,
+    "usage": {
+      "width": 256,
+      "height": 256,
+      "dpr": 1,
+      "weight": 1
+    },
+    "budgetRatios": [
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "rankingObjective": "search loss + 0.2 * candidate bytes / source bytes; lower is better",
+    "initialization": "Each run independently measures original and all four uniform quality vectors before other proposals.",
+    "methods": [
+      "uniform",
+      "random",
+      "greedy",
+      "evolutionary without surrogate",
+      "evolutionary with ridge surrogate"
+    ],
+    "surrogate": "Ridge fitted only to observations from the current method and seed; predictions select the next physical measurement.",
+    "cache": "No shared observation or score cache. Every method pays for fresh encoding, validation, file reload and rendering.",
+    "heldout": "Benchmark comparisons use search-view scores. Final extra-view checks are exercised by project export, not used for benchmark ranking.",
+    "uniformStop": "Uniform quality has exactly original plus four levels. It stops after five observations with an unused allowance; no duplicate work is invented.",
+    "selectionRule": "Sources, seeds, budgets, objective and limit were fixed before running. All runs, failures and unfilled budgets are preserved."
+  },
+  "versions": {
+    "node": "24.19.0",
+    "glb": "assetfit-glb-1.0.0",
+    "renderer": "three-180-fixed-v1",
+    "metric": "rgba-reference-v1"
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "logicalCpus": 8,
+    "rendering": {
+      "renderer": "three-180-fixed-v1",
+      "metric": "rgba-reference-v1",
+      "browser": "152.0.7977.76",
+      "three": "180",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+      "colorSpace": "srgb",
+      "toneMapping": "ACESFilmic",
+      "exposure": 1,
+      "environment": "Three.js RoomEnvironment",
+      "alpha": true,
+      "antialias": true
+    }
+  },
+  "costs": {
+    "rendererStartupMs": 4005.0480000000002,
+    "originalReferenceMs": 963.210000000001,
+    "totalMs": 67925.316916,
+    "methodPhysicalMs": 62765.161709999986,
+    "logicalEvaluations": 222
+  },
+  "assets": [
+    {
+      "name": "Duck",
+      "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+      "sourceBytes": 120484,
+      "referenceMs": 486.05125000000044,
+      "settingsHash": "16b6cdbc5eb15e643f1beed50ae8f2efee892c51472353c2dceb7018a60a559b",
+      "summaries": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 5,
+          "validCandidates": 1,
+          "failedCandidates": 4,
+          "physicalMs": 350.1120000000001,
+          "timings": {
+            "initializationMs": 32.45758400000068,
+            "transformMs": 0,
+            "encodeMs": 0,
+            "validationMs": 7.313666000000012,
+            "evaluationMs": 296.0019999999995,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 1,
+          "failedCandidates": 7,
+          "physicalMs": 270.82474999999977,
+          "timings": {
+            "initializationMs": 21.784874999999374,
+            "transformMs": 0,
+            "encodeMs": 0,
+            "validationMs": 7.767749999999978,
+            "evaluationMs": 232.4305829999994,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-fadd9ad3a9e841",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-1753ef03cfc159",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-77992575ae53bd",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 3,
+          "failedCandidates": 5,
+          "physicalMs": 823.1287079999993,
+          "timings": {
+            "initializationMs": 5.531958000000486,
+            "transformMs": 38.21820800000023,
+            "encodeMs": 2.53558300000077,
+            "validationMs": 16.809583000000202,
+            "evaluationMs": 752.7462079999996,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.1864758372827566,
+          "best": {
+            "id": "glb-ff7ff4e8982585",
+            "bytes": 111968,
+            "loss": 0.0006121541381066742
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 2,
+          "failedCandidates": 6,
+          "physicalMs": 510.3042080000005,
+          "timings": {
+            "initializationMs": 14.767625000000407,
+            "transformMs": 22.169833999999355,
+            "encodeMs": 1.2905829999999696,
+            "validationMs": 16.987708999999995,
+            "evaluationMs": 441.9672079999991,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-434c0612b4b011",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 5,
+          "validCandidates": 1,
+          "failedCandidates": 4,
+          "physicalMs": 235.71379199999956,
+          "timings": {
+            "initializationMs": 8.471125000000029,
+            "transformMs": 0,
+            "encodeMs": 0,
+            "validationMs": 4.310542000000169,
+            "evaluationMs": 216.28212500000063,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 1,
+          "failedCandidates": 7,
+          "physicalMs": 238.80324999999993,
+          "timings": {
+            "initializationMs": 4.76495899999918,
+            "transformMs": 0,
+            "encodeMs": 0,
+            "validationMs": 3.536000000000058,
+            "evaluationMs": 218.72120799999993,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-1753ef03cfc159",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-434c0612b4b011",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-61bfbe1648b554",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 3,
+          "failedCandidates": 5,
+          "physicalMs": 732.7347919999993,
+          "timings": {
+            "initializationMs": 8.408625000000029,
+            "transformMs": 36.69208399999934,
+            "encodeMs": 2.4916670000011436,
+            "validationMs": 15.013498999999683,
+            "evaluationMs": 660.3091670000003,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.1864758372827566,
+          "best": {
+            "id": "glb-ff7ff4e8982585",
+            "bytes": 111968,
+            "loss": 0.0006121541381066742
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 3,
+          "failedCandidates": 5,
+          "physicalMs": 735.8367090000002,
+          "timings": {
+            "initializationMs": 5.870207999999366,
+            "transformMs": 19.09362500000043,
+            "encodeMs": 2.3948330000002898,
+            "validationMs": 17.319792000000234,
+            "evaluationMs": 680.1754999999985,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.17558440931025837,
+          "best": {
+            "id": "glb-7baabae8824f08",
+            "bytes": 105216,
+            "loss": 0.0009288533858202585
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7baabae8824f08",
+                "bytes": 105216,
+                "loss": 0.0009288533858202585
+              }
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-77992575ae53bd",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 5,
+          "validCandidates": 1,
+          "failedCandidates": 4,
+          "physicalMs": 233.01475000000028,
+          "timings": {
+            "initializationMs": 7.216500000000451,
+            "transformMs": 0,
+            "encodeMs": 0,
+            "validationMs": 3.5139170000002196,
+            "evaluationMs": 215.54912499999955,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 2,
+          "failedCandidates": 6,
+          "physicalMs": 470.7207499999986,
+          "timings": {
+            "initializationMs": 4.766458000000057,
+            "transformMs": 14.061666999999943,
+            "encodeMs": 0.7303749999991851,
+            "validationMs": 7.310542000001078,
+            "evaluationMs": 433.1819169999999,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.1864758372827566,
+          "best": {
+            "id": "glb-ff7ff4e8982585",
+            "bytes": 111968,
+            "loss": 0.0006121541381066742
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-77992575ae53bd",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-84dbc40d867021",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 3,
+          "failedCandidates": 5,
+          "physicalMs": 724.7974159999994,
+          "timings": {
+            "initializationMs": 6.3405839999995806,
+            "transformMs": 37.916041000002224,
+            "encodeMs": 3.4870840000021417,
+            "validationMs": 18.063791000000492,
+            "evaluationMs": 651.5540009999986,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.1864758372827566,
+          "best": {
+            "id": "glb-ff7ff4e8982585",
+            "bytes": 111968,
+            "loss": 0.0006121541381066742
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 2,
+          "failedCandidates": 6,
+          "physicalMs": 496.36183300000084,
+          "timings": {
+            "initializationMs": 7.271749999999884,
+            "transformMs": 22.10699999999997,
+            "encodeMs": 2.7773749999996653,
+            "validationMs": 8.612457999999606,
+            "evaluationMs": 446.8999160000003,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-77992575ae53bd",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 2,
+          "failedCandidates": 6,
+          "physicalMs": 493.7413749999996,
+          "timings": {
+            "initializationMs": 6.41137499999968,
+            "transformMs": 22.137040999999954,
+            "encodeMs": 1.4079160000001139,
+            "validationMs": 8.313916999999492,
+            "evaluationMs": 447.618625000001,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-434c0612b4b011",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 3,
+          "failedCandidates": 5,
+          "physicalMs": 705.3342919999996,
+          "timings": {
+            "initializationMs": 8.519125000000713,
+            "transformMs": 18.84400099999948,
+            "encodeMs": 2.077251000000615,
+            "validationMs": 12.729666000001089,
+            "evaluationMs": 655.1632499999978,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.17558440931025837,
+          "best": {
+            "id": "glb-7baabae8824f08",
+            "bytes": 105216,
+            "loss": 0.0009288533858202585
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7baabae8824f08",
+                "bytes": 105216,
+                "loss": 0.0009288533858202585
+              }
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-77992575ae53bd",
+              "error": "offset is out of bounds"
+            }
+          ]
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 2,
+          "failedCandidates": 6,
+          "physicalMs": 499.7252919999992,
+          "timings": {
+            "initializationMs": 7.528040999999575,
+            "transformMs": 22.77887499999997,
+            "encodeMs": 1.574040999999852,
+            "validationMs": 13.285250000000815,
+            "evaluationMs": 442.42633300000125,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 0,
+              "valid": false,
+              "loss": null
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.2,
+          "best": {
+            "id": "original",
+            "bytes": 120484,
+            "loss": 0
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": false,
+              "selected": null
+            }
+          ],
+          "failures": [
+            {
+              "id": "glb-a61dea38a69def",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-d267d1ad283841",
+              "error": "offset is out of bounds"
+            },
+            {
+              "id": "glb-77992575ae53bd",
+              "error": "offset is out of bounds"
+            }
+          ]
+        }
+      ],
+      "commonInitializationVerified": true
+    },
+    {
+      "name": "Avocado",
+      "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+      "sourceBytes": 8110040,
+      "referenceMs": 477.1587500000005,
+      "settingsHash": "3097c5ae1a93e305328d1bee0a56d526a7cbe1d1633f89fbe6a05d4bbf3dd5eb",
+      "summaries": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 2602.749749999999,
+          "timings": {
+            "initializationMs": 26.286167000000205,
+            "transformMs": 636.4371659999997,
+            "encodeMs": 5.601124000000709,
+            "validationMs": 36.28020800000013,
+            "evaluationMs": 1859.771417,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4094.1071249999986,
+          "timings": {
+            "initializationMs": 23.544166000001496,
+            "transformMs": 1063.4622919999983,
+            "encodeMs": 9.193874000000505,
+            "validationMs": 57.160124999998516,
+            "evaluationMs": 2752.6844169999986,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12707945970808746,
+          "best": {
+            "id": "glb-2b351ba784f2e7",
+            "bytes": 5029944,
+            "loss": 0.003037062876505859
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4183.6290420000005,
+          "timings": {
+            "initializationMs": 22.371124999997846,
+            "transformMs": 1197.0361239999984,
+            "encodeMs": 9.624248000003718,
+            "validationMs": 58.62416700000176,
+            "evaluationMs": 2829.3512919999994,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4026.3001670000012,
+          "timings": {
+            "initializationMs": 21.14208399999916,
+            "transformMs": 1085.4660409999997,
+            "encodeMs": 10.491499000003387,
+            "validationMs": 59.17349899999681,
+            "evaluationMs": 2793.797000999999,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13044219429236664,
+          "best": {
+            "id": "glb-2fc8fa74ae4c2a",
+            "bytes": 4950080,
+            "loss": 0.008369306859012432
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 2519.691666999999,
+          "timings": {
+            "initializationMs": 20.699499999998807,
+            "transformMs": 633.5721250000024,
+            "encodeMs": 5.299582999999984,
+            "validationMs": 37.68499999999767,
+            "evaluationMs": 1785.789622999997,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3942.53125,
+          "timings": {
+            "initializationMs": 22.0313750000023,
+            "transformMs": 808.0270820000151,
+            "encodeMs": 12.583667999988393,
+            "validationMs": 60.3012900000067,
+            "evaluationMs": 2973.9552510000067,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4161.669499999996,
+          "timings": {
+            "initializationMs": 22.599457999996957,
+            "transformMs": 1193.4829989999926,
+            "encodeMs": 9.461790999986988,
+            "validationMs": 52.5360829999845,
+            "evaluationMs": 2816.154998999991,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4067.696208000001,
+          "timings": {
+            "initializationMs": 21.009500000000116,
+            "transformMs": 1155.261916999989,
+            "encodeMs": 8.690207999999984,
+            "validationMs": 54.450459000014234,
+            "evaluationMs": 2765.4996669999964,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 2451.095207999999,
+          "timings": {
+            "initializationMs": 20.780208000003768,
+            "transformMs": 621.3601659999986,
+            "encodeMs": 4.758540999995603,
+            "validationMs": 36.46699900001113,
+            "evaluationMs": 1736.754249000005,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4304.670166999997,
+          "timings": {
+            "initializationMs": 24.397875000002387,
+            "transformMs": 1289.6883740000048,
+            "encodeMs": 9.608625000008033,
+            "validationMs": 56.436918000013975,
+            "evaluationMs": 2856.544126000008,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12531759296512346,
+          "best": {
+            "id": "glb-42de89b71a7c30",
+            "bytes": 5035680,
+            "loss": 0.0011337418373854947
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-42de89b71a7c30",
+                "bytes": 5035680,
+                "loss": 0.0011337418373854947
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-42de89b71a7c30",
+                "bytes": 5035680,
+                "loss": 0.0011337418373854947
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4100.084124999994,
+          "timings": {
+            "initializationMs": 20.231541000001016,
+            "transformMs": 1190.7517910000024,
+            "encodeMs": 9.637750000001688,
+            "validationMs": 56.1148339999927,
+            "evaluationMs": 2752.836458999991,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3727.851333999999,
+          "timings": {
+            "initializationMs": 21.50108299999556,
+            "transformMs": 913.7404989999923,
+            "encodeMs": 9.713375000006636,
+            "validationMs": 52.019749000006414,
+            "evaluationMs": 2671.332374999991,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12707945970808746,
+          "best": {
+            "id": "glb-2b351ba784f2e7",
+            "bytes": 5029944,
+            "loss": 0.003037062876505859
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3674.814249999996,
+          "timings": {
+            "initializationMs": 25.50404200000048,
+            "transformMs": 865.7702930000014,
+            "encodeMs": 9.2162500000195,
+            "validationMs": 57.838041000002704,
+            "evaluationMs": 2650.746167000012,
+            "surrogateTrainingMs": 1.307042000000365
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3671.2373750000042,
+          "timings": {
+            "initializationMs": 24.215415999999095,
+            "transformMs": 820.6577079999915,
+            "encodeMs": 9.769710000007763,
+            "validationMs": 54.66278999998758,
+            "evaluationMs": 2687.1287070000035,
+            "surrogateTrainingMs": 0.9860009999974864
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.12627799897294908,
+          "best": {
+            "id": "glb-801414bfb2295e",
+            "bytes": 4955656,
+            "loss": 0.004067602969970047
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3715.8806250000052,
+          "timings": {
+            "initializationMs": 21.583749999997963,
+            "transformMs": 867.7602079999924,
+            "encodeMs": 9.065665000009176,
+            "validationMs": 53.57920899998135,
+            "evaluationMs": 2694.6121240000066,
+            "surrogateTrainingMs": 0.9782080000004498
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        }
+      ],
+      "commonInitializationVerified": true
+    }
+  ],
+  "detailedArtifact": "artifacts/benchmark-runs/2026-09-05T22-55-01-175Z/benchmark.json"
+}

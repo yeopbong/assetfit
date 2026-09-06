@@ -1,0 +1,2978 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-05T22-56-52-423Z",
+  "status": "complete",
+  "protocol": {
+    "sources": [
+      "Duck",
+      "Avocado"
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "maxEvaluations": 8,
+    "usage": {
+      "width": 256,
+      "height": 256,
+      "dpr": 1,
+      "weight": 1
+    },
+    "budgetRatios": [
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ],
+    "rankingObjective": "search loss + 0.2 * candidate bytes / source bytes; lower is better",
+    "initialization": "Each run independently measures original and all four uniform quality vectors before other proposals.",
+    "methods": [
+      "uniform",
+      "random",
+      "greedy",
+      "evolutionary without surrogate",
+      "evolutionary with ridge surrogate"
+    ],
+    "surrogate": "Ridge fitted only to observations from the current method and seed; predictions select the next physical measurement.",
+    "cache": "No shared observation or score cache. Every method pays for fresh encoding, validation, file reload and rendering.",
+    "heldout": "Benchmark comparisons use search-view scores. Final extra-view checks are exercised by project export, not used for benchmark ranking.",
+    "uniformStop": "Uniform quality has exactly original plus four levels. It stops after five observations with an unused allowance; no duplicate work is invented.",
+    "selectionRule": "Sources, seeds, budgets, objective and limit were fixed before running. All runs, failures and unfilled budgets are preserved."
+  },
+  "versions": {
+    "node": "24.19.0",
+    "glb": "assetfit-glb-1.0.1",
+    "renderer": "three-180-fixed-v1",
+    "metric": "rgba-reference-v1"
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "logicalCpus": 8,
+    "rendering": {
+      "renderer": "three-180-fixed-v1",
+      "metric": "rgba-reference-v1",
+      "browser": "152.0.7977.76",
+      "three": "180",
+      "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "gpu": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+      "colorSpace": "srgb",
+      "toneMapping": "ACESFilmic",
+      "exposure": 1,
+      "environment": "Three.js RoomEnvironment",
+      "alpha": true,
+      "antialias": true
+    }
+  },
+  "costs": {
+    "rendererStartupMs": 3614.482791,
+    "originalReferenceMs": 1325.6333329999989,
+    "totalMs": 88811.36137500001,
+    "methodPhysicalMs": 83632.90241300002,
+    "logicalEvaluations": 222
+  },
+  "assets": [
+    {
+      "name": "Duck",
+      "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+      "sourceBytes": 120484,
+      "referenceMs": 873.0153330000003,
+      "settingsHash": "16b6cdbc5eb15e643f1beed50ae8f2efee892c51472353c2dceb7018a60a559b",
+      "summaries": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 1460.6333330000007,
+          "timings": {
+            "initializationMs": 47.78966599999967,
+            "transformMs": 75.9572079999989,
+            "encodeMs": 5.083415000000059,
+            "validationMs": 23.477042000001347,
+            "evaluationMs": 1301.4778330000008,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1940.4710830000004,
+          "timings": {
+            "initializationMs": 12.234292000000096,
+            "transformMs": 112.22416500000145,
+            "encodeMs": 4.81879200000094,
+            "validationMs": 25.94812400000319,
+            "evaluationMs": 1780.0107919999991,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fadd9ad3a9e841",
+                "bytes": 58852,
+                "loss": 0.0021335584205982275
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-77992575ae53bd",
+                "bytes": 87500,
+                "loss": 0.000877056630750991
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 2253.388333000001,
+          "timings": {
+            "initializationMs": 11.704916000000594,
+            "transformMs": 107.31987399999889,
+            "encodeMs": 3.832624999997279,
+            "validationMs": 25.23870700000134,
+            "evaluationMs": 2096.3746679999977,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1851.2551249999997,
+          "timings": {
+            "initializationMs": 5.096292000000176,
+            "transformMs": 93.42291599999771,
+            "encodeMs": 6.06695899999977,
+            "validationMs": 21.544832000001406,
+            "evaluationMs": 1719.9005419999976,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-d267d1ad283841",
+                "bytes": 95540,
+                "loss": 0.00035179700068768254
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 1188.9385419999999,
+          "timings": {
+            "initializationMs": 10.720417000000452,
+            "transformMs": 65.58687399999872,
+            "encodeMs": 4.643583000000945,
+            "validationMs": 19.260583999997834,
+            "evaluationMs": 1085.8955010000009,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1884.0168330000015,
+          "timings": {
+            "initializationMs": 5.451499999999214,
+            "transformMs": 85.98279100000036,
+            "encodeMs": 5.484250999999858,
+            "validationMs": 28.297750999998243,
+            "evaluationMs": 1752.5427519999994,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-434c0612b4b011",
+                "bytes": 49064,
+                "loss": 0.006631575098718807
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-61bfbe1648b554",
+                "bytes": 71468,
+                "loss": 0.002045119867713501
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1869.3381250000002,
+          "timings": {
+            "initializationMs": 6.108374999999796,
+            "transformMs": 100.49062500000218,
+            "encodeMs": 4.956417000001238,
+            "validationMs": 22.332625000000917,
+            "evaluationMs": 1731.234708,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1918.6857500000006,
+          "timings": {
+            "initializationMs": 9.209000000002561,
+            "transformMs": 112.11387599999944,
+            "encodeMs": 5.789792000006855,
+            "validationMs": 31.044584999999643,
+            "evaluationMs": 1755.1234170000098,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-f6db6bc0349580",
+                "bytes": 72724,
+                "loss": 0.002064074619434126
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 1217.494083999998,
+          "timings": {
+            "initializationMs": 8.265625,
+            "transformMs": 60.675499999997555,
+            "encodeMs": 5.134708999998111,
+            "validationMs": 20.983791000002384,
+            "evaluationMs": 1119.2383759999975,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1916.789208000002,
+          "timings": {
+            "initializationMs": 9.498250000000553,
+            "transformMs": 124.4342919999981,
+            "encodeMs": 7.845249999998487,
+            "validationMs": 27.39524900000106,
+            "evaluationMs": 1743.1610439999968,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-77992575ae53bd",
+                "bytes": 87500,
+                "loss": 0.000877056630750991
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1876.8657920000005,
+          "timings": {
+            "initializationMs": 6.788333000000421,
+            "transformMs": 100.95220900000277,
+            "encodeMs": 7.421666000002006,
+            "validationMs": 35.51287600000069,
+            "evaluationMs": 1721.6833330000009,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1956.8460840000007,
+          "timings": {
+            "initializationMs": 5.919708999997965,
+            "transformMs": 105.87812499999563,
+            "encodeMs": 6.284666999996261,
+            "validationMs": 22.566001999995933,
+            "evaluationMs": 1809.320583000008,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-49cce6565996c3",
+                "bytes": 17712,
+                "loss": 0.01941738023596611
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1930.9030409999978,
+          "timings": {
+            "initializationMs": 8.679208000001381,
+            "transformMs": 145.0757500000036,
+            "encodeMs": 3.682667000004585,
+            "validationMs": 18.790751000000455,
+            "evaluationMs": 1746.466207000005,
+            "surrogateTrainingMs": 1.0839579999992566
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 1994.7878750000018,
+          "timings": {
+            "initializationMs": 5.112790999999561,
+            "transformMs": 100.18033299999661,
+            "encodeMs": 2.3795850000024075,
+            "validationMs": 16.266040000005887,
+            "evaluationMs": 1864.828708000001,
+            "surrogateTrainingMs": 0.5169169999971928
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 2274.546957999999,
+          "timings": {
+            "initializationMs": 4.846207999999024,
+            "transformMs": 108.87512600000628,
+            "encodeMs": 3.743624999995518,
+            "validationMs": 16.057250000005297,
+            "evaluationMs": 2135.1582520000084,
+            "surrogateTrainingMs": 0.5084580000002461
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 120484,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-a61dea38a69def",
+              "bytes": 96796,
+              "valid": true,
+              "loss": 0.0003785554433184124
+            },
+            {
+              "id": "glb-99fc60e57f0dd6",
+              "bytes": 63428,
+              "valid": true,
+              "loss": 0.0024971541460199107
+            },
+            {
+              "id": "glb-c086c694da3f5b",
+              "bytes": 36448,
+              "valid": true,
+              "loss": 0.006679187292700409
+            },
+            {
+              "id": "glb-49cce6565996c3",
+              "bytes": 17712,
+              "valid": true,
+              "loss": 0.01941738023596611
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.048818794531640224,
+          "best": {
+            "id": "glb-49cce6565996c3",
+            "bytes": 17712,
+            "loss": 0.01941738023596611
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 30121,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-7d295737dca4b4",
+                "bytes": 19888,
+                "loss": 0.01920008095699471
+              }
+            },
+            {
+              "ratio": 0.5,
+              "budget": 60242,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-c086c694da3f5b",
+                "bytes": 36448,
+                "loss": 0.006679187292700409
+              }
+            },
+            {
+              "ratio": 0.75,
+              "budget": 90363,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-99fc60e57f0dd6",
+                "bytes": 63428,
+                "loss": 0.0024971541460199107
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 108435,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-a61dea38a69def",
+                "bytes": 96796,
+                "loss": 0.0003785554433184124
+              }
+            }
+          ],
+          "failures": []
+        }
+      ],
+      "commonInitializationVerified": true
+    },
+    {
+      "name": "Avocado",
+      "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+      "sourceBytes": 8110040,
+      "referenceMs": 452.6179999999986,
+      "settingsHash": "3097c5ae1a93e305328d1bee0a56d526a7cbe1d1633f89fbe6a05d4bbf3dd5eb",
+      "summaries": [
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 2537.6454169999997,
+          "timings": {
+            "initializationMs": 22.67041700000118,
+            "transformMs": 630.6818749999948,
+            "encodeMs": 5.597957999998471,
+            "validationMs": 30.957417999990867,
+            "evaluationMs": 1809.8346670000064,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4393.606040999999,
+          "timings": {
+            "initializationMs": 27.64166600000317,
+            "transformMs": 1100.8452509999988,
+            "encodeMs": 14.784498999993957,
+            "validationMs": 63.88041700000031,
+            "evaluationMs": 3124.8037480000057,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12707945970808746,
+          "best": {
+            "id": "glb-2b351ba784f2e7",
+            "bytes": 5029944,
+            "loss": 0.003037062876505859
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4191.182708,
+          "timings": {
+            "initializationMs": 21.892750000006345,
+            "transformMs": 1207.6770840000027,
+            "encodeMs": 11.334250999992946,
+            "validationMs": 54.422250000010536,
+            "evaluationMs": 2827.1510820000112,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4155.899958000002,
+          "timings": {
+            "initializationMs": 25.351833000000624,
+            "transformMs": 1090.9140440000047,
+            "encodeMs": 10.521541999994952,
+            "validationMs": 48.77212499999587,
+            "evaluationMs": 2920.4980409999916,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13044219429236664,
+          "best": {
+            "id": "glb-2fc8fa74ae4c2a",
+            "bytes": 4950080,
+            "loss": 0.008369306859012432
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 2451.8933749999997,
+          "timings": {
+            "initializationMs": 22.597625000002154,
+            "transformMs": 630.9584170000016,
+            "encodeMs": 5.033042000002752,
+            "validationMs": 31.566247999988263,
+            "evaluationMs": 1723.1701259999973,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3905.353541999997,
+          "timings": {
+            "initializationMs": 20.99920900000143,
+            "transformMs": 805.4750399999975,
+            "encodeMs": 9.645209000009345,
+            "validationMs": 56.828958000005514,
+            "evaluationMs": 2948.7599599999958,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4219.241332999998,
+          "timings": {
+            "initializationMs": 23.13737499999843,
+            "transformMs": 1219.7570840000044,
+            "encodeMs": 10.07954299999983,
+            "validationMs": 54.1122510000132,
+            "evaluationMs": 2843.151165000003,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4136.652374999998,
+          "timings": {
+            "initializationMs": 22.800083000001905,
+            "transformMs": 1160.1387100000065,
+            "encodeMs": 9.582333999991533,
+            "validationMs": 54.923124000000826,
+            "evaluationMs": 2823.8013320000027,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "uniform",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 5,
+          "validCandidates": 5,
+          "failedCandidates": 0,
+          "physicalMs": 2511.4504579999993,
+          "timings": {
+            "initializationMs": 23.954333000001498,
+            "transformMs": 629.883124,
+            "encodeMs": 5.893498999997973,
+            "validationMs": 34.52675000000454,
+            "evaluationMs": 1778.937582999999,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "proposal-space-exhausted",
+          "surrogateProposals": 0,
+          "bestObjective": 0.13057460661996112,
+          "best": {
+            "id": "glb-fe448dec1df37a",
+            "bytes": 5185280,
+            "loss": 0.0027015011852160186
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "random",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4307.301583000008,
+          "timings": {
+            "initializationMs": 27.027584000003117,
+            "transformMs": 1282.018081000031,
+            "encodeMs": 11.691042000005837,
+            "validationMs": 56.83329299999605,
+            "evaluationMs": 2869.3213749999777,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12531759296512346,
+          "best": {
+            "id": "glb-42de89b71a7c30",
+            "bytes": 5035680,
+            "loss": 0.0011337418373854947
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-42de89b71a7c30",
+                "bytes": 5035680,
+                "loss": 0.0011337418373854947
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-42de89b71a7c30",
+                "bytes": 5035680,
+                "loss": 0.0011337418373854947
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "greedy",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 4192.675958000007,
+          "timings": {
+            "initializationMs": 21.63504200000898,
+            "transformMs": 1200.9566250000062,
+            "encodeMs": 9.428708999985247,
+            "validationMs": 57.13708499998029,
+            "evaluationMs": 2839.398000000001,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": false,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3802.081957999995,
+          "timings": {
+            "initializationMs": 23.294208999999682,
+            "transformMs": 919.7968759999785,
+            "encodeMs": 8.968416000003344,
+            "validationMs": 57.501751999981934,
+            "evaluationMs": 2736.40033400002,
+            "surrogateTrainingMs": 0
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 0,
+          "bestObjective": 0.12707945970808746,
+          "best": {
+            "id": "glb-2b351ba784f2e7",
+            "bytes": 5029944,
+            "loss": 0.003037062876505859
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 11,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3800.834208,
+          "timings": {
+            "initializationMs": 22.31895899999654,
+            "transformMs": 878.9204589999863,
+            "encodeMs": 10.153165999989142,
+            "validationMs": 53.58095800000592,
+            "evaluationMs": 2780.696541000012,
+            "surrogateTrainingMs": 0.9250420000171289
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 22,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3699.5531670000055,
+          "timings": {
+            "initializationMs": 22.130583999998635,
+            "transformMs": 838.4262509999971,
+            "encodeMs": 9.99670800002059,
+            "validationMs": 52.487667000008514,
+            "evaluationMs": 2712.7680420000106,
+            "surrogateTrainingMs": 1.0027089999930467
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.12627799897294908,
+          "best": {
+            "id": "glb-801414bfb2295e",
+            "bytes": 4955656,
+            "loss": 0.004067602969970047
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        },
+        {
+          "method": "evolutionary",
+          "surrogate": true,
+          "seed": 33,
+          "logicalEvaluations": 8,
+          "validCandidates": 8,
+          "failedCandidates": 0,
+          "physicalMs": 3792.570166000005,
+          "timings": {
+            "initializationMs": 22.379584000009345,
+            "transformMs": 884.8002919999999,
+            "encodeMs": 10.173415999975987,
+            "validationMs": 52.347664999979315,
+            "evaluationMs": 2760.160666999989,
+            "surrogateTrainingMs": 1.0487490000086837
+          },
+          "firstFive": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "valid": true,
+              "loss": 0
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "valid": true,
+              "loss": 0.0027015011852160186
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "valid": true,
+              "loss": 0.007547111611916059
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "valid": true,
+              "loss": 0.018649584426685694
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "valid": true,
+              "loss": 0.06789929111254299
+            }
+          ],
+          "stopped": "evaluation-limit",
+          "surrogateProposals": 3,
+          "bestObjective": 0.12599587097566564,
+          "best": {
+            "id": "glb-4fb9bdf05ae000",
+            "bytes": 4978800,
+            "loss": 0.0032147256298967
+          },
+          "budgets": [
+            {
+              "ratio": 0.25,
+              "budget": 2027510,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.5,
+              "budget": 4055020,
+              "feasibleInArchive": false,
+              "selected": null
+            },
+            {
+              "ratio": 0.75,
+              "budget": 6082530,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            },
+            {
+              "ratio": 0.9,
+              "budget": 7299036,
+              "feasibleInArchive": true,
+              "selected": {
+                "id": "glb-fe448dec1df37a",
+                "bytes": 5185280,
+                "loss": 0.0027015011852160186
+              }
+            }
+          ],
+          "failures": []
+        }
+      ],
+      "commonInitializationVerified": true
+    }
+  ],
+  "detailedArtifact": "artifacts/benchmark-runs/2026-09-05T22-56-52-423Z/benchmark.json"
+}

@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-06T04:48:57.158Z",
+  "scope": "Bounded release audit of the pre-existing small mixed case and targeted project/CLI regressions. This is not the representative MB-scale release case or a new benchmark run.",
+  "candidateSemanticsChanged": false,
+  "sourceAssets": [
+    {
+      "file": "Duck.glb",
+      "bytes": 120484,
+      "sha256": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5"
+    },
+    {
+      "file": "astronaut.png",
+      "bytes": 791555,
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+    },
+    {
+      "file": "detail.png",
+      "bytes": 54927,
+      "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+    }
+  ],
+  "candidateFiles": [
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "original",
+      "bytes": 120484,
+      "sha256": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 0
+        },
+        "textures": {
+          "image-0": 0
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": true
+      },
+      "loss": 0,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-a61dea38a69def",
+      "bytes": 96796,
+      "sha256": "51a49605dbd76d80710b2a7f3868deeaadcc5a8b9eacd3fb8083b77d87b802ce",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 1
+        },
+        "textures": {
+          "image-0": 1
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.0003785554433184124,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-99fc60e57f0dd6",
+      "bytes": 63428,
+      "sha256": "cdbfae08d2c558abb66d9a5ab663017ed10e95261fbbb53803009e695553ae9c",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 2
+        },
+        "textures": {
+          "image-0": 2
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.0024971541460199107,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-c086c694da3f5b",
+      "bytes": 36448,
+      "sha256": "a96781d3b6d12fdcdce077b307222e01a80532857a764fdca7ea559e702e75b4",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 3
+        },
+        "textures": {
+          "image-0": 3
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.006679187292700409,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-49cce6565996c3",
+      "bytes": 17712,
+      "sha256": "d7a178fcb084ece0de79d07d0cd2ecbcaec11d230e9f1376cfb51c37e6b6b3eb",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 4
+        },
+        "textures": {
+          "image-0": 4
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.01941738023596611,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-450cff180a37fa",
+      "bytes": 34264,
+      "sha256": "7ddfe833b8bf505084dcd2e3eec89ef611937bb0ca82890b9610436e68b69034",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 3
+        },
+        "textures": {
+          "image-0": 4
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.007054942031006767,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-7d295737dca4b4",
+      "bytes": 19888,
+      "sha256": "35c61fe07117d9b54365a13672f2293a08d0e7f765625ae593e40c58eae092bc",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 4
+        },
+        "textures": {
+          "image-0": 3
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.01920008095699471,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-1753ef03cfc159",
+      "bytes": 24464,
+      "sha256": "f3b3f48c39a7fe31aea5a2937325def75716c9bd4e1a35ca55f1d0ea3277352d",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 4
+        },
+        "textures": {
+          "image-0": 2
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.019424413872674295,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-84dbc40d867021",
+      "bytes": 33760,
+      "sha256": "b72e07efe12c02145ce98aaea41ee67d1f04cc5f0d1bec3270bfa118dd63eea3",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 4
+        },
+        "textures": {
+          "image-0": 1
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.01919258389391147,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-95cdeec0645ff2",
+      "bytes": 32504,
+      "sha256": "333c5c302ada19eedd44560bcb87a23b392a710a1be18fe68fe13c310773bebe",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 4
+        },
+        "textures": {
+          "image-0": 0
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.01919438594612767,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-5cd218467f91b5",
+      "bytes": 41024,
+      "sha256": "01651d7726e9d4ebc0e5d9ba93ea619dcb20bfedeb1371fd39ebd5c5d71568a4",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 3
+        },
+        "textures": {
+          "image-0": 2
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.007005934129388244,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "Duck.glb",
+      "type": "glb",
+      "candidateId": "glb-1b7907fbd88677",
+      "bytes": 56668,
+      "sha256": "58f26fff2204b44125678fddd09ecb5397c84c4ae51c4beb4eb9669660f69169",
+      "recipe": {
+        "version": "assetfit-glb-1.0.2",
+        "geometry": {
+          "mesh-0-primitive-0": 2
+        },
+        "textures": {
+          "image-0": 4
+        },
+        "method": "evolutionary",
+        "sourceHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "original": false
+      },
+      "loss": 0.0026477083887864075,
+      "measurementStage": "search",
+      "semanticPreservation": true
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "original",
+      "bytes": 791555,
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+      "recipe": {
+        "original": true,
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "lossless": true
+      },
+      "loss": 0,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-dd3187c205ec72aa0ffe",
+      "bytes": 423805,
+      "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+      "recipe": {
+        "format": "png",
+        "width": 512,
+        "height": 512,
+        "lossless": true
+      },
+      "loss": 0,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-015a7dfd1bce2a5ccbec",
+      "bytes": 37436,
+      "sha256": "777f00e1028ba34c821c72deee0e6d0f3c6946621e50f32835a002a3738ad99f",
+      "recipe": {
+        "format": "webp",
+        "width": 512,
+        "height": 512,
+        "quality": 84,
+        "lossless": false
+      },
+      "loss": 0.004802014282973801,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-0a9e4a33975428294fea",
+      "bytes": 58480,
+      "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+      "recipe": {
+        "format": "jpeg",
+        "width": 512,
+        "height": 512,
+        "quality": 84,
+        "lossless": false
+      },
+      "loss": 0.003423373360638039,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-62f72fc1f83f734961a5",
+      "bytes": 12814,
+      "sha256": "30fcb0de2fb710dcb55e400409cd36a620680f1571539d4262710be8c6dcd609",
+      "recipe": {
+        "format": "webp",
+        "width": 320,
+        "height": 320,
+        "quality": 68,
+        "lossless": false
+      },
+      "loss": 0.00914794682472561,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-56d0a37e218d6516e767",
+      "bytes": 18924,
+      "sha256": "5fcd17f84b67ab815e9edcb4e098ebb0c876631979ff13d5d9045a9289e6bef0",
+      "recipe": {
+        "format": "jpeg",
+        "width": 320,
+        "height": 320,
+        "quality": 68,
+        "lossless": false
+      },
+      "loss": 0.009938477605700286,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-a06340fd8df98e8f8625",
+      "bytes": 5202,
+      "sha256": "25289f16986132ff2f98f680cdd85c2966dd3c58073bcf93b949e4ca8bbec880",
+      "recipe": {
+        "format": "webp",
+        "width": 192,
+        "height": 192,
+        "quality": 46,
+        "lossless": false
+      },
+      "loss": 0.021905073269584255,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "astronaut.png",
+      "type": "image",
+      "candidateId": "image-c312e0fe14aba68894d0",
+      "bytes": 6474,
+      "sha256": "6ce1f0e94426e25e80b8849fcdd63e0180413668a3612147c749134424528d70",
+      "recipe": {
+        "format": "jpeg",
+        "width": 192,
+        "height": 192,
+        "quality": 46,
+        "lossless": false
+      },
+      "loss": 0.023165454237466437,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "detail.png",
+      "type": "image",
+      "candidateId": "original",
+      "bytes": 54927,
+      "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+      "recipe": {
+        "original": true,
+        "format": "png",
+        "width": 960,
+        "height": 480,
+        "lossless": true
+      },
+      "loss": 0,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "detail.png",
+      "type": "image",
+      "candidateId": "image-9550a3769fd616dec8e7",
+      "bytes": 60859,
+      "sha256": "8eb2394eb1b34f70a6b947c0c2c5ec835255bd8f0b89dcbe99b21a5ab4e3ca29",
+      "recipe": {
+        "format": "png",
+        "width": 960,
+        "height": 480,
+        "lossless": true
+      },
+      "loss": 0,
+      "measurementStage": "image-usage"
+    },
+    {
+      "asset": "detail.png",
+      "type": "image",
+      "candidateId": "image-5ab0ef0b9ad470646ac9",
+      "bytes": 28238,
+      "sha256": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+      "recipe": {
+        "format": "webp",
+        "width": 960,
+        "height": 480,
+        "lossless": true
+      },
+      "loss": 0,
+      "measurementStage": "image-usage"
+    }
+  ],
+  "deliveries": [
+    {
+      "budget": {
+        "name": "lite",
+        "bytes": 73556
+      },
+      "actualAssetBytes": 73556,
+      "independentDecodeAndHashVerification": true,
+      "selected": {
+        "d78dbc45-222": "glb-95cdeec0645ff2",
+        "b3df3549-d57": "image-62f72fc1f83f734961a5",
+        "b7b801b5-eb0": "image-5ab0ef0b9ad470646ac9"
+      }
+    },
+    {
+      "budget": {
+        "name": "standard",
+        "bytes": 122342
+      },
+      "actualAssetBytes": 122342,
+      "independentDecodeAndHashVerification": true,
+      "selected": {
+        "d78dbc45-222": "glb-1b7907fbd88677",
+        "b3df3549-d57": "image-015a7dfd1bce2a5ccbec",
+        "b7b801b5-eb0": "image-5ab0ef0b9ad470646ac9"
+      }
+    },
+    {
+      "budget": {
+        "name": "high",
+        "bytes": 207202
+      },
+      "actualAssetBytes": 207202,
+      "independentDecodeAndHashVerification": true,
+      "selected": {
+        "d78dbc45-222": "original",
+        "b3df3549-d57": "image-0a9e4a33975428294fea",
+        "b7b801b5-eb0": "image-5ab0ef0b9ad470646ac9"
+      }
+    }
+  ],
+  "fixes": [
+    {
+      "issue": "Relative output roots persisted absolute GLB candidate and render references.",
+      "files": [
+        "src/project.mjs",
+        "src/delivery.mjs"
+      ],
+      "verification": "Existing real-render cancellation test now creates and optimizes with relative paths, moves the complete project, and independently verifies export from its new location.",
+      "invalidatedEvidence": "No candidate byte or metric changes. Existing managed project JSON created with relative output roots may retain old absolute references; newly generated projects are portable."
+    },
+    {
+      "issue": "All physical image encodes could fail after a corrupted locked-original archive file while the project reported complete.",
+      "files": [
+        "src/project.mjs"
+      ],
+      "verification": "Regression verifies failed with one failed asset, partial with one failed and one complete asset, no allocation that drops an asset, unchanged original lock, and complete with cleared errors after file recovery.",
+      "invalidatedEvidence": "No valid candidate bytes or metric changes. Historical complete states in this specific all-physical-failure condition were inaccurate; existing successful example and benchmark measurements remain valid."
+    },
+    {
+      "issue": "CLI reported exit 0 after returned failed or partial processing, and after cooperative cancellation.",
+      "files": [
+        "src/cli.mjs",
+        "tests/cli.test.mjs"
+      ],
+      "verification": "Actual subprocesses return 2 for failed/partial and 130 for cancellation; a completed search with no feasible measured allocation retains exit 0 and explicit finite-archive scope.",
+      "invalidatedEvidence": "No candidate file or evaluation changes. Historical zero exit status alone is insufficient evidence of successful processing."
+    }
+  ],
+  "validationRuns": [
+    {
+      "command": "ASSETFIT_RENDER_TESTS=1 node --test tests/project.test.mjs tests/project-glb.test.mjs tests/glb.test.mjs tests/images.test.mjs tests/allocator.test.mjs tests/metrics.test.mjs tests/renderer.test.mjs",
+      "passed": 46,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 13586.9375,
+      "includesMovedRelativeOutputProject": true
+    },
+    {
+      "command": "node --test tests/project.test.mjs",
+      "passed": 19,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 1805.18025,
+      "scope": "After processing failure status fix."
+    },
+    {
+      "command": "node --test --test-name-pattern='failed physical processing' tests/project.test.mjs",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 685.054709,
+      "scope": "After adding partial-failure assertion to the same regression."
+    },
+    {
+      "command": "node --test tests/cli.test.mjs",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 2231.028583,
+      "scope": "Actual child-process resume failure/partial results, too-small candidate-table result, and cooperative SIGINT exit code."
+    }
+  ],
+  "validationCounting": "Runs overlap. Counts must not be added to claim a larger suite.",
+  "uiInspection": {
+    "processingFailurePanel": true,
+    "partialFailurePanel": true,
+    "budgetFailureScope": "No feasible configuration found under current constraints and exploration budget.",
+    "method": "Read-only source confirmation; browser interaction evidence is recorded separately."
+  },
+  "environment": {
+    "node": "24.19.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "sharp": "0.34.3",
+    "vips": "8.17.1"
+  }
+}

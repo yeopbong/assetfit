@@ -1,0 +1,10 @@
+* text=auto
+*.mjs text eol=lf
+*.command text eol=lf
+*.sh text eol=lf
+*.glb binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.zip binary
+docs/images/*.svg -whitespace

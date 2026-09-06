@@ -1,0 +1,372 @@
+{
+  "recordedAt": "2026-09-05T23:32:05.373Z",
+  "tests": {
+    "total": 47,
+    "passed": 47,
+    "failed": 0,
+    "skipped": 0
+  },
+  "mixedReplay": {
+    "consistent": true,
+    "checks": [
+      {
+        "assetId": "d78dbc45-222",
+        "budget": "lite",
+        "expectedHash": "333c5c302ada19eedd44560bcb87a23b392a710a1be18fe68fe13c310773bebe",
+        "actualHash": "333c5c302ada19eedd44560bcb87a23b392a710a1be18fe68fe13c310773bebe",
+        "match": true
+      },
+      {
+        "assetId": "d78dbc45-222",
+        "budget": "standard",
+        "expectedHash": "58f26fff2204b44125678fddd09ecb5397c84c4ae51c4beb4eb9669660f69169",
+        "actualHash": "58f26fff2204b44125678fddd09ecb5397c84c4ae51c4beb4eb9669660f69169",
+        "match": true
+      },
+      {
+        "assetId": "d78dbc45-222",
+        "budget": "high",
+        "expectedHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "actualHash": "65bf938f54d6073e619e76e007820bbf980cdc3dc0daec0d94830ffc4ae54ab5",
+        "match": true
+      },
+      {
+        "assetId": "b3df3549-d57",
+        "budget": "lite",
+        "expectedHash": "30fcb0de2fb710dcb55e400409cd36a620680f1571539d4262710be8c6dcd609",
+        "actualHash": "30fcb0de2fb710dcb55e400409cd36a620680f1571539d4262710be8c6dcd609",
+        "match": true
+      },
+      {
+        "assetId": "b3df3549-d57",
+        "budget": "standard",
+        "expectedHash": "777f00e1028ba34c821c72deee0e6d0f3c6946621e50f32835a002a3738ad99f",
+        "actualHash": "777f00e1028ba34c821c72deee0e6d0f3c6946621e50f32835a002a3738ad99f",
+        "match": true
+      },
+      {
+        "assetId": "b3df3549-d57",
+        "budget": "high",
+        "expectedHash": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+        "actualHash": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+        "match": true
+      },
+      {
+        "assetId": "b7b801b5-eb0",
+        "budget": "lite",
+        "expectedHash": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+        "actualHash": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+        "match": true
+      },
+      {
+        "assetId": "b7b801b5-eb0",
+        "budget": "standard",
+        "expectedHash": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+        "actualHash": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+        "match": true
+      },
+      {
+        "assetId": "b7b801b5-eb0",
+        "budget": "high",
+        "expectedHash": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+        "actualHash": "e23a5561753ffd8cdcb3977df3a6bd6fed7041957dbe4c860b6d16b50ac6172f",
+        "match": true
+      }
+    ]
+  },
+  "localBrowser": {
+    "projectId": "e122e304-6e0",
+    "closedPageTaskCompleted": true,
+    "assetTypes": [
+      "glb",
+      "image",
+      "image"
+    ],
+    "validCandidates": [
+      {
+        "name": "Duck.glb",
+        "count": 12
+      },
+      {
+        "name": "astronaut.png",
+        "count": 8
+      },
+      {
+        "name": "detail.png",
+        "count": 5
+      }
+    ],
+    "immediateBudgetExport": {
+      "requestedBudget": 100000,
+      "actualAssetBytes": 96394,
+      "zipBytes": 1705759
+    },
+    "lockPropagationVisible": true,
+    "staleExportDisabled": true,
+    "browserErrors": []
+  },
+  "staticBrowser": {
+    "verifiedCandidates": 23,
+    "staticOriginHasNoProcessingAPI": true,
+    "budgetChangesActualSelection": true,
+    "priorityChangesActualSelection": true,
+    "browserZip": {
+      "valid": true,
+      "assetBytes": 69888,
+      "budgetBytes": 73556,
+      "errors": []
+    },
+    "browserZipBytes": 872866,
+    "licensesIncluded": true,
+    "mobileNoPageOverflow": true,
+    "browserErrors": []
+  },
+  "mixed": {
+    "sources": 966966,
+    "assets": [
+      {
+        "name": "Duck.glb",
+        "validCandidates": 12
+      },
+      {
+        "name": "astronaut.png",
+        "validCandidates": 8
+      },
+      {
+        "name": "detail.png",
+        "validCandidates": 3
+      }
+    ],
+    "allocations": {
+      "lite": {
+        "feasible": true,
+        "selected": {
+          "d78dbc45-222": "glb-95cdeec0645ff2",
+          "b3df3549-d57": "image-62f72fc1f83f734961a5",
+          "b7b801b5-eb0": "image-5ab0ef0b9ad470646ac9"
+        },
+        "bytes": 73556,
+        "loss": 0.028342332770853282,
+        "normalizedLoss": 0.009447444256951093,
+        "budget": 73556,
+        "slack": 0,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "d78dbc45-222",
+            "candidateId": "glb-95cdeec0645ff2",
+            "bytes": 32504,
+            "priority": 1,
+            "loss": 0.01919438594612767,
+            "weightedLoss": 0.01919438594612767
+          },
+          {
+            "assetId": "b3df3549-d57",
+            "candidateId": "image-62f72fc1f83f734961a5",
+            "bytes": 12814,
+            "priority": 1,
+            "loss": 0.00914794682472561,
+            "weightedLoss": 0.00914794682472561
+          },
+          {
+            "assetId": "b7b801b5-eb0",
+            "candidateId": "image-5ab0ef0b9ad470646ac9",
+            "bytes": 28238,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 51152,
+        "statesVisited": 46,
+        "peakFrontier": 6,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.011666999999988548
+      },
+      "standard": {
+        "feasible": true,
+        "selected": {
+          "d78dbc45-222": "glb-1b7907fbd88677",
+          "b3df3549-d57": "image-015a7dfd1bce2a5ccbec",
+          "b7b801b5-eb0": "image-5ab0ef0b9ad470646ac9"
+        },
+        "bytes": 122342,
+        "loss": 0.007449722671760209,
+        "normalizedLoss": 0.002483240890586736,
+        "budget": 122342,
+        "slack": 0,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "d78dbc45-222",
+            "candidateId": "glb-1b7907fbd88677",
+            "bytes": 56668,
+            "priority": 1,
+            "loss": 0.0026477083887864075,
+            "weightedLoss": 0.0026477083887864075
+          },
+          {
+            "assetId": "b3df3549-d57",
+            "candidateId": "image-015a7dfd1bce2a5ccbec",
+            "bytes": 37436,
+            "priority": 1,
+            "loss": 0.004802014282973801,
+            "weightedLoss": 0.004802014282973801
+          },
+          {
+            "assetId": "b7b801b5-eb0",
+            "candidateId": "image-5ab0ef0b9ad470646ac9",
+            "bytes": 28238,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 51152,
+        "statesVisited": 63,
+        "peakFrontier": 12,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.014165999999988799
+      },
+      "high": {
+        "feasible": true,
+        "selected": {
+          "d78dbc45-222": "original",
+          "b3df3549-d57": "image-0a9e4a33975428294fea",
+          "b7b801b5-eb0": "image-5ab0ef0b9ad470646ac9"
+        },
+        "bytes": 207202,
+        "loss": 0.003423373360638039,
+        "normalizedLoss": 0.001141124453546013,
+        "budget": 207202,
+        "slack": 0,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "d78dbc45-222",
+            "candidateId": "original",
+            "bytes": 120484,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "b3df3549-d57",
+            "candidateId": "image-0a9e4a33975428294fea",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.003423373360638039,
+            "weightedLoss": 0.003423373360638039
+          },
+          {
+            "assetId": "b7b801b5-eb0",
+            "candidateId": "image-5ab0ef0b9ad470646ac9",
+            "bytes": 28238,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 51152,
+        "statesVisited": 79,
+        "peakFrontier": 18,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.017624999999952706
+      }
+    },
+    "cost": {
+      "elapsedMs": 53022.591917,
+      "imageMs": 2243.968791000005,
+      "glbMs": 48127.739874,
+      "allocationMs": 3.5181649999996125,
+      "cacheHits": 6,
+      "retries": 0,
+      "heldoutMs": 1564.3517080000001,
+      "finalCheckMs": 23297.618667
+    }
+  },
+  "downloads": {
+    "lite": {
+      "archive": "downloads/lite.zip",
+      "report": "downloads/lite-report.html",
+      "assetBytes": 73556,
+      "zipBytes": 874219,
+      "metadataBytes": 1684263,
+      "licenseBytes": 9999,
+      "verified": {
+        "valid": true,
+        "assetBytes": 73556,
+        "budgetBytes": 73556,
+        "errors": []
+      }
+    },
+    "standard": {
+      "archive": "downloads/standard.zip",
+      "report": "downloads/standard-report.html",
+      "assetBytes": 122342,
+      "zipBytes": 945110,
+      "metadataBytes": 1723844,
+      "licenseBytes": 9999,
+      "verified": {
+        "valid": true,
+        "assetBytes": 122342,
+        "budgetBytes": 122342,
+        "errors": []
+      }
+    },
+    "high": {
+      "archive": "downloads/high.zip",
+      "report": "downloads/high-report.html",
+      "assetBytes": 207202,
+      "zipBytes": 976954,
+      "metadataBytes": 1694720,
+      "licenseBytes": 9999,
+      "verified": {
+        "valid": true,
+        "assetBytes": 207202,
+        "budgetBytes": 207202,
+        "errors": []
+      }
+    }
+  },
+  "benchmark": {
+    "status": "complete",
+    "costs": {
+      "rendererStartupMs": 3614.482791,
+      "originalReferenceMs": 1325.6333329999989,
+      "totalMs": 88811.36137500001,
+      "methodPhysicalMs": 83632.90241300002,
+      "logicalEvaluations": 222
+    },
+    "source": "benchmark-results.json"
+  },
+  "checks": {
+    "strictAllocatorAndMetricTypes": true,
+    "implementationSyntax": true,
+    "cleanPinnedDependencyInstall": true,
+    "firstPartyContentAudit": true
+  },
+  "release": {
+    "published": false,
+    "build": "dist/",
+    "launcher": "start.command"
+  }
+}

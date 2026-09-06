@@ -1,0 +1,18 @@
+{
+  "question": "Did extra measured proposals improve the same engineering objective over uniform initialization, and did ridge assistance beat a simple measured baseline?",
+  "takeaway": "All methods tie on Duck; on Avocado, measured greedy has the lowest mean, and ridge improves evolution alone without beating greedy.",
+  "family": "Comparison and distribution",
+  "variant": "Faceted horizontal seed points with mean diamonds and observed min-to-max connectors",
+  "grain": "One independently measured method, surrogate setting and seed run for one asset",
+  "rows": 30,
+  "seedsPerMethodAndAsset": 3,
+  "renderer": "Matplotlib 3.10.6 static SVG and PNG",
+  "source": "docs/benchmark-observations.json",
+  "measure": "Minimum measured search loss + 0.2 * candidate bytes / source bytes within each run",
+  "scales": "Independent, explicitly labeled zoomed x axes; no cross-asset ranking and no bar baseline",
+  "costTreatment": "Uniform stops after five defined measurements; other methods use eight. Physical time is reported in a separate table, including initialization and fitting.",
+  "palette": { "mean": "#1769a0", "observations": "#8c9baa", "text": "#172b3a" },
+  "nonColorDistinction": "Mean diamond; seeds use open circle, square and triangle; source assets use separate panels",
+  "output": ["docs/images/benchmark-comparison.svg", "docs/images/benchmark-comparison.png"],
+  "qa": "Inspect the exported PNG at native size and check values against the re-derived audit. The figure is embedded in benchmark-notes.md."
+}

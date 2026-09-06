@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "version": "assetfit-0.1.0",
+  "projectName": "Field Notes / A mixed visual collection",
+  "budgetName": "high",
+  "budgetBytes": 9000000,
+  "assetBytes": 6901595,
+  "definition": "Sum of the actual bytes of the selected visual asset files. 1 MB = 1,000,000 bytes; 1 MiB = 1,048,576 bytes. Metadata and ZIP bytes are separate.",
+  "assets": [
+    {
+      "id": "0f141c4c-ea2",
+      "name": "Avocado.glb",
+      "type": "glb",
+      "file": "assets/0f141c4c-ea2-Avocado.glb",
+      "bytes": 4984536,
+      "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+      "sourceSha256": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+      "candidateId": "glb-93cccbaabffad1",
+      "usages": [
+        {
+          "label": "Product model",
+          "width": 320,
+          "height": 320,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ]
+    },
+    {
+      "id": "707c3bcb-c52",
+      "name": "astronaut.png",
+      "type": "image",
+      "file": "assets/707c3bcb-c52-astronaut.png",
+      "bytes": 423805,
+      "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+      "sourceSha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+      "candidateId": "image-ad000c3926294464d012",
+      "usages": [
+        {
+          "label": "Editorial portrait",
+          "width": 320,
+          "height": 320,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 2,
+          "regions": []
+        },
+        {
+          "label": "Byline portrait",
+          "width": 96,
+          "height": 96,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ]
+    },
+    {
+      "id": "97ffd40a-71c",
+      "name": "blue-marble.jpg",
+      "type": "image",
+      "file": "assets/97ffd40a-71c-blue-marble.jpg",
+      "bytes": 1438327,
+      "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+      "sourceSha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+      "candidateId": "original",
+      "usages": [
+        {
+          "label": "Earth feature photo",
+          "width": 640,
+          "height": 640,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ]
+    },
+    {
+      "id": "fae3d18e-7ae",
+      "name": "detail.png",
+      "type": "image",
+      "file": "assets/fae3d18e-7ae-detail.png",
+      "bytes": 54927,
+      "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+      "sourceSha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+      "candidateId": "original",
+      "usages": [
+        {
+          "label": "Protected detail graphic",
+          "width": 640,
+          "height": 320,
+          "dpr": 1,
+          "fit": "contain",
+          "weight": 1,
+          "regions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+export interface Region { x:number; y:number; width:number; height:number; weight:number }
+export interface Usage { width:number; height:number; dpr:number; fit:'contain'|'cover'|'fill'; weight:number; regions?:Region[]; cameras?:{position:number[];target:number[]}[] }
+export interface Constraints { lockOriginal?:boolean; lockedObjects?:string[]; minWidth?:number; minHeight?:number; preserveDimensions?:boolean; lossless?:boolean; preserveAlpha?:boolean; formats?:string[] }
+export interface Candidate { id:string; file:string; bytes:number; hash:string; params:Record<string,unknown>; valid:boolean; metrics:{loss:number;uses?:unknown[]}; costMs:number; diagnostics?:unknown[] }
+export interface Asset { id:string; name:string; type:'image'|'glb'; source:string; sourceHash:string; sourceBytes:number; usages:Usage[]; priority:number; constraints:Constraints; candidates:Candidate[]; epoch?:string; status:string; capabilities:Record<string,unknown> }
+export interface Allocation { feasible:boolean; selected:Record<string,string>; bytes:number; loss:number; normalizedLoss?:number; exact:boolean; reason?:string }
+export interface Project { schemaVersion:1; id:string; name:string; assets:Asset[]; budgets:{name:string;bytes:number}[]; settings:{maxEvaluations:number;seed:number;method:string}; status:string; observations:Record<string,unknown>[]; allocations:Record<string,Allocation>; cost:Record<string,number>; createdAt:string; updatedAt:string }

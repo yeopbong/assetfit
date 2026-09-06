@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "kind": "policy",
+  "version": "assetfit-0.1.0",
+  "budgets": [
+    {
+      "name": "lite",
+      "bytes": 5500000
+    },
+    {
+      "name": "standard",
+      "bytes": 7000000
+    },
+    {
+      "name": "high",
+      "bytes": 9000000
+    }
+  ],
+  "settings": {
+    "maxEvaluations": 12,
+    "seed": 42,
+    "method": "evolutionary",
+    "maxImageCandidates": 8,
+    "useSurrogate": true
+  },
+  "defaults": {
+    "image": {
+      "width": 512,
+      "height": 512,
+      "dpr": 1,
+      "fit": "contain",
+      "weight": 1,
+      "regions": []
+    },
+    "glb": {
+      "width": 256,
+      "height": 256,
+      "dpr": 1,
+      "fit": "contain",
+      "weight": 1,
+      "regions": []
+    },
+    "constraints": {
+      "preserveAlpha": true,
+      "formats": [
+        "jpeg",
+        "png",
+        "webp"
+      ]
+    }
+  }
+}

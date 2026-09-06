@@ -1,0 +1,2898 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-06T04-49-06-956Z",
+  "status": "complete",
+  "protocol": {
+    "budgetRule": "Before candidate generation, declare lite = 5,500,000; standard = 7,000,000; high = 9,000,000 integer asset bytes. Budgets are not chosen from observed winning transitions.",
+    "sources": [
+      "Avocado.glb",
+      "astronaut.png",
+      "blue-marble.jpg",
+      "detail.png"
+    ],
+    "config": "examples/release-config.json",
+    "reproduction": "node scripts/release-case.mjs",
+    "priorityBudget": 8500000,
+    "priorityRule": "At the fixed 8,500,000-byte budget compare balanced priorities, model priority 8, and Earth photo priority 8; record all outcomes even when selections do not change.",
+    "allocation": "Exact sparse Pareto allocation over the same complete measured valid candidate table; compare greedy and proportional baselines with the same table and constraints.",
+    "retention": "Each source is copied to a fresh managed project. Existing measured projects and the earlier small demonstration are retained."
+  },
+  "versions": {
+    "glb": "assetfit-glb-1.0.2",
+    "image": "sharp-0.34.3-image-v2",
+    "node": "24.19.0"
+  },
+  "stages": {
+    "sourceVerificationMs": 11.662834000000004,
+    "importAndConfigurationMs": 38.99425000000002,
+    "mainOptimizationMs": 19176.745083,
+    "baselineAndPriorityAllocationMs": 1.5203340000007302,
+    "exportAndVerificationMs": 2181.051875000001,
+    "exportedFileReloadMs": 5986.756167,
+    "lockedProjectCheckMs": 5762.609583000001,
+    "demoAssemblyMs": 181.28862500000105
+  },
+  "projects": {
+    "main": {
+      "directory": "artifacts/release-case/2026-09-06T04-49-06-956Z/projects/619cd20f-73f",
+      "status": "complete",
+      "sourceBytes": 10394849,
+      "settings": {
+        "maxEvaluations": 12,
+        "seed": 42,
+        "method": "evolutionary",
+        "maxImageCandidates": 8,
+        "useSurrogate": true
+      },
+      "environment": {
+        "node": "24.19.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "sharp": {
+          "aom": "3.12.1",
+          "archive": "3.8.1",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.1",
+          "ffi": "3.5.1",
+          "fontconfig": "2.17.1",
+          "freetype": "2.13.3",
+          "fribidi": "1.0.16",
+          "glib": "2.85.1",
+          "harfbuzz": "11.2.1",
+          "heif": "1.20.1",
+          "highway": "1.2.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "4.1.5",
+          "pango": "1.56.4",
+          "pixman": "0.46.2",
+          "png": "1.6.50",
+          "proxy-libintl": "0.4",
+          "rsvg": "2.60.0",
+          "spng": "0.7.4",
+          "tiff": "4.7.0",
+          "vips": "8.17.1",
+          "webp": "1.5.0",
+          "xml2": "2.14.4",
+          "zlib-ng": "2.2.4",
+          "sharp": "0.34.3"
+        },
+        "renderer": "three-180-fixed-v1",
+        "metric": "rgba-reference-v1"
+      },
+      "cost": {
+        "elapsedMs": 19174.90175,
+        "imageMs": 7410.427832000003,
+        "glbMs": 10840.317625,
+        "allocationMs": 0.8597919999992882,
+        "cacheHits": 0,
+        "retries": 0,
+        "heldoutMs": 383.7804999999971
+      },
+      "disk": {
+        "bytes": 174723562,
+        "files": 226,
+        "categories": {
+          "candidates": {
+            "bytes": 101232164,
+            "files": 104
+          },
+          "exports": {
+            "bytes": 60745139,
+            "files": 36
+          },
+          "inputs": {
+            "bytes": 10394849,
+            "files": 4
+          },
+          "metadata": {
+            "bytes": 502075,
+            "files": 1
+          },
+          "renders": {
+            "bytes": 1849335,
+            "files": 81
+          }
+        }
+      },
+      "assets": [
+        {
+          "id": "0f141c4c-ea2",
+          "name": "Avocado.glb",
+          "type": "glb",
+          "sourceBytes": 8110040,
+          "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+          "usages": [
+            {
+              "label": "Product model",
+              "width": 320,
+              "height": 320,
+              "dpr": 1,
+              "fit": "contain",
+              "weight": 1,
+              "regions": []
+            }
+          ],
+          "constraints": {
+            "preserveAlpha": true,
+            "formats": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          },
+          "costs": {
+            "candidateCount": 12,
+            "valid": 12,
+            "invalid": 0,
+            "proposalCount": 12,
+            "initializationMs": 19.337500000000546,
+            "encodeMs": 26.222294000001057,
+            "transformMs": 1253.5884170000036,
+            "validationMs": 101.98666700000103,
+            "evaluationMs": 4303.3072090000005,
+            "surrogateTrainingMs": 2.546915999997509,
+            "candidateWallMs": 5785.244874999995,
+            "cacheHits": 0
+          },
+          "candidates": [
+            {
+              "id": "original",
+              "bytes": 8110040,
+              "hash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+              "valid": true,
+              "loss": 0,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 0
+                },
+                "textures": {
+                  "image-0": 0
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": true
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-fe448dec1df37a",
+              "bytes": 5185280,
+              "hash": "66e4661ca3e22133e1f647bd0fff40b2081dc0d5dd0e00e4616df7658a96ab60",
+              "valid": true,
+              "loss": 0.0027099978199367513,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 1
+                },
+                "textures": {
+                  "image-0": 1
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-49eb05571fe2f5",
+              "bytes": 5024368,
+              "hash": "b80c0e14fe0fe354c58aaeda020810ea4c54c67842f8f6f58985cbe04cab9b38",
+              "valid": true,
+              "loss": 0.0074784513918280185,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 2
+                },
+                "textures": {
+                  "image-0": 2
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-f95913e8bc0035",
+              "bytes": 4968376,
+              "hash": "6ae5ddefff1b327def083546a30d4cb4f16725bf8c1f09396406f1b19a3aadc4",
+              "valid": true,
+              "loss": 0.018635698011097674,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 3
+                },
+                "textures": {
+                  "image-0": 3
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-8f90d219f22061",
+              "bytes": 4941592,
+              "hash": "ba1abb74e9f10a050b2cfdc552e44074addf8c42c7b8917e7cd0ebcd79d3c163",
+              "valid": true,
+              "loss": 0.06780240785749952,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 4
+                },
+                "textures": {
+                  "image-0": 4
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-a5a804d95f9915",
+              "bytes": 4973224,
+              "hash": "4f27869e3f529597e4374e28f6d823f56e1f400fa50a9b934e0dff3e709abec9",
+              "valid": true,
+              "loss": 0.007709335503982184,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 2
+                },
+                "textures": {
+                  "image-0": 3
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-801414bfb2295e",
+              "bytes": 4955656,
+              "hash": "f36196209624862ed42e3b2bf95221b1b60ed029c34c3fa9d489647668a3965f",
+              "valid": true,
+              "loss": 0.0042063945380541685,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 1
+                },
+                "textures": {
+                  "image-0": 4
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-4fb9bdf05ae000",
+              "bytes": 4978800,
+              "hash": "e38d2c6a3b04f860607a1668c12d179b5498a7f6de51d8b5c408a5da99b12b7f",
+              "valid": true,
+              "loss": 0.0032916403782937502,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 1
+                },
+                "textures": {
+                  "image-0": 3
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-2fc8fa74ae4c2a",
+              "bytes": 4950080,
+              "hash": "61be5c4b109d977250ea7bb7b3a8f46b99418d827616878f675f83b49dfa141a",
+              "valid": true,
+              "loss": 0.008391931294335594,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 2
+                },
+                "textures": {
+                  "image-0": 4
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-97f623512b614d",
+              "bytes": 4961392,
+              "hash": "25f867a8847ea5a67561809a8563989588606ce4e600431aee2bd60789d9731a",
+              "valid": true,
+              "loss": 0.0025539817841493057,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 0
+                },
+                "textures": {
+                  "image-0": 4
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "glb-93cccbaabffad1",
+              "bytes": 4984536,
+              "hash": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+              "valid": true,
+              "loss": 0.0014781897097166645,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 0
+                },
+                "textures": {
+                  "image-0": 3
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": {
+                "valid": true,
+                "stage": "heldout",
+                "loss": 0.0016893888680912237
+              }
+            },
+            {
+              "id": "glb-2b351ba784f2e7",
+              "bytes": 5029944,
+              "hash": "3dc3dfb907814aa056401a1f285ea41bc5b7ac17d021c0779c56aa71f4dea136",
+              "valid": true,
+              "loss": 0.0030153506069423796,
+              "params": {
+                "version": "assetfit-glb-1.0.2",
+                "geometry": {
+                  "mesh-0-primitive-0": 1
+                },
+                "textures": {
+                  "image-0": 2
+                },
+                "method": "evolutionary",
+                "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+                "original": false
+              },
+              "finalCheck": null
+            }
+          ]
+        },
+        {
+          "id": "707c3bcb-c52",
+          "name": "astronaut.png",
+          "type": "image",
+          "sourceBytes": 791555,
+          "sourceHash": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+          "usages": [
+            {
+              "label": "Editorial portrait",
+              "width": 320,
+              "height": 320,
+              "dpr": 1,
+              "fit": "contain",
+              "weight": 2,
+              "regions": []
+            },
+            {
+              "label": "Byline portrait",
+              "width": 96,
+              "height": 96,
+              "dpr": 1,
+              "fit": "contain",
+              "weight": 1,
+              "regions": []
+            }
+          ],
+          "constraints": {
+            "preserveAlpha": true,
+            "formats": [
+              "jpeg",
+              "png",
+              "webp"
+            ]
+          },
+          "costs": {
+            "candidateCount": 8,
+            "valid": 8,
+            "invalid": 0,
+            "proposalCount": 8,
+            "initializationMs": 9.794416999999157,
+            "encodeMs": 170.89708099999552,
+            "transformMs": 0,
+            "validationMs": 0,
+            "evaluationMs": 322.79708400000163,
+            "surrogateTrainingMs": 0,
+            "candidateWallMs": 522.9938349999957,
+            "cacheHits": 0
+          },
+          "candidates": [
+            {
+              "id": "original",
+              "bytes": 791555,
+              "hash": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+              "valid": true,
+              "loss": 0,
+              "params": {
+                "original": true,
+                "format": "png",
+                "width": 512,
+                "height": 512,
+                "lossless": true
+              },
+              "dimensions": {
+                "width": 512,
+                "height": 512,
+                "format": "png",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-ad000c3926294464d012",
+              "bytes": 423805,
+              "hash": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+              "valid": true,
+              "loss": 0,
+              "params": {
+                "format": "png",
+                "width": 512,
+                "height": 512,
+                "lossless": true
+              },
+              "dimensions": {
+                "width": 512,
+                "height": 512,
+                "format": "png",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-7dc6b8d1edc3a89e690e",
+              "bytes": 37436,
+              "hash": "777f00e1028ba34c821c72deee0e6d0f3c6946621e50f32835a002a3738ad99f",
+              "valid": true,
+              "loss": 0.003947968850390175,
+              "params": {
+                "format": "webp",
+                "width": 512,
+                "height": 512,
+                "quality": 84,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 512,
+                "height": 512,
+                "format": "webp",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-64edf2c5d62364152dc6",
+              "bytes": 58480,
+              "hash": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+              "valid": true,
+              "loss": 0.002660170197454048,
+              "params": {
+                "format": "jpeg",
+                "width": 512,
+                "height": 512,
+                "quality": 84,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 512,
+                "height": 512,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-1113a0f1b2a512890fe1",
+              "bytes": 12814,
+              "hash": "30fcb0de2fb710dcb55e400409cd36a620680f1571539d4262710be8c6dcd609",
+              "valid": true,
+              "loss": 0.007711235328003528,
+              "params": {
+                "format": "webp",
+                "width": 320,
+                "height": 320,
+                "quality": 68,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 320,
+                "height": 320,
+                "format": "webp",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-51428f3728a1e0126ffe",
+              "bytes": 18924,
+              "hash": "5fcd17f84b67ab815e9edcb4e098ebb0c876631979ff13d5d9045a9289e6bef0",
+              "valid": true,
+              "loss": 0.007631798836248893,
+              "params": {
+                "format": "jpeg",
+                "width": 320,
+                "height": 320,
+                "quality": 68,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 320,
+                "height": 320,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-faa08ea6ea52b75ecd39",
+              "bytes": 5202,
+              "hash": "25289f16986132ff2f98f680cdd85c2966dd3c58073bcf93b949e4ca8bbec880",
+              "valid": true,
+              "loss": 0.017647025198686158,
+              "params": {
+                "format": "webp",
+                "width": 192,
+                "height": 192,
+                "quality": 46,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 192,
+                "format": "webp",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-66228055bae776d5bcec",
+              "bytes": 6474,
+              "hash": "6ce1f0e94426e25e80b8849fcdd63e0180413668a3612147c749134424528d70",
+              "valid": true,
+              "loss": 0.018000851267648065,
+              "params": {
+                "format": "jpeg",
+                "width": 192,
+                "height": 192,
+                "quality": 46,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 192,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            }
+          ]
+        },
+        {
+          "id": "97ffd40a-71c",
+          "name": "blue-marble.jpg",
+          "type": "image",
+          "sourceBytes": 1438327,
+          "sourceHash": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+          "usages": [
+            {
+              "label": "Earth feature photo",
+              "width": 640,
+              "height": 640,
+              "dpr": 1,
+              "fit": "contain",
+              "weight": 1,
+              "regions": []
+            }
+          ],
+          "constraints": {
+            "preserveAlpha": true,
+            "formats": [
+              "jpeg",
+              "png",
+              "webp"
+            ],
+            "minWidth": 640,
+            "minHeight": 640
+          },
+          "costs": {
+            "candidateCount": 8,
+            "valid": 8,
+            "invalid": 0,
+            "proposalCount": 8,
+            "initializationMs": 51.26624999999876,
+            "encodeMs": 5195.550332999997,
+            "transformMs": 0,
+            "validationMs": 0,
+            "evaluationMs": 1503.5051250000015,
+            "surrogateTrainingMs": 0,
+            "candidateWallMs": 6735.072332000007,
+            "cacheHits": 0
+          },
+          "candidates": [
+            {
+              "id": "original",
+              "bytes": 1438327,
+              "hash": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+              "valid": true,
+              "loss": 0,
+              "params": {
+                "original": true,
+                "format": "jpeg",
+                "width": 3000,
+                "height": 3002,
+                "lossless": true
+              },
+              "dimensions": {
+                "width": 3000,
+                "height": 3002,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-d3f0f76776852d9792f3",
+              "bytes": 10841295,
+              "hash": "551a0da20c35194754bd51562fe896c3b5bd58090620ce2fa254abf1bc5e2c98",
+              "valid": true,
+              "loss": 0,
+              "params": {
+                "format": "png",
+                "width": 3000,
+                "height": 3002,
+                "lossless": true
+              },
+              "dimensions": {
+                "width": 3000,
+                "height": 3002,
+                "format": "png",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-68c954b7123da75f76d4",
+              "bytes": 774798,
+              "hash": "f8d4cedd7424da9d52bcb9e847f8fac16ffdcd3cc91430131642640aae8f4575",
+              "valid": true,
+              "loss": 0.0025946522772189486,
+              "params": {
+                "format": "webp",
+                "width": 3000,
+                "height": 3002,
+                "quality": 84,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 3000,
+                "height": 3002,
+                "format": "webp",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-69680bfe7fef9fe2cf5e",
+              "bytes": 1288851,
+              "hash": "646b1c4e23b79b9655afd3844449be1b85a39157cc449a45dd066192713e56b9",
+              "valid": true,
+              "loss": 0.0010398611084104347,
+              "params": {
+                "format": "jpeg",
+                "width": 3000,
+                "height": 3002,
+                "quality": 84,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 3000,
+                "height": 3002,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-3e8428f53d8593234aca",
+              "bytes": 170694,
+              "hash": "3625b42580aa3e2658716c79160ca6c40d51c433663d4d1d271aadd625d63bcb",
+              "valid": true,
+              "loss": 0.005413602746252579,
+              "params": {
+                "format": "webp",
+                "width": 1500,
+                "height": 1501,
+                "quality": 68,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 1500,
+                "height": 1501,
+                "format": "webp",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-94a59085f3e033b819f5",
+              "bytes": 249238,
+              "hash": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187",
+              "valid": true,
+              "loss": 0.003883241651736846,
+              "params": {
+                "format": "jpeg",
+                "width": 1500,
+                "height": 1501,
+                "quality": 68,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 1500,
+                "height": 1501,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-8316c81a54926fb681bf",
+              "bytes": 50340,
+              "hash": "3789d0b6a1670a76750d35e85025cca36a3b0b1a8503cef9732086364a5c488c",
+              "valid": true,
+              "loss": 0.016992882751161204,
+              "params": {
+                "format": "webp",
+                "width": 750,
+                "height": 751,
+                "quality": 46,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 750,
+                "height": 751,
+                "format": "webp",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            },
+            {
+              "id": "image-3fbeba612e0fa0f47633",
+              "bytes": 50067,
+              "hash": "b47a02a3d851f9ca4ebf7e5c1fe82843bdd34030e21385114e2b48e216f93aec",
+              "valid": true,
+              "loss": 0.01738141053625084,
+              "params": {
+                "format": "jpeg",
+                "width": 750,
+                "height": 751,
+                "quality": 46,
+                "lossless": false
+              },
+              "dimensions": {
+                "width": 750,
+                "height": 751,
+                "format": "jpeg",
+                "hasAlpha": false
+              },
+              "finalCheck": null
+            }
+          ]
+        },
+        {
+          "id": "fae3d18e-7ae",
+          "name": "detail.png",
+          "type": "image",
+          "sourceBytes": 54927,
+          "sourceHash": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+          "usages": [
+            {
+              "label": "Protected detail graphic",
+              "width": 640,
+              "height": 320,
+              "dpr": 1,
+              "fit": "contain",
+              "weight": 1,
+              "regions": []
+            }
+          ],
+          "constraints": {
+            "preserveAlpha": true,
+            "formats": [
+              "png",
+              "webp"
+            ],
+            "lockOriginal": true,
+            "lossless": true,
+            "preserveDimensions": true,
+            "minWidth": 960,
+            "minHeight": 480
+          },
+          "costs": {
+            "candidateCount": 1,
+            "valid": 1,
+            "invalid": 0,
+            "proposalCount": 1,
+            "initializationMs": 3.6829579999975977,
+            "encodeMs": 0.2543340000011085,
+            "transformMs": 0,
+            "validationMs": 0,
+            "evaluationMs": 25.027874999999767,
+            "surrogateTrainingMs": 0,
+            "candidateWallMs": 29.70745800000077,
+            "cacheHits": 0
+          },
+          "candidates": [
+            {
+              "id": "original",
+              "bytes": 54927,
+              "hash": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+              "valid": true,
+              "loss": 0,
+              "params": {
+                "original": true,
+                "format": "png",
+                "width": 960,
+                "height": 480,
+                "lossless": true
+              },
+              "dimensions": {
+                "width": 960,
+                "height": 480,
+                "format": "png",
+                "hasAlpha": true
+              },
+              "finalCheck": null
+            }
+          ]
+        }
+      ]
+    },
+    "locked": {
+      "directory": "artifacts/release-case/2026-09-06T04-49-06-956Z/projects/6896bd7d-97f",
+      "cost": {
+        "elapsedMs": 5713.081125000001,
+        "imageMs": 284.10641799999576,
+        "glbMs": 5322.596167000003,
+        "allocationMs": 0.05437500000698492,
+        "cacheHits": 0,
+        "retries": 0
+      },
+      "disk": {
+        "bytes": 23929343,
+        "files": 32,
+        "categories": {
+          "candidates": {
+            "bytes": 13186610,
+            "files": 16
+          },
+          "inputs": {
+            "bytes": 10394849,
+            "files": 4
+          },
+          "metadata": {
+            "bytes": 78597,
+            "files": 1
+          },
+          "renders": {
+            "bytes": 269287,
+            "files": 11
+          }
+        }
+      }
+    }
+  },
+  "allocations": [
+    {
+      "budget": {
+        "name": "lite",
+        "bytes": 5500000
+      },
+      "exact": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 5347181,
+        "loss": 0.008021601558907559,
+        "normalizedLoss": 0.0020054003897268897,
+        "budget": 5500000,
+        "slack": 152819,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 160,
+        "peakFrontier": 32,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.3927089999997406,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "loss": 0.002660170197454048,
+            "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "loss": 0.003883241651736846,
+            "sha256": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "greedy": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 5347181,
+        "loss": 0.008021601558907559,
+        "normalizedLoss": 0.0020054003897268897,
+        "budget": 5500000,
+        "slack": 152819,
+        "exact": false,
+        "method": "measured-greedy",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "durationMs": 0.14866600000095787,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "loss": 0.002660170197454048,
+            "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "loss": 0.003883241651736846,
+            "sha256": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "proportional": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-7dc6b8d1edc3a89e690e",
+          "97ffd40a-71c": "image-8316c81a54926fb681bf",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 5127239,
+        "loss": 0.022419041311268043,
+        "normalizedLoss": 0.005604760327817011,
+        "budget": 5500000,
+        "slack": 372761,
+        "exact": false,
+        "method": "original-size-proportional",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-7dc6b8d1edc3a89e690e",
+            "bytes": 37436,
+            "priority": 1,
+            "loss": 0.003947968850390175,
+            "weightedLoss": 0.003947968850390175
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-8316c81a54926fb681bf",
+            "bytes": 50340,
+            "priority": 1,
+            "loss": 0.016992882751161204,
+            "weightedLoss": 0.016992882751161204
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "durationMs": 0.08695799999986775,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-7dc6b8d1edc3a89e690e",
+            "bytes": 37436,
+            "loss": 0.003947968850390175,
+            "sha256": "777f00e1028ba34c821c72deee0e6d0f3c6946621e50f32835a002a3738ad99f"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "image-8316c81a54926fb681bf",
+            "bytes": 50340,
+            "loss": 0.016992882751161204,
+            "sha256": "3789d0b6a1670a76750d35e85025cca36a3b0b1a8503cef9732086364a5c488c"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      }
+    },
+    {
+      "budget": {
+        "name": "standard",
+        "bytes": 7000000
+      },
+      "exact": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "budget": 7000000,
+        "slack": 98405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 176,
+        "peakFrontier": 41,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.1288749999985157,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "loss": 0,
+            "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "loss": 0,
+            "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "greedy": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "budget": 7000000,
+        "slack": 98405,
+        "exact": false,
+        "method": "measured-greedy",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "durationMs": 0.060084000000642845,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "loss": 0,
+            "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "loss": 0,
+            "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "proportional": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 5347181,
+        "loss": 0.008021601558907559,
+        "normalizedLoss": 0.0020054003897268897,
+        "budget": 7000000,
+        "slack": 1652819,
+        "exact": false,
+        "method": "original-size-proportional",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "durationMs": 0.025874999999359716,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "loss": 0.002660170197454048,
+            "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "loss": 0.003883241651736846,
+            "sha256": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      }
+    },
+    {
+      "budget": {
+        "name": "high",
+        "bytes": 9000000
+      },
+      "exact": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "budget": 9000000,
+        "slack": 2098405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 189,
+        "peakFrontier": 41,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.10083300000042072,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "loss": 0,
+            "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "loss": 0,
+            "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "greedy": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "budget": 9000000,
+        "slack": 2098405,
+        "exact": false,
+        "method": "measured-greedy",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "durationMs": 0.05912500000340515,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "loss": 0,
+            "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "loss": 0,
+            "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "proportional": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 5347181,
+        "loss": 0.008021601558907559,
+        "normalizedLoss": 0.0020054003897268897,
+        "budget": 9000000,
+        "slack": 3652819,
+        "exact": false,
+        "method": "original-size-proportional",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "durationMs": 0.027458000000478933,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "loss": 0.002660170197454048,
+            "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "loss": 0.003883241651736846,
+            "sha256": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      }
+    }
+  ],
+  "priorityComparison": {
+    "budget": 8500000,
+    "balanced": {
+      "feasible": true,
+      "selected": {
+        "0f141c4c-ea2": "glb-93cccbaabffad1",
+        "707c3bcb-c52": "image-ad000c3926294464d012",
+        "97ffd40a-71c": "original",
+        "fae3d18e-7ae": "original"
+      },
+      "bytes": 6901595,
+      "loss": 0.0014781897097166645,
+      "normalizedLoss": 0.00036954742742916613,
+      "budget": 8500000,
+      "slack": 1598405,
+      "exact": true,
+      "method": "exact-sparse-pareto",
+      "version": "sparse-pareto-v1",
+      "contributions": [
+        {
+          "assetId": "0f141c4c-ea2",
+          "candidateId": "glb-93cccbaabffad1",
+          "bytes": 4984536,
+          "priority": 1,
+          "loss": 0.0014781897097166645,
+          "weightedLoss": 0.0014781897097166645
+        },
+        {
+          "assetId": "707c3bcb-c52",
+          "candidateId": "image-ad000c3926294464d012",
+          "bytes": 423805,
+          "priority": 1,
+          "loss": 0,
+          "weightedLoss": 0
+        },
+        {
+          "assetId": "97ffd40a-71c",
+          "candidateId": "original",
+          "bytes": 1438327,
+          "priority": 1,
+          "loss": 0,
+          "weightedLoss": 0
+        },
+        {
+          "assetId": "fae3d18e-7ae",
+          "candidateId": "original",
+          "bytes": 54927,
+          "priority": 1,
+          "loss": 0,
+          "weightedLoss": 0
+        }
+      ],
+      "scope": "Generated candidate table at current priorities.",
+      "minimumBytes": 5051788,
+      "statesVisited": 182,
+      "peakFrontier": 41,
+      "limits": {
+        "maxFrontierStates": 250000,
+        "maxExpandedStates": 2000000
+      },
+      "durationMs": 0.17516600000089966
+    },
+    "favorModel": {
+      "feasible": true,
+      "selected": {
+        "0f141c4c-ea2": "original",
+        "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+        "97ffd40a-71c": "image-94a59085f3e033b819f5",
+        "fae3d18e-7ae": "original"
+      },
+      "bytes": 8472685,
+      "loss": 0.006543411849190894,
+      "normalizedLoss": 0.0005948556226537176,
+      "budget": 8500000,
+      "slack": 27315,
+      "exact": true,
+      "method": "exact-sparse-pareto",
+      "version": "sparse-pareto-v1",
+      "contributions": [
+        {
+          "assetId": "0f141c4c-ea2",
+          "candidateId": "original",
+          "bytes": 8110040,
+          "priority": 8,
+          "loss": 0,
+          "weightedLoss": 0
+        },
+        {
+          "assetId": "707c3bcb-c52",
+          "candidateId": "image-64edf2c5d62364152dc6",
+          "bytes": 58480,
+          "priority": 1,
+          "loss": 0.002660170197454048,
+          "weightedLoss": 0.002660170197454048
+        },
+        {
+          "assetId": "97ffd40a-71c",
+          "candidateId": "image-94a59085f3e033b819f5",
+          "bytes": 249238,
+          "priority": 1,
+          "loss": 0.003883241651736846,
+          "weightedLoss": 0.003883241651736846
+        },
+        {
+          "assetId": "fae3d18e-7ae",
+          "candidateId": "original",
+          "bytes": 54927,
+          "priority": 1,
+          "loss": 0,
+          "weightedLoss": 0
+        }
+      ],
+      "scope": "Generated candidate table at current priorities.",
+      "minimumBytes": 5051788,
+      "statesVisited": 190,
+      "peakFrontier": 35,
+      "limits": {
+        "maxFrontierStates": 250000,
+        "maxExpandedStates": 2000000
+      },
+      "durationMs": 0.1472089999988384
+    },
+    "favorPhoto": {
+      "feasible": true,
+      "selected": {
+        "0f141c4c-ea2": "glb-93cccbaabffad1",
+        "707c3bcb-c52": "image-ad000c3926294464d012",
+        "97ffd40a-71c": "original",
+        "fae3d18e-7ae": "original"
+      },
+      "bytes": 6901595,
+      "loss": 0.0014781897097166645,
+      "normalizedLoss": 0.00013438088270151496,
+      "budget": 8500000,
+      "slack": 1598405,
+      "exact": true,
+      "method": "exact-sparse-pareto",
+      "version": "sparse-pareto-v1",
+      "contributions": [
+        {
+          "assetId": "0f141c4c-ea2",
+          "candidateId": "glb-93cccbaabffad1",
+          "bytes": 4984536,
+          "priority": 1,
+          "loss": 0.0014781897097166645,
+          "weightedLoss": 0.0014781897097166645
+        },
+        {
+          "assetId": "707c3bcb-c52",
+          "candidateId": "image-ad000c3926294464d012",
+          "bytes": 423805,
+          "priority": 1,
+          "loss": 0,
+          "weightedLoss": 0
+        },
+        {
+          "assetId": "97ffd40a-71c",
+          "candidateId": "original",
+          "bytes": 1438327,
+          "priority": 8,
+          "loss": 0,
+          "weightedLoss": 0
+        },
+        {
+          "assetId": "fae3d18e-7ae",
+          "candidateId": "original",
+          "bytes": 54927,
+          "priority": 1,
+          "loss": 0,
+          "weightedLoss": 0
+        }
+      ],
+      "scope": "Generated candidate table at current priorities.",
+      "minimumBytes": 5051788,
+      "statesVisited": 204,
+      "peakFrontier": 63,
+      "limits": {
+        "maxFrontierStates": 250000,
+        "maxExpandedStates": 2000000
+      },
+      "durationMs": 0.15879100000165636
+    },
+    "changedBothTypes": true,
+    "outcomes": {
+      "balanced": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00036954742742916613,
+        "budget": 8500000,
+        "slack": 1598405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 182,
+        "peakFrontier": 41,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.17516600000089966,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "loss": 0,
+            "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "loss": 0,
+            "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "favorModel": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "original",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 8472685,
+        "loss": 0.006543411849190894,
+        "normalizedLoss": 0.0005948556226537176,
+        "budget": 8500000,
+        "slack": 27315,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "original",
+            "bytes": 8110040,
+            "priority": 8,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "priority": 1,
+            "loss": 0.002660170197454048,
+            "weightedLoss": 0.002660170197454048
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "priority": 1,
+            "loss": 0.003883241651736846,
+            "weightedLoss": 0.003883241651736846
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 190,
+        "peakFrontier": 35,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.1472089999988384,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "original",
+            "bytes": 8110040,
+            "loss": 0,
+            "sha256": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-64edf2c5d62364152dc6",
+            "bytes": 58480,
+            "loss": 0.002660170197454048,
+            "sha256": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "image-94a59085f3e033b819f5",
+            "bytes": 249238,
+            "loss": 0.003883241651736846,
+            "sha256": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      },
+      "favorPhoto": {
+        "feasible": true,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        },
+        "bytes": 6901595,
+        "loss": 0.0014781897097166645,
+        "normalizedLoss": 0.00013438088270151496,
+        "budget": 8500000,
+        "slack": 1598405,
+        "exact": true,
+        "method": "exact-sparse-pareto",
+        "version": "sparse-pareto-v1",
+        "contributions": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "priority": 1,
+            "loss": 0.0014781897097166645,
+            "weightedLoss": 0.0014781897097166645
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "priority": 8,
+            "loss": 0,
+            "weightedLoss": 0
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "candidateId": "original",
+            "bytes": 54927,
+            "priority": 1,
+            "loss": 0,
+            "weightedLoss": 0
+          }
+        ],
+        "scope": "Generated candidate table at current priorities.",
+        "minimumBytes": 5051788,
+        "statesVisited": 204,
+        "peakFrontier": 63,
+        "limits": {
+          "maxFrontierStates": 250000,
+          "maxExpandedStates": 2000000
+        },
+        "durationMs": 0.15879100000165636,
+        "files": [
+          {
+            "assetId": "0f141c4c-ea2",
+            "name": "Avocado.glb",
+            "usage": "Product model",
+            "type": "glb",
+            "candidateId": "glb-93cccbaabffad1",
+            "bytes": 4984536,
+            "loss": 0.0014781897097166645,
+            "sha256": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+          },
+          {
+            "assetId": "707c3bcb-c52",
+            "name": "astronaut.png",
+            "usage": "Editorial portrait",
+            "type": "image",
+            "candidateId": "image-ad000c3926294464d012",
+            "bytes": 423805,
+            "loss": 0,
+            "sha256": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+          },
+          {
+            "assetId": "97ffd40a-71c",
+            "name": "blue-marble.jpg",
+            "usage": "Earth feature photo",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 1438327,
+            "loss": 0,
+            "sha256": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+          },
+          {
+            "assetId": "fae3d18e-7ae",
+            "name": "detail.png",
+            "usage": "Protected detail graphic",
+            "type": "image",
+            "candidateId": "original",
+            "bytes": 54927,
+            "loss": 0,
+            "sha256": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+          }
+        ]
+      }
+    },
+    "modelAssetId": "0f141c4c-ea2",
+    "photoAssetId": "97ffd40a-71c"
+  },
+  "tinyBudgetCheck": {
+    "feasible": false,
+    "selected": {},
+    "bytes": null,
+    "loss": null,
+    "normalizedLoss": null,
+    "budget": 1000000,
+    "minimumBytes": 5051788,
+    "exact": true,
+    "method": "exact-sparse-pareto",
+    "version": "sparse-pareto-v1",
+    "reason": "Current constraints and candidate archive contain no configuration within this asset-byte budget.",
+    "scope": "Generated candidate table at current priorities; not a proof over ungenerated outputs.",
+    "files": [
+      {
+        "assetId": "0f141c4c-ea2",
+        "name": "Avocado.glb",
+        "usage": "Product model",
+        "type": "glb",
+        "candidateId": null,
+        "bytes": null,
+        "loss": null,
+        "sha256": null
+      },
+      {
+        "assetId": "707c3bcb-c52",
+        "name": "astronaut.png",
+        "usage": "Editorial portrait",
+        "type": "image",
+        "candidateId": null,
+        "bytes": null,
+        "loss": null,
+        "sha256": null
+      },
+      {
+        "assetId": "97ffd40a-71c",
+        "name": "blue-marble.jpg",
+        "usage": "Earth feature photo",
+        "type": "image",
+        "candidateId": null,
+        "bytes": null,
+        "loss": null,
+        "sha256": null
+      },
+      {
+        "assetId": "fae3d18e-7ae",
+        "name": "detail.png",
+        "usage": "Protected detail graphic",
+        "type": "image",
+        "candidateId": null,
+        "bytes": null,
+        "loss": null,
+        "sha256": null
+      }
+    ]
+  },
+  "exportedFileReloads": [
+    {
+      "tier": "lite",
+      "hash": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+      "bytes": 4984536,
+      "valid": true,
+      "stage": "heldout",
+      "loss": 0.0016893888680912237,
+      "durationMs": 360.44550000000163
+    },
+    {
+      "tier": "standard",
+      "hash": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+      "bytes": 4984536,
+      "valid": true,
+      "stage": "heldout",
+      "loss": 0.0016893888680912237,
+      "durationMs": 309.1054170000025
+    },
+    {
+      "tier": "high",
+      "hash": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+      "bytes": 4984536,
+      "valid": true,
+      "stage": "heldout",
+      "loss": 0.0016893888680912237,
+      "durationMs": 305.9997089999997
+    }
+  ],
+  "lockCheck": {
+    "allocation": {
+      "feasible": false,
+      "selected": {},
+      "bytes": null,
+      "loss": null,
+      "normalizedLoss": null,
+      "budget": 5500000,
+      "minimumBytes": 10394849,
+      "exact": true,
+      "method": "exact-sparse-pareto",
+      "version": "sparse-pareto-v1",
+      "reason": "Current constraints and candidate archive contain no configuration within this asset-byte budget.",
+      "scope": "Generated candidate table at current priorities; not a proof over ungenerated outputs.",
+      "files": [
+        {
+          "assetId": "d54f748e-c3c",
+          "name": "Avocado.glb",
+          "usage": "Product model",
+          "type": "glb",
+          "candidateId": null,
+          "bytes": null,
+          "loss": null,
+          "sha256": null
+        },
+        {
+          "assetId": "d7a13324-33d",
+          "name": "astronaut.png",
+          "usage": "Editorial portrait",
+          "type": "image",
+          "candidateId": null,
+          "bytes": null,
+          "loss": null,
+          "sha256": null
+        },
+        {
+          "assetId": "04e36aed-efc",
+          "name": "blue-marble.jpg",
+          "usage": "Earth feature photo",
+          "type": "image",
+          "candidateId": null,
+          "bytes": null,
+          "loss": null,
+          "sha256": null
+        },
+        {
+          "assetId": "01eb1931-edb",
+          "name": "detail.png",
+          "usage": "Protected detail graphic",
+          "type": "image",
+          "candidateId": null,
+          "bytes": null,
+          "loss": null,
+          "sha256": null
+        }
+      ]
+    },
+    "refusedExport": true,
+    "assets": [
+      {
+        "name": "Avocado.glb",
+        "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+        "candidateHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+        "bytes": 8110040
+      },
+      {
+        "name": "astronaut.png",
+        "sourceHash": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+        "candidateHash": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+        "bytes": 791555
+      },
+      {
+        "name": "blue-marble.jpg",
+        "sourceHash": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+        "candidateHash": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+        "bytes": 1438327
+      },
+      {
+        "name": "detail.png",
+        "sourceHash": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+        "candidateHash": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+        "bytes": 54927
+      }
+    ]
+  },
+  "deliveries": [
+    {
+      "budgetName": "lite",
+      "assetBytes": 5347181,
+      "metadataBytes": 4629466,
+      "zipBytes": 8275314,
+      "verified": {
+        "valid": true,
+        "assetBytes": 5347181,
+        "budgetBytes": 5500000,
+        "errors": []
+      },
+      "directory": "artifacts/release-case/2026-09-06T04-49-06-956Z/projects/619cd20f-73f/exports/lite-6fd4c938-505"
+    },
+    {
+      "budgetName": "standard",
+      "assetBytes": 6901595,
+      "metadataBytes": 4564032,
+      "zipBytes": 9776413,
+      "verified": {
+        "valid": true,
+        "assetBytes": 6901595,
+        "budgetBytes": 7000000,
+        "errors": []
+      },
+      "directory": "artifacts/release-case/2026-09-06T04-49-06-956Z/projects/619cd20f-73f/exports/standard-a365825d-56b"
+    },
+    {
+      "budgetName": "high",
+      "assetBytes": 6901595,
+      "metadataBytes": 4564027,
+      "zipBytes": 9776406,
+      "verified": {
+        "valid": true,
+        "assetBytes": 6901595,
+        "budgetBytes": 9000000,
+        "errors": []
+      },
+      "directory": "artifacts/release-case/2026-09-06T04-49-06-956Z/projects/619cd20f-73f/exports/high-1f0c1b6b-7d0"
+    }
+  ],
+  "reallocation": {
+    "changedAcrossBudgets": true,
+    "modelCandidatesAcrossBudgets": [
+      "glb-93cccbaabffad1",
+      "glb-93cccbaabffad1",
+      "glb-93cccbaabffad1"
+    ],
+    "imageCandidatesAcrossBudgets": [
+      {
+        "name": "astronaut.png",
+        "candidates": [
+          "image-64edf2c5d62364152dc6",
+          "image-ad000c3926294464d012",
+          "image-ad000c3926294464d012"
+        ]
+      },
+      {
+        "name": "blue-marble.jpg",
+        "candidates": [
+          "image-94a59085f3e033b819f5",
+          "original",
+          "original"
+        ]
+      },
+      {
+        "name": "detail.png",
+        "candidates": [
+          "original",
+          "original",
+          "original"
+        ]
+      }
+    ]
+  },
+  "recipe": {
+    "schemaVersion": 1,
+    "kind": "recipe",
+    "version": "assetfit-0.1.0",
+    "environment": {
+      "node": "24.19.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "sharp": {
+        "aom": "3.12.1",
+        "archive": "3.8.1",
+        "cairo": "1.18.4",
+        "cgif": "0.5.0",
+        "exif": "0.6.25",
+        "expat": "2.7.1",
+        "ffi": "3.5.1",
+        "fontconfig": "2.17.1",
+        "freetype": "2.13.3",
+        "fribidi": "1.0.16",
+        "glib": "2.85.1",
+        "harfbuzz": "11.2.1",
+        "heif": "1.20.1",
+        "highway": "1.2.0",
+        "imagequant": "2.4.1",
+        "lcms": "2.17",
+        "mozjpeg": "4.1.5",
+        "pango": "1.56.4",
+        "pixman": "0.46.2",
+        "png": "1.6.50",
+        "proxy-libintl": "0.4",
+        "rsvg": "2.60.0",
+        "spng": "0.7.4",
+        "tiff": "4.7.0",
+        "vips": "8.17.1",
+        "webp": "1.5.0",
+        "xml2": "2.14.4",
+        "zlib-ng": "2.2.4",
+        "sharp": "0.34.3"
+      },
+      "renderer": "three-180-fixed-v1",
+      "metric": "rgba-reference-v1"
+    },
+    "name": "Field Notes / A mixed visual collection",
+    "settings": {
+      "maxEvaluations": 12,
+      "seed": 42,
+      "method": "evolutionary",
+      "maxImageCandidates": 8,
+      "useSurrogate": true
+    },
+    "budgets": [
+      {
+        "name": "lite",
+        "bytes": 5500000
+      },
+      {
+        "name": "standard",
+        "bytes": 7000000
+      },
+      {
+        "name": "high",
+        "bytes": 9000000
+      }
+    ],
+    "manualChoices": {},
+    "assets": [
+      {
+        "id": "0f141c4c-ea2",
+        "name": "Avocado.glb",
+        "sourceHash": "ccc9c3ce56423720b09399c2351537207cd5a65f859f9e6e2f30922762f3abd4",
+        "sourceBytes": 8110040,
+        "usages": [
+          {
+            "label": "Product model",
+            "width": 320,
+            "height": 320,
+            "dpr": 1,
+            "fit": "contain",
+            "weight": 1,
+            "regions": []
+          }
+        ],
+        "constraints": {
+          "preserveAlpha": true,
+          "formats": [
+            "jpeg",
+            "png",
+            "webp"
+          ]
+        },
+        "priority": 1,
+        "selectedHashes": {
+          "lite": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+          "standard": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5",
+          "high": "44e161f7d21625b33407bbf68e03fb798bd0b6c7f84bd8a98fa569d7358279b5"
+        }
+      },
+      {
+        "id": "707c3bcb-c52",
+        "name": "astronaut.png",
+        "sourceHash": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+        "sourceBytes": 791555,
+        "usages": [
+          {
+            "label": "Editorial portrait",
+            "width": 320,
+            "height": 320,
+            "dpr": 1,
+            "fit": "contain",
+            "weight": 2,
+            "regions": []
+          },
+          {
+            "label": "Byline portrait",
+            "width": 96,
+            "height": 96,
+            "dpr": 1,
+            "fit": "contain",
+            "weight": 1,
+            "regions": []
+          }
+        ],
+        "constraints": {
+          "preserveAlpha": true,
+          "formats": [
+            "jpeg",
+            "png",
+            "webp"
+          ]
+        },
+        "priority": 1,
+        "selectedHashes": {
+          "lite": "8223e10ff6bfa11d8d4695305c83ce5bec9985e053db63f950cbaeed471c7a4a",
+          "standard": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e",
+          "high": "789ee4ecdb3dba56ce6861d291928a555c8f7af234782ed10d58068981439f1e"
+        }
+      },
+      {
+        "id": "97ffd40a-71c",
+        "name": "blue-marble.jpg",
+        "sourceHash": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+        "sourceBytes": 1438327,
+        "usages": [
+          {
+            "label": "Earth feature photo",
+            "width": 640,
+            "height": 640,
+            "dpr": 1,
+            "fit": "contain",
+            "weight": 1,
+            "regions": []
+          }
+        ],
+        "constraints": {
+          "preserveAlpha": true,
+          "formats": [
+            "jpeg",
+            "png",
+            "webp"
+          ],
+          "minWidth": 640,
+          "minHeight": 640
+        },
+        "priority": 1,
+        "selectedHashes": {
+          "lite": "a54442885617d9644fd9c78649c763fab19d85fc9afabdd8c06389a30ef2c187",
+          "standard": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048",
+          "high": "dfc341bd81efcb2d9a22aaee3f92e84b538c4501157b02e16b8dc93c4965f048"
+        }
+      },
+      {
+        "id": "fae3d18e-7ae",
+        "name": "detail.png",
+        "sourceHash": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+        "sourceBytes": 54927,
+        "usages": [
+          {
+            "label": "Protected detail graphic",
+            "width": 640,
+            "height": 320,
+            "dpr": 1,
+            "fit": "contain",
+            "weight": 1,
+            "regions": []
+          }
+        ],
+        "constraints": {
+          "preserveAlpha": true,
+          "formats": [
+            "png",
+            "webp"
+          ],
+          "lockOriginal": true,
+          "lossless": true,
+          "preserveDimensions": true,
+          "minWidth": 960,
+          "minHeight": 480
+        },
+        "priority": 1,
+        "selectedHashes": {
+          "lite": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+          "standard": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871",
+          "high": "4a543b77263dafc22c7b2edf65323239ea437d7867482f0058a7f441b7fad871"
+        }
+      }
+    ]
+  },
+  "demo": {
+    "mediaFiles": 148,
+    "sourceReferencesRewritten": 189,
+    "project": "examples/release-demo/project.json",
+    "downloads": {
+      "lite": {
+        "report": "downloads/lite-report.json",
+        "recipe": "downloads/lite-recipe.json",
+        "assetBytes": 5347181,
+        "metadataBytes": 4629466,
+        "verified": {
+          "valid": true,
+          "assetBytes": 5347181,
+          "budgetBytes": 5500000,
+          "errors": []
+        },
+        "manifest": "downloads/lite-manifest.json",
+        "policy": "downloads/lite-policy.json",
+        "prebuiltArchive": false,
+        "measuredLocalZipBytes": 8275314
+      },
+      "standard": {
+        "archive": "downloads/standard.zip",
+        "report": "downloads/standard-report.json",
+        "recipe": "downloads/standard-recipe.json",
+        "assetBytes": 6901595,
+        "zipBytes": 9776413,
+        "metadataBytes": 4564032,
+        "verified": {
+          "valid": true,
+          "assetBytes": 6901595,
+          "budgetBytes": 7000000,
+          "errors": []
+        },
+        "manifest": "downloads/standard-manifest.json",
+        "policy": "downloads/standard-policy.json",
+        "prebuiltArchive": true,
+        "measuredLocalZipBytes": 9776413
+      },
+      "high": {
+        "report": "downloads/high-report.json",
+        "recipe": "downloads/high-recipe.json",
+        "assetBytes": 6901595,
+        "metadataBytes": 4564027,
+        "verified": {
+          "valid": true,
+          "assetBytes": 6901595,
+          "budgetBytes": 9000000,
+          "errors": []
+        },
+        "manifest": "downloads/high-manifest.json",
+        "policy": "downloads/high-policy.json",
+        "prebuiltArchive": false,
+        "measuredLocalZipBytes": 9776406
+      }
+    },
+    "disk": {
+      "bytes": 102489870,
+      "files": 166,
+      "categories": {
+        "metadata": {
+          "bytes": 606431,
+          "files": 5
+        },
+        "downloads": {
+          "bytes": 10887280,
+          "files": 13
+        },
+        "media": {
+          "bytes": 90996159,
+          "files": 148
+        }
+      }
+    }
+  },
+  "totalWallMs": 33415.670957999995,
+  "costDefinition": "Wall time is measured from script start through demonstration assembly, before final evidence/report serialization. Stage times include physical setup, encoding, evaluation and filesystem work. Project costs and candidate subcomponents are nested accounting views, not quantities to sum again. Demonstration cache and ZIP/container storage are separate from selected asset bytes.",
+  "plateau": {
+    "enumeratedConfigurations": 768,
+    "sameStandardHigh": true,
+    "currentBytes": 6901595,
+    "currentWeightedLoss": 0.0014781897097166645,
+    "nextImprovement": {
+      "bytes": 9877623,
+      "loss": 0.0010398611084104347,
+      "selected": {
+        "0f141c4c-ea2": "original",
+        "707c3bcb-c52": "image-ad000c3926294464d012",
+        "97ffd40a-71c": "image-69680bfe7fef9fe2cf5e",
+        "fae3d18e-7ae": "original"
+      }
+    },
+    "interpretation": "The next threshold is computed from all combinations in this fixed measured table; no ungenerated candidate is implied."
+  },
+  "packagingRevision": {
+    "type": "publication-only",
+    "sourceMeasuredRunId": "2026-09-06T04-49-06-956Z",
+    "candidateBytesChanged": false,
+    "qualityMeasurementsChanged": false,
+    "prebuiltArchive": "downloads/standard.zip",
+    "removedFromPublication": [
+      "lite.zip",
+      "high.zip",
+      "lite-report.html",
+      "standard-report.html",
+      "high-report.html"
+    ],
+    "preservedCopies": "artifacts/release-case/2026-09-06T04-49-06-956Z/unpublished-download-copies",
+    "notes": "Each tier retains manifest/recipe/policy/report JSON; the browser packages any feasible allocation from real candidate files. All three original local exports remain intact.",
+    "durationMs": 5.776875000000002
+  }
+}

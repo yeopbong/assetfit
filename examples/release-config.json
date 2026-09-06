@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "name": "Field Notes / A mixed visual collection",
+  "budgets": [
+    { "name": "lite", "bytes": 5500000 },
+    { "name": "standard", "bytes": 7000000 },
+    { "name": "high", "bytes": 9000000 }
+  ],
+  "settings": { "maxEvaluations": 12, "maxImageCandidates": 8, "seed": 42, "method": "evolutionary", "useSurrogate": true },
+  "priorityCheckBudget": 8500000,
+  "assets": [
+    {
+      "file": "Avocado.glb",
+      "usages": [{ "label": "Product model", "width": 320, "height": 320, "dpr": 1, "fit": "contain", "weight": 1, "regions": [] }],
+      "constraints": {}
+    },
+    {
+      "file": "astronaut.png",
+      "usages": [
+        { "label": "Editorial portrait", "width": 320, "height": 320, "dpr": 1, "fit": "contain", "weight": 2, "regions": [] },
+        { "label": "Byline portrait", "width": 96, "height": 96, "dpr": 1, "fit": "contain", "weight": 1, "regions": [] }
+      ],
+      "constraints": { "preserveAlpha": true }
+    },
+    {
+      "file": "blue-marble.jpg",
+      "usages": [{ "label": "Earth feature photo", "width": 640, "height": 640, "dpr": 1, "fit": "contain", "weight": 1, "regions": [] }],
+      "constraints": { "preserveAlpha": true, "minWidth": 640, "minHeight": 640 }
+    },
+    {
+      "file": "detail.png",
+      "usages": [{ "label": "Protected detail graphic", "width": 640, "height": 320, "dpr": 1, "fit": "contain", "weight": 1, "regions": [] }],
+      "constraints": { "lockOriginal": true, "lossless": true, "preserveDimensions": true, "minWidth": 960, "minHeight": 480, "preserveAlpha": true, "formats": ["png", "webp"] }
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "status": "local-release-candidate-verified",
+  "checkedAt": "2026-09-06T05:10:10.368322+00:00",
+  "publication": {
+    "repositoryPushed": false,
+    "siteDeployed": false,
+    "publicUrlVerified": false
+  },
+  "tests": {
+    "command": "ASSETFIT_RENDER_TESTS=1 pnpm test",
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "logSha256": "c86b9dacf9951e9206e8a587edf15be852157f748a1efa75971c0e0100875b8e"
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "passed": true
+  },
+  "static": {
+    "schemaVersion": 1,
+    "staticBasePath": "/assetfit/",
+    "staticOriginHasNoProcessingAPI": true,
+    "verifiedCandidates": 29,
+    "archiveJsonBytes": 227290,
+    "initialResponseBodyBytes": 3582935,
+    "initialCandidateFiles": 2,
+    "totalDistinctCandidateFiles": 29,
+    "initialGlbFiles": 0,
+    "modelLoadsAfterSelection": true,
+    "selections": [
+      {
+        "budget": 5500000,
+        "bytes": 5347181,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-64edf2c5d62364152dc6",
+          "97ffd40a-71c": "image-94a59085f3e033b819f5",
+          "fae3d18e-7ae": "original"
+        }
+      },
+      {
+        "budget": 7000000,
+        "bytes": 6901595,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        }
+      },
+      {
+        "budget": 9000000,
+        "bytes": 6901595,
+        "selected": {
+          "0f141c4c-ea2": "glb-93cccbaabffad1",
+          "707c3bcb-c52": "image-ad000c3926294464d012",
+          "97ffd40a-71c": "original",
+          "fae3d18e-7ae": "original"
+        }
+      }
+    ],
+    "priorityChangesActualSelection": false,
+    "priorityResultMatchesAllocator": true,
+    "browserZip": {
+      "valid": true,
+      "assetBytes": 5347181,
+      "budgetBytes": 5500000,
+      "errors": []
+    },
+    "browserZipBytes": 8222421,
+    "licensesIncluded": true,
+    "recipesMatchCandidates": true,
+    "tooSmallBudgetDisablesExport": true,
+    "mobileNoPageOverflow": true,
+    "browserErrors": []
+  },
+  "localUi": {
+    "projectId": "d9c200ff-b82",
+    "closedPageTaskCompleted": true,
+    "assetTypes": [
+      "glb",
+      "image",
+      "image"
+    ],
+    "validCandidates": [
+      {
+        "name": "Duck.glb",
+        "count": 12
+      },
+      {
+        "name": "astronaut.png",
+        "count": 8
+      },
+      {
+        "name": "detail.png",
+        "count": 5
+      }
+    ],
+    "immediateBudgetExport": {
+      "requestedBudget": 100000,
+      "actualAssetBytes": 96394,
+      "zipBytes": 1705802
+    },
+    "lockPropagationVisible": true,
+    "staleExportDisabled": true,
+    "browserErrors": []
+  },
+  "cleanInstall": {
+    "schemaVersion": 1,
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "24.19.0",
+    "pnpm": "11.19.0",
+    "cleanPathContainsSpaces": true,
+    "freshDependencyStore": true,
+    "existingNodeModulesCopied": false,
+    "generatedCachesCopied": false,
+    "declaredSystemBrowser": true,
+    "launcherAndHttpVerified": true,
+    "typecheck": true,
+    "build": true,
+    "mixedProject": {
+      "status": "complete",
+      "assetTypes": [
+        "glb",
+        "image"
+      ],
+      "candidates": [
+        {
+          "name": "Duck.glb",
+          "valid": 5
+        },
+        {
+          "name": "astronaut.png",
+          "valid": 8
+        }
+      ],
+      "assetBytes": 157920,
+      "budgetBytes": 180000,
+      "verification": {
+        "valid": true,
+        "assetBytes": 157920,
+        "budgetBytes": 180000,
+        "errors": []
+      }
+    },
+    "timings": [
+      {
+        "command": "pnpm --version",
+        "elapsedMs": 235.29274999999998,
+        "exitCode": 0
+      },
+      {
+        "command": "pnpm install --frozen-lockfile --store-dir .install-store",
+        "elapsedMs": 26801.518625,
+        "exitCode": 0
+      },
+      {
+        "command": "pnpm build",
+        "elapsedMs": 1101.012917,
+        "exitCode": 0
+      },
+      {
+        "command": "pnpm typecheck",
+        "elapsedMs": 1889.177083999999,
+        "exitCode": 0
+      },
+      {
+        "command": "start.command and HTTP startup",
+        "elapsedMs": 1481.2125420000011,
+        "exitCode": 0
+      },
+      {
+        "command": "node src/cli.mjs optimize examples/sources/Duck.glb examples/sources/astronaut.png --name Clean install mixed smoke --budget 180000 --evaluations 5 --out .assetfit/projects",
+        "elapsedMs": 7961.998625,
+        "exitCode": 0
+      },
+      {
+        "command": "node src/cli.mjs export .assetfit/projects/8f76a8d7-551",
+        "elapsedMs": 439.60737500000687,
+        "exitCode": 0
+      },
+      {
+        "command": "node src/cli.mjs verify .assetfit/projects/8f76a8d7-551/exports/standard-aa2483ae-742",
+        "elapsedMs": 278.75104199999623,
+        "exitCode": 0
+      }
+    ]
+  },
+  "relatedEvidence": {
+    "mainCase": "docs/release-case.json",
+    "coreAudit": "docs/rc-core-audit.json",
+    "historicalSearch": "docs/benchmark-audit.json",
+    "historicalObservations": "docs/benchmark-observations.json"
+  },
+  "sources": {
+    "package.json": "1e56481dfb3b5d7ee4b140868b7beb918d8423ede727681680986cd6ee02d718",
+    "pnpm-lock.yaml": "4ab472df1c23e9b4b71f5e51d3cd879a4093a03cf2dd0b0bbd2c5e254de5ce63",
+    "pnpm-workspace.yaml": "a527d0af6a43174f68e8dcf17ec12332d6d9a8347ac78039e61e01b3574d7113",
+    "scripts/benchmark.mjs": "64da22f817a730c062364c48dc010aa8e16b19adc8ffe7bd674a5ec48e2b6c45",
+    "scripts/build.mjs": "e53fa9ff0c9650b397b29bc2c623407326e980c7b1b5bb9a4067ffad91e03a1d",
+    "scripts/check.mjs": "d60893dee44cd42682bbb7680e18d62d9aead2990e5807d573f29d3a6289b7e8",
+    "scripts/delivery-summary.mjs": "f81c56fc5a808540204c9e112aa1c30f9e5939da5bd364490c775e2c2aefcedb",
+    "scripts/examples.mjs": "43d28e54e248e4c50dd723c6ed46a2fc84bf35c3828dc61ae2cd9a4df9f69056",
+    "scripts/plot-benchmark-requirements.txt": "479ef1bb8c70110016634e098c0755d96ec6c9dad7fc330d6f8537961d64207c",
+    "scripts/plot-benchmark.py": "04619ba0c2ae1802b77944a8edf8f6f01ffc10ab3e1cb5fc2c545f157ccb80b2",
+    "scripts/release-case.mjs": "a96df013425b358426cfd4a12d0856b297d2fcc5751286d271e168d420bf5b05",
+    "scripts/verify-clean.mjs": "18140fc5a3eb36fc99905e293e9f9e71c8578d8367eba5cf89a63a49b007743e",
+    "scripts/verify-demo.mjs": "f223bafa2e64b454808e11c4431a01b840318b62d6c2a324bab003b8e193a6b5",
+    "scripts/verify-local.mjs": "1f3cc82e6796260986e75d7d121df609c8474b9aee6e1bc47b2ed668a9a3249d",
+    "src/allocator.mjs": "3b5eca75e932e1c9e1a5097cc3b295dcd40b8f0e9f6f2025b384b6ccff4cd850",
+    "src/cli.mjs": "7f85f126d943b196c2d5086678f17bdceeadce8c285f133dd16761dc27b683b0",
+    "src/delivery.mjs": "74482d6357af01328391b7d5cd4e8acb2a1b12da179abfb921a3eaf94edd5e15",
+    "src/glb.mjs": "15d8d223fcdaaefcf4d7c38e04ba08886446a1c98eb8447fd1af55865dcaf896",
+    "src/images.mjs": "f6bf597061e54977c3a4a2e2e97c0f3d5ef708c2ca084e109fc5b50a82a42a28",
+    "src/metrics.mjs": "555dd8cdd84cc6e82615a3e5ec1f5ee3aeff018c2a283f8f7d8adb354d005d09",
+    "src/project.mjs": "434afd907c35b69865728f54c2cf6f186d3e24471169659995c317af0334dbc1",
+    "src/renderer.mjs": "d0c75e61b909d625a3bedf07957bcb98dabbd6eb52556283bf9c546eb9dc9deb",
+    "src/server.mjs": "04b64a65d95ef5563d75876b1c0f068fa75ccd79af577722f8a61249bd533475",
+    "src/types.ts": "0b69d481a5859ad9b9e38b1f21e6746e1f084330a2e45967616a4b5e75024506",
+    "src/util.mjs": "79df45ae999a64428db9c8cda6021d41290cb4edff6e0e3d8e756384fa9ae98f",
+    "start.command": "78d5683722423daacc8060c285bf92f6d762a989f163b5fbb74a13db65c81011",
+    "tsconfig.json": "09d4ab1dd85650b35ded117f0097c070b774d408fe6f19ff93d6e311fc170378",
+    "web/app.mjs": "d9c7fe6a1ebdc432faa6f37d10e57ca9a2537512e0058d457426917ee1ab8ec3",
+    "web/index.html": "1d451837db3413220b00eea4d246d474118d25f5d90582ac37e217785c8849ad",
+    "web/render.html": "cb3636f4686dfdde0e2a66d580169464a0feacd26be3fc999c5fd4857793215d",
+    "web/render.mjs": "ca3f1c90ba4363dbaf660194412fc9a08980f7091e309e991d853cb60dbbe216",
+    "web/style.css": "f821f589ecbdaa6131ea3074041bd24532c21baa01245bc132deb857d1a4061b",
+    "web/viewer.mjs": "572a467863c39117210e1965ce253863228435c1ee6090741f1eb143a44cd0d3"
+  },
+  "screenshots": {
+    "docs/images/demo-desktop.png": "c91b0d7fae9a9523c84feee047cb0445d81a3c2cd1d1cd6ba5cb3042753a7fef",
+    "docs/images/demo-export.png": "454d1f846bd02ef20e116e8b51fef47b344317ff935dfcf29d73bcb2216536b2",
+    "docs/images/demo-model-comparison.png": "70ded116725334c3e7ea7b049dda9f7cd2cf6ff82e39a7dcc40bd41dd42868c2",
+    "docs/images/demo-protected-comparison.png": "6bb969e61e0d5aa4fda19aae80cb4bdf2be41bed51f59fd00ccfe09536f23dff"
+  }
+}
