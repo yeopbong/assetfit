@@ -67,7 +67,7 @@ async function projectFor(name, files, usages, constraints = {}) {
   if (process.argv.includes('--reuse')) try {
     const previous = JSON.parse(await readFile(pointer, 'utf8'));
     entry = { dir: path.join(root, previous.dir), project: await loadProject(path.join(root, previous.dir)) };
-  } catch { /* A missing prior example starts a fresh measured run. */ }
+  } catch {}
   if (!entry) {
     entry = await createProject(path.join(artifacts, 'projects'), { name: `Field Notes / ${name}`, budgets: [{ name: 'initial', bytes: 20_000_000 }], settings: { maxEvaluations: 12, maxImageCandidates: 8, seed: 42, method: 'evolutionary', useSurrogate: true } });
     await importFiles(entry.dir, entry.project, files.map((file) => path.join(sources, file)));
@@ -147,7 +147,6 @@ async function checkFinalModels(entry) {
 
 async function publishLocalDemo(entry, evidence, provenance) {
   const { dir, project } = entry;
-  // This directory contains only reproducible generated demonstration outputs.
   await rm(demoDir, { recursive: true, force: true });
   await mkdir(demoDir, { recursive: true });
   const copied = new Set();

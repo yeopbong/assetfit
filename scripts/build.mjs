@@ -12,8 +12,6 @@ for(const input of Object.keys(bundle.metafile.inputs).filter(file=>file.include
  }
 }
 const notices=['AssetFit browser bundle — third-party notices\nJSZip is used under its MIT option. Sample assets have separate licenses in demo/SOURCES.json.'];
-// JSZip's browser entry is itself a bundle, so esbuild cannot see its inner packages.
-// Include its locked production dependency closure as well as visible bundle inputs.
 async function includeDependencies(entry){
  const require=createRequire(path.join(entry.folder,'package.json'));
  for(const name of Object.keys(entry.meta.dependencies??{})){
@@ -41,7 +39,6 @@ let archive='examples/release-demo';
 try{await access(archive+'/project.json');}catch{archive='examples/demo';}
 await cp(archive,'dist/demo',{recursive:true});
 const project=JSON.parse(await readFile('dist/demo/project.json','utf8'));
-// Detailed observations remain in the archive; the explorer needs the candidate table only.
 for(const asset of project.assets){delete asset.observations;delete asset.sourceKey;}
 delete project.progress;
 await writeFile('dist/demo/project.json',JSON.stringify(project));

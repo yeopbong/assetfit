@@ -1,67 +1,42 @@
 # AssetFit
 
-**Fit images and static 3D models into one shared asset budget.**
+Fit images and static 3D models into one shared file-size budget. AssetFit generates and compares versions of your JPEG, PNG, WebP and GLB files, then selects one version of every asset. Display sizes, importance and protection settings guide the selection.
 
-Give AssetFit JPEG, PNG, WebP and self-contained static GLB files, describe where they will be displayed, and protect critical content. It generates and measures real versions, then chooses one version of every asset under a total byte limit. Images and models participate in the same allocation, so changing the budget or importance can move bytes between them.
+![AssetFit with mixed assets, comparisons and a shared byte budget](docs/images/demo-desktop.png)
 
-The output is a delivery ZIP containing the selected files, an inspectable comparison report, a manifest with actual bytes and hashes, and a recipe for replay. Original inputs stay intact. The full application runs on your computer without a paid API or hosted processing service.
+[Try the online demo](https://yeopbong.github.io/assetfit/) · [Source repository](https://github.com/yeopbong/assetfit)
 
-![AssetFit running with real mixed assets, usage settings, comparison and a joint byte budget](docs/images/demo-desktop.png)
+The online demo uses existing candidates. Change the budget or importance to select and download sample files. Run the local application to process new files.
 
-[Try the live demo](https://yeopbong.github.io/assetfit/) · [Source repository](https://github.com/yeopbong/assetfit) · [Release validation](docs/RC.md)
+## Run locally
 
-## Try it locally
-
-Requirements: **Node.js 22.13+**, **pnpm 11.19.0**, and **Chrome or Playwright Chromium** for GLB evaluation. Image-only CLI processing does not need a browser.
-
-From the directory containing your checkout:
+Install **Node.js 22.13+** and **pnpm 11.19.0**. GLB processing also needs Chrome or Playwright Chromium; image-only CLI processing does not need a browser.
 
 ```sh
+git clone https://github.com/yeopbong/assetfit.git
 cd assetfit
 pnpm install --frozen-lockfile
 pnpm build
 pnpm start
 ```
 
-Open [the local workspace](http://127.0.0.1:4318). If your checkout path contains spaces, quote it: `cd "my projects/assetfit"`.
+Open [127.0.0.1:4318](http://127.0.0.1:4318). If Chrome is unavailable, run `pnpm exec playwright install chromium`. For an occupied port, use `pnpm start --port 4319`.
 
 1. Choose **New project**, then **Add files** or **Load sample**.
-2. Set each asset's display size, importance and protection, then enter a total budget in bytes.
-3. Choose **Generate & allocate**. Inspect the original, selected file and measured differences.
-4. Adjust the budget or importance to reallocate measured candidates, then **Download delivery**.
+2. Set display sizes, importance and protection, then enter a total budget in bytes.
+3. Choose **Generate & allocate** and inspect the comparisons.
+4. Adjust the budget or importance, then choose **Download delivery**.
 
-If Chrome is unavailable, run `pnpm exec playwright install chromium`. If port 4318 is occupied, use `pnpm start --port 4319` and open the address printed in the terminal. If the first dependency installation fails, check `node --version`, `pnpm --version` and the reported registry/network or package error, then rerun the frozen install; keep the lockfile. See [setup and troubleshooting](docs/USAGE.md#setup-and-troubleshooting) for browser paths, the macOS launcher and recovery.
+The delivery ZIP includes selected files, comparison reports, a manifest and a replay recipe. Processing runs locally and leaves original inputs intact. See the [user guide](docs/USAGE.md) for CLI commands, the macOS launcher and recovery.
 
-Validated environment: **macOS arm64, Node 24.19.0, pnpm 11.19.0, Chrome 152.0.7977.76**. GitHub Actions also passed installation, default tests, production build and static subpath checks on Ubuntu 24.04; this does not validate full local processing on Linux. Node 22.13 is the declared minimum; that version and Windows remain untested. [Release checks and remaining limits](docs/RC.md) record the actual verification scope.
+## Before using a delivery
 
-## Local application and static demo
+- The budget counts **selected asset bytes**. Embedded GLB textures count inside the model; reports and ZIP overhead are separate.
+- Supported inputs are static 8-bit JPEG/PNG/WebP and self-contained static GLB 2.0 with core PBR content and `KHR_texture_transform`. Animation, skins, morph targets, external model resources and other extensions are unsupported.
+- Loss is a reference-based comparison under the chosen viewing conditions. Inspect important details and use protection settings for content that must remain exact.
+- Selection uses a finite candidate table. A larger budget can select the same files; an infeasible budget leaves assets and locks in place.
+- Interactive 3D inspection needs WebGL. Recorded fixed-camera comparisons remain available when it is unavailable.
 
-| | Full local application | Static demo |
-| --- | --- | --- |
-| Inputs | Your supported images and GLBs | Included real sample assets |
-| Candidate generation and evaluation | New encodes and GLB renders on your computer | Clearly labeled precomputed candidates |
-| Budget and importance changes | Joint allocation over measured candidates | The same allocator runs in the browser |
-| New display conditions or protection | Regenerate or reevaluate as required | Use the local application |
-| Delivery | Actual selected files, report and replay recipe | Actual selected sample files and recorded measurements |
+[Technical reference](docs/TECHNICAL.md) · [Mixed example](docs/release-case.md) · [Search benchmark](docs/benchmark-notes.md)
 
-The static build is in `dist/`; it needs no processing backend. It loads selected content as needed and can export a new selection from the existing candidate table. It does not simulate encoding or rendering progress. [The public demo](https://yeopbong.github.io/assetfit/) runs this build on GitHub Pages under `/assetfit/`. Candidate encoding and measurement are precomputed; budget and importance changes perform real allocation in your browser. The loopback link above works only on the computer running AssetFit.
-
-## What the results mean
-
-The hard budget is the **sum of actual selected visual-file bytes**. Embedded GLB textures are already counted inside the model. Reports, ZIP overhead, network transfer, GPU memory and frame rate are different quantities. One MB is 1,000,000 bytes; one MiB is 1,048,576 bytes.
-
-The allocator minimizes a defined reference-based engineering loss over the valid candidate table. It is not a human visual-quality percentage or a claim of optimal encoding outside that table. Locks and protection remain constraints. If no measured combination fits, AssetFit reports that result and does not silently remove an asset or unlock it. Inspect critical details before using a delivery.
-
-Interactive model orbit and lighting require WebGL. If it is unavailable, the comparison shows labeled recorded fixed-camera renders for the original and inspected candidate; allocation and downloads still work.
-
-The supported scope is static 8-bit JPEG/PNG/WebP and self-contained static GLB 2.0 with supported core PBR content and `KHR_texture_transform`. Animation, skins, morph targets, other GLB extensions, external model resources, SVG and high-bit-depth images are rejected explicitly. [Supported inputs, protection and resource limits](docs/USAGE.md#supported-assets-and-protections) explain the boundary.
-
-## Evidence and reproduction
-
-- [Real mixed release case](docs/release-case.md): an 8.11 MB Avocado model, photographs and a protected graphic; exact input/output bytes, recipes, constraints, timings and reproduction commands. [Machine-readable record](docs/release-case.json).
-- [Search comparison](docs/benchmark-notes.md): audited historical observations and a reproducible figure. Simple methods can win; 222 paid evaluations are not 222 unique outputs or proof of general superiority.
-- [Public deployment evidence](docs/publication.json): successful remote workflows, real public browser checks and verified downloaded files.
-- [Release validation](docs/RC.md): clean installation, local processing, UI and static subpath checks, plus verified and unverified scope.
-- [User guide](docs/USAGE.md): CLI, failure and recovery states, export, replay and policy. [Technical reference](docs/TECHNICAL.md): objective, cache validity and implementation limits.
-
-Code: [MIT](LICENSE). Sample assets retain their own licenses and attribution in [`examples/SOURCES.json`](examples/SOURCES.json); the code license does not replace them. Publication status is tracked in the release report. Plotting dependencies are only needed to regenerate documentation figures, not to use AssetFit.
+Code is [MIT licensed](LICENSE). Sample attribution and licenses are in [examples/SOURCES.json](examples/SOURCES.json); dependency notices are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

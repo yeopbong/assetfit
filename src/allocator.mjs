@@ -1,4 +1,3 @@
-/** Exact multiple-choice allocation over the measured candidate archive. Browser safe. */
 export const ALLOCATOR_VERSION = 'sparse-pareto-v1';
 export const ALLOCATION_LIMITS = Object.freeze({ maxFrontierStates: 250_000, maxExpandedStates: 2_000_000 });
 
@@ -84,12 +83,9 @@ function result(table, indices, budget, totalPriority, method, exact, extra = {}
   return { feasible: true, selected, bytes: totalBytes, loss, normalizedLoss: totalPriority ? loss / totalPriority : 0, budget, slack: budget - totalBytes, exact, method, version: ALLOCATOR_VERSION, contributions, scope: 'Generated candidate table at current priorities.', ...extra };
 }
 
-/**
- * A frontier is rebuilt for each solve; the supplied candidate archive is never pruned.
- * @template {{bytes:number,loss:number}} T
+/** @template {{bytes:number,loss:number}} T
  * @param {T[]} states
- * @returns {T[]}
- */
+ * @returns {T[]} */
 function pareto(states) {
   states.sort((a, b) => a.bytes - b.bytes || a.loss - b.loss);
   let lowestLoss = Infinity;
@@ -125,7 +121,6 @@ export function allocate(assets, budget, weights = {}, options = {}) {
       for (const candidate of candidates) {
         statesVisited++;
         if (statesVisited > limits.maxExpandedStates) throw allocationLimit('expanded states', statesVisited, nextByBytes.size, limits);
-        // Subtract first so a sum above the safe integer range is never accepted.
         if (candidate.bytes > budget - remaining[i + 1] - state.bytes) continue;
         const cost = state.bytes + candidate.bytes;
         const loss = state.loss + candidate.loss;
@@ -133,7 +128,6 @@ export function allocate(assets, budget, weights = {}, options = {}) {
         const previous = nextByBytes.get(cost);
         if (!previous || loss < previous.loss) {
           nextByBytes.set(cost, { bytes: cost, loss, indices: [...state.indices, candidate.index] });
-          // Bound in-progress storage as well as the final nondominated frontier.
           if (nextByBytes.size > limits.maxFrontierStates) throw allocationLimit('stored byte states', statesVisited, nextByBytes.size, limits);
         }
       }
@@ -145,10 +139,7 @@ export function allocate(assets, budget, weights = {}, options = {}) {
   return result(table, best.indices, budget, totalPriority, 'exact-sparse-pareto', true, { minimumBytes, statesVisited, peakFrontier, limits, durationMs: performance.now() - started });
 }
 
-/**
- * Measured marginal benefit per additional byte, starting with each asset's smallest valid file.
- * @param {AssetInput[]} assets @param {number} budget @param {Record<string,number>} weights
- */
+/** @param {AssetInput[]} assets @param {number} budget @param {Record<string,number>} weights */
 export function allocateGreedy(assets, budget, weights = {}) {
   const started = performance.now();
   const prepared = prepare(assets, budget, weights);
@@ -178,10 +169,7 @@ export function allocateGreedy(assets, budget, weights = {}) {
   return result(table, indices, budget, totalPriority, 'measured-greedy', false, { minimumBytes, durationMs: performance.now() - started });
 }
 
-/**
- * Simple baseline: distribute bytes beyond mandatory minima in proportion to original bytes.
- * @param {AssetInput[]} assets @param {number} budget @param {Record<string,number>} weights
- */
+/** @param {AssetInput[]} assets @param {number} budget @param {Record<string,number>} weights */
 export function allocateProportional(assets, budget, weights = {}) {
   const started = performance.now();
   const prepared = prepare(assets, budget, weights);
@@ -194,7 +182,6 @@ export function allocateProportional(assets, budget, weights = {}) {
   const remaining = budget - minimumBytes;
   const indices = table.map((asset, i) => {
     const minimum = Math.min(...asset.candidates.map((candidate) => candidate.bytes));
-    // BigInt avoids multiplication rounding granting a byte above a proportional quota.
     const extra = proportionSum ? Number(BigInt(remaining) * BigInt(proportions[i]) / BigInt(proportionSum)) : Math.floor(remaining / (table.length || 1));
     const limit = minimum + extra;
     return asset.candidates.reduce((best, candidate, index, all) => candidate.bytes <= limit && (best < 0 || candidate.loss < all[best].loss || (candidate.loss === all[best].loss && candidate.bytes < all[best].bytes)) ? index : best, -1);

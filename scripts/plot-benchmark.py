@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""Audit and plot recorded GLB observations; never generate synthetic measurements.
-
-Default: rebuild the audit and figure from the portable observations in docs.
---extract PATH: extract those observations from a full benchmark report and verify
-all referenced candidate files before saving the portable evidence.
-"""
 import argparse
 import copy
 import hashlib
@@ -165,7 +159,7 @@ def plot(report):
         ax.tick_params(axis="y", length=0, labelcolor=ink)
         ax.tick_params(axis="x", length=3, colors=ink)
         ax.spines["bottom"].set_color(gray)
-        # Independent, explicitly zoomed scales reveal seed variation without a bar baseline.
+
         if asset["name"] == "Duck":
             ax.set_xlim(.046, .052)
             ax.set_xticks([.046, .048, .050, .052])
@@ -190,7 +184,7 @@ def plot(report):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description="Plot recorded GLB observations from docs; --extract reads and verifies a full benchmark report.")
     parser.add_argument("--extract", type=Path, help="Full report under the repository root; candidate files must exist.")
     args = parser.parse_args()
     evidence_path = ROOT / "docs" / "benchmark-observations.json"

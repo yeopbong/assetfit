@@ -67,7 +67,6 @@ export async function chromeOptions() {
   return {};
 }
 
-/** A transient loopback renderer serves only registered files and bundled code. */
 export async function createRenderer({ workDir = path.join(os.tmpdir(), 'assetfit-render'), signal } = {}) {
   const outputDir = path.resolve(workDir, 'renders');
   await mkdir(outputDir, { recursive: true });
@@ -196,7 +195,6 @@ export async function createRenderer({ workDir = path.join(os.tmpdir(), 'assetfi
           views.push({ viewIndex, ...metrics });
           images.push({ stage, usageIndex: usage.usageIndex, viewIndex, reference: reference.path, candidate: candidateImage, difference });
         }
-        // Empty original views are recorded but cannot dilute visible-view damage.
         const scoredViews = views.filter(view => !view.emptyReference);
         const loss = Math.min(1, views.reduce((sum, view) => sum + view.loss, 0) / Math.max(1, scoredViews.length));
         uses.push({ usageIndex: usage.usageIndex, weight: usage.weight, loss, views, width: usage.width, height: usage.height,

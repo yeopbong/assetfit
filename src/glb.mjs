@@ -30,7 +30,6 @@ function checkCancelled(signal) {
 }
 function createIO() { return new NodeIO().registerExtensions([KHRTextureTransform]); }
 
-/** Inspect the original JSON before allowing any library to interpret extensions. */
 export function parseGlb(bytes) {
   const buffer = Buffer.from(bytes);
   if (buffer.length < 20 || buffer.readUInt32LE(0) !== 0x46546c67) throw new Error('Invalid GLB header.');
@@ -65,7 +64,6 @@ function materialInfos(material = {}) {
     material.pbrMetallicRoughness?.metallicRoughnessTexture, material.occlusionTexture];
 }
 
-/** Restore metadata the document abstraction does not represent, using stable source resource mapping. */
 export function preserveGlbMetadata(source, outputBytes) {
   const { json, bin } = parseGlb(outputBytes);
   const before = stable(json);
@@ -216,7 +214,6 @@ export async function inspectGlb(filePath) {
     extensions: json.extensionsUsed || [], compatibility: 'Core glTF 2.0 with optional KHR_texture_transform; no external decoder.', version: GLB_PIPELINE_VERSION };
 }
 
-/** A shared accessor locks every primitive that uses it, without splitting the source. */
 export function resolveGlbProtection(capabilities, constraints = {}, usages = []) {
   const requested = new Set([...(constraints.lockedObjects || constraints.lockObjects || []),
     ...usages.flatMap((usage) => usage.lockedObjects || usage.protection?.lockedObjects || [])].map((value) => typeof value === 'number' ? `node-${value}` : value));
@@ -269,7 +266,6 @@ function cloneAccessor(document, source, array) {
   return result;
 }
 
-/** Uses only public meshoptimizer APIs. Every rewritten attribute gets a private accessor. */
 export function simplifyPrimitive(document, primitive, ratio, error = 0.08) {
   const position = primitive.getAttribute('POSITION');
   const indexAccessor = primitive.getIndices();
@@ -445,7 +441,6 @@ export async function generateGlbCandidates({ sourcePath, outputDir, asset = {},
     if (observation.event === 'candidate' && observation.attempt) completions.set(observation.attempt, observation);
   }
   const pendingRetries = [];
-  // Existing observations are accepted only with the same generation key and verified files.
   for (const observation of completions.size ? [...completions.values()].sort((a, b) => a.attempt - b.attempt) : history) {
     if (observation.event !== 'candidate' || observation.generationKey !== generationKey || !observation.candidate) continue;
     const candidate = observation.candidate;
@@ -543,7 +538,7 @@ export async function generateGlbCandidates({ sourcePath, outputDir, asset = {},
     } catch (error) {
       if (error.name === 'AbortError') { await report({ event: 'cancelled-candidate', candidateId: id, attempt: logicalAttempt, vector, costMs: performance.now() - candidateStarted, randomState: random.state() }); throw error; }
       let failedBytes = Buffer.alloc(0);
-      try { failedBytes = await fs.readFile(destination); } catch { /* Encoding may fail before a file exists. */ }
+      try { failedBytes = await fs.readFile(destination); } catch {}
       candidate = { id, file: destination, bytes: failedBytes.length, hash: hash(failedBytes), params, valid: false, metrics: null,
         costMs: performance.now() - candidateStarted, diagnostics: { error: error.message, timings, generationKey } };
     }

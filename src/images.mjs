@@ -112,7 +112,6 @@ async function decodedRaster(file) {
 
 async function displayPixels(file, usage, decoded) {
   const { data, info } = decoded ?? await decodedRaster(file);
-  // Resize decoded RGBA identically; codec shrink-on-load would bias equivalent files.
   return sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
     .resize(usage.pixelWidth, usage.pixelHeight, { fit: usage.fit, position: 'centre', kernel: 'lanczos3', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .raw().toBuffer();
@@ -122,7 +121,6 @@ async function canonicalPixels(file) {
   return sharp(file, sharpOptions).rotate().toColourspace('srgb').ensureAlpha().raw().toBuffer();
 }
 
-/** Evaluation uses actual decoded files under every declared display condition. */
 export async function evaluateImage(sourcePath, candidatePath, usages = [], options = {}) {
   const normalized = normalizeImageUsages(usages);
   const uses = [];
@@ -168,7 +166,6 @@ function proposals(metadata, constraints, usages, maxCandidates) {
   const targetScale = Math.min(1, Math.max(...usages.map((usage) => usage.fit === 'contain' ? Math.min(usage.pixelWidth / metadata.width, usage.pixelHeight / metadata.height) : Math.max(usage.pixelWidth / metadata.width, usage.pixelHeight / metadata.height))));
   const scales = constraints.preserveDimensions ? [1] : [1, Math.min(0.75, Math.max(0.5, targetScale)), Math.min(0.45, Math.max(0.25, targetScale * 0.6))];
   const lossyFormats = formats.filter((format) => format !== 'png').sort((a) => a === 'webp' ? -1 : 1);
-  // Three scales cover the native, display-oriented and compact ranges within eight proposals.
   const levels = [{ scale: scales[0], quality: 84 }, { scale: scales[1] ?? 1, quality: 68 }, { scale: scales[2] ?? 1, quality: 46 }];
   for (const { scale, quality } of levels) {
     const minimumScale = Math.max(constraints.minWidth / metadata.width, constraints.minHeight / metadata.height);
@@ -197,7 +194,6 @@ function legality(metadata, source, params, constraints) {
   return diagnostics;
 }
 
-/** Sequential encodes bound memory and allow cancellation at encode/evaluation boundaries. */
 export async function generateImageCandidates({ sourcePath, outputDir, asset = {}, settings = {}, onCandidate, onObservation, signal }) {
   abort(signal);
   const started = performance.now();

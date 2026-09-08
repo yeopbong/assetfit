@@ -1,4 +1,3 @@
-/** Shared display-space engineering proxy. Scores are not perceptual percentages. */
 export const METRIC_VERSION = 'rgba-reference-v1';
 
 /** @typedef {{x?: number, y?: number, width?: number, height?: number, w?: number, h?: number, weight?: number, unit?: string}} RegionInput */
@@ -19,16 +18,9 @@ function rectangle(region, width, height) {
   };
 }
 
-/**
- * Compare two decoded RGBA displays under exactly the same declared conditions.
- * RGB averages black and white compositing; invisible RGB cannot create damage.
- * Weights are fixed by original alpha (1 foreground, 0.03 background) and user
- * regions. The denominator never shrinks when a candidate part disappears.
- * The loss combines RGB (0.55), edge (0.20), alpha (0.15), silhouette (0.10).
- * @param {Uint8Array} reference
+/** @param {Uint8Array} reference
  * @param {Uint8Array} candidate
- * @param {{width: number, height: number, regions?: Array<RegionInput>}} options
- */
+ * @param {{width: number, height: number, regions?: Array<RegionInput>}} options */
 export function compareRgba(reference, candidate, { width, height, regions = [] }) {
   if (!Number.isInteger(width) || !Number.isInteger(height) || width < 1 || height < 1
       || width * height > 16_777_216) throw new Error('Invalid metric dimensions.');
@@ -133,11 +125,8 @@ export function compareRgba(reference, candidate, { width, height, regions = [] 
   };
 }
 
-/**
- * Opaque red heatmap at a declared 4x amplification; no hidden auto contrast.
- * @param {Uint8Array} reference
- * @param {Uint8Array} candidate
- */
+/** @param {Uint8Array} reference
+ * @param {Uint8Array} candidate */
 export function differenceRgba(reference, candidate) {
   if (reference.length !== candidate.length || reference.length % 4) throw new Error('Difference inputs must be equal RGBA buffers.');
   const result = new Uint8Array(reference.length);

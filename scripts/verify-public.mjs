@@ -1,4 +1,3 @@
-/** Read-only deployed-site acceptance. Usage: node scripts/verify-public.mjs <site-url> [--fallback-only] */
 import {readFile,writeFile,mkdir,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {createRequire} from 'node:module';
@@ -63,9 +62,6 @@ async function assertVisibleAllocation(expected,target=page){
 async function waitForModels(){
   await page.waitForFunction(()=>document.querySelectorAll('.view-stage canvas').length===2&&[...document.querySelectorAll('.view-stage canvas')].every(canvas=>canvas.width>0&&canvas.height>0));
   await page.waitForLoadState('networkidle');
-  // Canvas creation and an idle network can precede image decode and the first GLB frame.
-  // Read the current framebuffer during animation-frame polling; transparent clear pixels
-  // must not be accepted as proof that the model was actually drawn.
   await page.waitForFunction(()=>document.querySelectorAll('.view-stage canvas').length===2&&[...document.querySelectorAll('.view-stage canvas')].every(canvas=>{
     const gl=canvas.getContext('webgl2')??canvas.getContext('webgl');if(!gl||gl.isContextLost())return false;
     const pixel=new Uint8Array(4);
@@ -79,7 +75,6 @@ async function waitForModels(){
 }
 async function verifyWebglFallback(){
   const context=await browser.newContext({viewport:{width:1440,height:1080}});
-  // Make the unavailable-WebGL path deterministic without altering the delivered app.
   await context.addInitScript(()=>{
     const getContext=HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext=function(name,...args){
